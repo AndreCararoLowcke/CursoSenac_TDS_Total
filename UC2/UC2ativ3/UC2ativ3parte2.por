@@ -6,27 +6,31 @@ programa {
 
     para(inteiro quarto = 0; quarto < 10; quarto++ )
     {
-      escreva("Qual o n�mero do quarto (1 a 10): ")
+      escreva("Qual o número do quarto (1 a 10): ")
       leia(quarto)
       quarto = quarto - 1
-      escreva("O quarto est� livre ('L') ou ocupado('O')? ")
+      escreva("O quarto está livre ('L') ou ocupado('O')? ")
       leia(digitado)
 
       se(vetor[quarto] == 'L' e digitado == 'L' )
       {
-        escreva("O quarto j� est� vazio!\n")
+        escreva("O quarto já está vazio!\n")
+        vetor[quarto] = 'L'
       }
-      se(vetor[quarto] == 'L' e digitado == 'O' )
+      senao se(vetor[quarto] == 'L' e digitado == 'O' )
       {
         escreva("O quarto foi ocupado!\n")
+        vetor[quarto] = 'O'
       }
-      se(vetor[quarto] == 'O' e digitado == 'L' )
+      senao se(vetor[quarto] == 'O' e digitado == 'L' )
       {
         escreva("O quarto foi liberado!\n")
+        vetor[quarto] = 'L'
       }
-      se(vetor[quarto] == 'O' e digitado == 'O' )
+      senao se(vetor[quarto] == 'O' e digitado == 'O' )
       {
-        escreva("O quarto j� est� ocupado!\n")
+        escreva("O quarto já está ocupado!\n")
+        vetor[quarto] = 'O'
       }
       escreva("Deseja continuar? (S/N):  ")
       leia(desejo)
@@ -34,9 +38,21 @@ programa {
       {
         quarto = 12
       }
-      
-
-    }
+      }
+	para(inteiro quarto = 0; quarto < 10; quarto++)
+		escreva("Quarto ",quarto + 1,", situação: ",vetor[quarto],"\n")
     
   }
 }
+
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 1152; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
