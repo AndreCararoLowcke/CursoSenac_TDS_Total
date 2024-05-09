@@ -1,4 +1,4 @@
 1- Para meu projeto vou seguir a dinâmica do PDF  'Projeto de software: conceito e etapas'.
 2- Sou obrigado a utilizar as tecnologias pevistas. Vou fazer um estudo sobre: Java, MySQL, Swing, JDBC para 
 integração com BD, Netbeans (IDE).
-
+# Estou instalando a IDE Netbeans
