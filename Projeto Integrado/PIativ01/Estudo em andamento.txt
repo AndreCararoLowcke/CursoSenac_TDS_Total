@@ -3,7 +3,8 @@
 integração com BD, Netbeans (IDE).
 
 # Estou instalando a IDE Netbeans ---> ok
-# Aprender usar Netbeans
+# Aprender usar Netbeans ---> ok
 
-#Iniciando a introdução ao sistema
-# Primeiro passo uc1ativ3 regrada de negocio
+#Iniciando a introdução ao sistema ---> ok
+# Primeiro passo uc1ativ3 regrada de negocio ---> ok
+# requisitos funcionais
