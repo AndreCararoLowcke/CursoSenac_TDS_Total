@@ -11,7 +11,7 @@ BEGIN
 DECLARE data_inicial DATETIME;
 SET data_inicial := '2019-01-20 10:10:00' ;
 SELECT data_inicial;
--- da para comentar assim tbm 
+-- da para comentar assim tbm buscar_compra_clientebuscar_compra_cliente
  /*
 	DECLARE cliente_id INT ;
     
