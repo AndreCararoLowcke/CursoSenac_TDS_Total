@@ -1,0 +1,482 @@
+use Ativ5
+switched to db Ativ5
+db.produto.insertMany([
+	{
+		"id" : 1,
+		"nome" : "Ventilador de mesa",
+		"descricao" : "Ventilador branco 40cm 110v",
+		"estoque" : 5,
+		"fabricante" : "Bons Ventos"
+	},
+	{
+		"id" : 2,
+		"nome" : "Ventilador de mesa",
+		"descricao" : "Ventilador preto 40cm 110v",
+		"estoque" : 5,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 3,
+		"nome" : "Ventilador de mesa 220",
+		"descricao" : "Ventilador branco 40cm 220v",
+		"estoque" : 5,
+		"fabricante" : "Bons Ventos"
+	},
+	{
+		"id" : 4,
+		"nome" : "Aspirador de pó",
+		"descricao" : "Aspira pó e agua 110v",
+		"estoque" : 9,
+		"fabricante" : "Bons ventos"
+	},
+	{
+		"id" : 5,
+		"nome" : "Aspirador de pó",
+		"descricao" : "Aspira pó 110v vermelho",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 6,
+		"nome" : "Aspirador de pó",
+		"descricao" : "Aspira pó 110v vermelho",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 7,
+		"nome" : "Batedeira planetária",
+		"descricao" : "Cor Branca 110v",
+		"estoque" : 5,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 8,
+		"nome" : "Liquidificador",
+		"descricao" : "Cor Preta 110v",
+		"estoque" : 7,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 9,
+		"nome" : "Liquidificador",
+		"descricao" : "Cor Branca 110v",
+		"estoque" : 2,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 10,
+		"nome" : "Liquidificador",
+		"descricao" : "Cor Preta 110v",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 11,
+		"nome" : "Processador",
+		"descricao" : "Cor Preta 110v",
+		"estoque" : 7,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 12,
+		"nome" : "Mixer",
+		"descricao" : "Cor Rosa 110v",
+		"estoque" : 8,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 13,
+		"nome" : "Furadeira",
+		"descricao" : "110v",
+		"estoque" : 3,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 14,
+		"nome" : "Furadeira 220",
+		"descricao" : "220v",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 15,
+		"nome" : "Forno Elétrico",
+		"descricao" : "110v",
+		"estoque" : 6,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 16,
+		"nome" : "Torradeira",
+		"descricao" : "110v",
+		"estoque" : 9,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 17,
+		"nome" : "Torradeira",
+		"descricao" : "110v",
+		"estoque" : 9,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 18,
+		"nome" : "Secador de cabelo",
+		"descricao" : "Cor Vermelha 2000w 110v",
+		"estoque" : 17,
+		"fabricante" : "Belle Tech"
+	},
+	{
+		"id" : 19,
+		"nome" : "Secador de cabelo",
+		"descricao" : "Cor Vermelha 2000w 110v",
+		"estoque" : 17,
+		"fabricante" : "UltraBeauty"
+	},
+	{
+		"id" : 20,
+		"nome" : "Chapinha cerâmica",
+		"descricao" : "Cor azul bivolt",
+		"estoque" : 4,
+		"fabricante" : "Belle Tech"
+	},
+	{
+		"id" : 21,
+		"nome" : "Chapinha cerâmica",
+		"descricao" : "Cor preta bivolt",
+		"estoque" : 4,
+		"fabricante" : "UltraBeauty"
+	},
+	{
+		"id" : 22,
+		"nome" : "Air Fryer",
+		"descricao" : "Bivolt",
+		"estoque" : 3,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 23,
+		"nome" : "Cafeteira Elétrica",
+		"descricao" : "Bivolt Verde",
+		"estoque" : 4,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 24,
+		"nome" : "Cafeteira Elétrica",
+		"descricao" : "Bivolt Azul",
+		"estoque" : 2,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 25,
+		"nome" : "Espremedor de Frutas",
+		"descricao" : "Preto bivolt",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 26,
+		"nome" : "Espremedor de Frutas",
+		"descricao" : "Branco bivolt",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 27,
+		"nome" : "Purificador de água",
+		"descricao" : "Refrigerado e antibactérias",
+		"estoque" : 3,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 28,
+		"nome" : "Purificador de água",
+		"descricao" : "Refrigerado",
+		"estoque" : 2,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 29,
+		"nome" : "Aspirador de pó vertical",
+		"descricao" : "1,5 m vermelho",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 30,
+		"nome" : "Panela de arroz eletrica",
+		"descricao" : "Bivolt",
+		"estoque" : 4,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 31,
+		"nome" : "Ferro de passar",
+		"descricao" : "Cor de Rosa",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 32,
+		"nome" : "Ferro de passar",
+		"descricao" : "vapor e seco",
+		"estoque" : 4,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 33,
+		"nome" : "Máquina de costura",
+		"descricao" : "9 pontos bivolt",
+		"estoque" : 3,
+		"fabricante" : "Formidable"
+	},
+	{
+		"id" : 34,
+		"nome" : "Forno Elétrico",
+		"descricao" : "",
+		"estoque" : 2,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 35,
+		"nome" : "Batedeira 400w",
+		"descricao" : "Premium profissional",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 36,
+		"nome" : "Pipoqueira elétrica",
+		"descricao" : "Bivolt",
+		"estoque" : 2,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 37,
+		"nome" : "Robo aspirador",
+		"descricao" : "autonomia para 4 horas",
+		"estoque" : 2,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 38,
+		"nome" : "Mixer",
+		"descricao" : "170w bivolt",
+		"estoque" : 2,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 39,
+		"nome" : "Multiprocessador",
+		"descricao" : "Bivolt",
+		"estoque" : 2,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 40,
+		"nome" : "Grill",
+		"descricao" : "compacto",
+		"estoque" : 6,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 41,
+		"nome" : "Forno de Microondas",
+		"descricao" : "20 litros",
+		"estoque" : 6,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 42,
+		"nome" : "Forno de Microondas",
+		"descricao" : "30 litros",
+		"estoque" : 6,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 43,
+		"nome" : "Cooktop",
+		"descricao" : "5 bocas",
+		"estoque" : 2,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 44,
+		"nome" : "Frigobar",
+		"descricao" : "50 litros",
+		"estoque" : 3,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 45,
+		"nome" : "Geladeira",
+		"descricao" : "Branca 110v",
+		"estoque" : 3,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 46,
+		"nome" : "Geladeira",
+		"descricao" : "Branca 220v",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 47,
+		"nome" : "Fogão",
+		"descricao" : "Branco 4 bocas",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 48,
+		"nome" : "Lavadora de roupas 220",
+		"descricao" : "220v com centrifugação",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 49,
+		"nome" : "Lavadora de roupas",
+		"descricao" : "110v com centrifugação",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 50,
+		"nome" : "Lavadora de roupas",
+		"descricao" : "Com secagem",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 51,
+		"nome" : "Adega",
+		"descricao" : "8 garrafas inox",
+		"estoque" : 2,
+		"fabricante" : "Ultralar"
+	}
+]
+)
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66aa52cc273bb368f75d848f'),
+    '1': ObjectId('66aa52cc273bb368f75d8490'),
+    '2': ObjectId('66aa52cc273bb368f75d8491'),
+    '3': ObjectId('66aa52cc273bb368f75d8492'),
+    '4': ObjectId('66aa52cc273bb368f75d8493'),
+    '5': ObjectId('66aa52cc273bb368f75d8494'),
+    '6': ObjectId('66aa52cc273bb368f75d8495'),
+    '7': ObjectId('66aa52cc273bb368f75d8496'),
+    '8': ObjectId('66aa52cc273bb368f75d8497'),
+    '9': ObjectId('66aa52cc273bb368f75d8498'),
+    '10': ObjectId('66aa52cc273bb368f75d8499'),
+    '11': ObjectId('66aa52cc273bb368f75d849a'),
+    '12': ObjectId('66aa52cc273bb368f75d849b'),
+    '13': ObjectId('66aa52cc273bb368f75d849c'),
+    '14': ObjectId('66aa52cc273bb368f75d849d'),
+    '15': ObjectId('66aa52cc273bb368f75d849e'),
+    '16': ObjectId('66aa52cc273bb368f75d849f'),
+    '17': ObjectId('66aa52cc273bb368f75d84a0'),
+    '18': ObjectId('66aa52cc273bb368f75d84a1'),
+    '19': ObjectId('66aa52cc273bb368f75d84a2'),
+    '20': ObjectId('66aa52cc273bb368f75d84a3'),
+    '21': ObjectId('66aa52cc273bb368f75d84a4'),
+    '22': ObjectId('66aa52cc273bb368f75d84a5'),
+    '23': ObjectId('66aa52cc273bb368f75d84a6'),
+    '24': ObjectId('66aa52cc273bb368f75d84a7'),
+    '25': ObjectId('66aa52cc273bb368f75d84a8'),
+    '26': ObjectId('66aa52cc273bb368f75d84a9'),
+    '27': ObjectId('66aa52cc273bb368f75d84aa'),
+    '28': ObjectId('66aa52cc273bb368f75d84ab'),
+    '29': ObjectId('66aa52cc273bb368f75d84ac'),
+    '30': ObjectId('66aa52cc273bb368f75d84ad'),
+    '31': ObjectId('66aa52cc273bb368f75d84ae'),
+    '32': ObjectId('66aa52cc273bb368f75d84af'),
+    '33': ObjectId('66aa52cc273bb368f75d84b0'),
+    '34': ObjectId('66aa52cc273bb368f75d84b1'),
+    '35': ObjectId('66aa52cc273bb368f75d84b2'),
+    '36': ObjectId('66aa52cc273bb368f75d84b3'),
+    '37': ObjectId('66aa52cc273bb368f75d84b4'),
+    '38': ObjectId('66aa52cc273bb368f75d84b5'),
+    '39': ObjectId('66aa52cc273bb368f75d84b6'),
+    '40': ObjectId('66aa52cc273bb368f75d84b7'),
+    '41': ObjectId('66aa52cc273bb368f75d84b8'),
+    '42': ObjectId('66aa52cc273bb368f75d84b9'),
+    '43': ObjectId('66aa52cc273bb368f75d84ba'),
+    '44': ObjectId('66aa52cc273bb368f75d84bb'),
+    '45': ObjectId('66aa52cc273bb368f75d84bc'),
+    '46': ObjectId('66aa52cc273bb368f75d84bd'),
+    '47': ObjectId('66aa52cc273bb368f75d84be'),
+    '48': ObjectId('66aa52cc273bb368f75d84bf'),
+    '49': ObjectId('66aa52cc273bb368f75d84c0'),
+    '50': ObjectId('66aa52cc273bb368f75d84c1')
+  }
+}
+db.produto.updateOne(
+    { "descricao": "Ventilador preto 40cm 110v" },
+    { $set: { "fabricante": "Super Ventão" } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Resultado do comando acima:
+{
+  "_id": {
+    "$oid": "66aa52cc273bb368f75d8490"
+  },
+  "id": 2,
+  "nome": "Ventilador de mesa",
+  "descricao": "Ventilador preto 40cm 110v",
+  "estoque": 5,
+  "fabricante": "Super Ventão"
+}
+db.produto.find({ "nome": "Liquidificador" })
+{
+  _id: ObjectId('66aa52cc273bb368f75d8496'),
+  id: 8,
+  nome: 'Liquidificador',
+  descricao: 'Cor Preta 110v',
+  estoque: 7,
+  fabricante: 'Casa & cia'
+}
+{
+  _id: ObjectId('66aa52cc273bb368f75d8497'),
+  id: 9,
+  nome: 'Liquidificador',
+  descricao: 'Cor Branca 110v',
+  estoque: 2,
+  fabricante: 'Ultralar'
+}
+{
+  _id: ObjectId('66aa52cc273bb368f75d8498'),
+  id: 10,
+  nome: 'Liquidificador',
+  descricao: 'Cor Preta 110v',
+  estoque: 3,
+  fabricante: 'Mundiale'
+}
+db.produto.find({ "fabricante": "Belle Tech" })
+{
+  _id: ObjectId('66aa52cc273bb368f75d84a0'),
+  id: 18,
+  nome: 'Secador de cabelo',
+  descricao: 'Cor Vermelha 2000w 110v',
+  estoque: 17,
+  fabricante: 'Belle Tech'
+}
+{
+  _id: ObjectId('66aa52cc273bb368f75d84a2'),
+  id: 20,
+  nome: 'Chapinha cerâmica',
+  descricao: 'Cor azul bivolt',
+  estoque: 4,
+  fabricante: 'Belle Tech'
+}
