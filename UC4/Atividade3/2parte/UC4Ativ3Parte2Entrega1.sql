@@ -8,7 +8,7 @@ Ordena-se pela data de venda, as mais recentes primeiro.
 SELECT * FROM venda v, item_venda iv, produto p, cliente c, funcionario f
 WHERE v.id = iv.venda_id AND c.id = v.cliente_id AND p.id = iv.produto_id AND f.id = v.funcionario_id and tipo_pagamento = 'D';
 
--- abaixo a consulta otimizada 1
+-- abaixo a consulta otimizada com JOINs e removida a utilização do *
 SELECT iv.venda_id, p.id, c.id, f.id
 FROM venda v
 JOIN item_venda iv ON v.id = iv.venda_id
