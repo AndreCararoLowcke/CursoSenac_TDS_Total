@@ -1,0 +1,28 @@
+Etapa 1- Projeto Integrador
+
+Ele será um programa que irá rodar localmente ou será uma extensão de navegador?
+Irá rodar localmente. É muito mais simples do que parece, uma explicação rápida já trará um bom entendimento.
+O whatsapp fornece um arquivo .TXT com os textos neste formato abaixo:
+---------------------------------------------------------------------------
+24/01/2024 05:10 - As mensagens e as ligações são protegidas com a criptografia de ponta a ponta e ficam somente entre você e os participantes desta conversa. Nem mesmo o WhatsApp pode lê-las ou ouvi-las. Toque para saber mais.
+11/01/2024 20:23 - ‎~ Narciso criou o grupo "TDS Senac"
+24/01/2024 05:10 - Você entrou usando o link de convite deste grupo
+24/01/2024 05:12 - Andre Cararo: 👍🏻💻💶
+24/01/2024 10:09 - +55 13 97410-2939: Bem-vindo ao grupo, André! 💻
+24/01/2024 16:50 - ‎+55 51 8142-4160 entrou usando o link de convite deste grupo
+24/01/2024 17:20 - ‎+55 21 99545-5821 entrou usando o link de convite deste grupo
+24/01/2024 21:38 - ‎+55 11 95974-2541 entrou usando o link de convite deste grupo
+24/01/2024 21:38 - +55 11 95974-2541: Boa noite !
+24/01/2024 21:38 - +55 11 95974-2541: Tudo bem ?
+24/01/2024 21:38 - +55 11 95974-2541: Gente, às matérias foram liberadas ?
+24/01/2024 21:39 - +55 13 97410-2939: Boa noite, Alexandre!
+----------------------------------------------------------------------------
+Então irei filtrar utilizando palavras chaves e agrupar. Apenas para ajudar na organização das conversas. No ambiente industrial muitas vezes vc quer apenas as mensagens que tal número mandou no grupo. Aí então o usuário seleciona o numero, faço uma filtragem e apresento apenas as mensagens daquele número.
+
+
+
+
+Pensando que as mensagens serão consumidas do whatsapp, como você imagina esse processo ocorrendo?
+Elas não serão consumidas no whatsapp. Serão baixadas do aplicativo whatsapp
+em um formato característico, ou seja esse processo é externo. Meu projeto receberá a pasta com arquivos padrão do whatsapp. Recebendo estes arquivos 
+só vou precisar usar JAVA para manipular as strings para que eu possa organizar e armazenar no banco de dados.
