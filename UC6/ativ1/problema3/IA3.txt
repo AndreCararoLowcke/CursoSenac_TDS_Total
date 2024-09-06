@@ -1,0 +1,73 @@
+Aqui está um exemplo de um programa Java que atende aos requisitos que você descreveu. O programa recebe o valor padrão da diária, os nomes e idades dos hóspedes, e calcula as gratuidades e meias hospedagens, além do valor total.
+
+```java
+import java.util.Scanner;
+
+public class Hospedagem {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        
+        // Recebe o valor padrão da diária
+        System.out.print("Digite o valor padrão da diária: R$ ");
+        double valorDiaria = entrada.nextDouble();
+        entrada.nextLine(); // Limpa o buffer
+
+        String nome;
+        int idade;
+        int quantidadeGratuidade = 0;
+        int quantidadeMeia = 0;
+        double valorTotal = 0;
+
+        while (true) {
+            System.out.print("Digite o nome do hóspede (ou 'PARE' para encerrar): ");
+            nome = entrada.nextLine();
+
+            if (nome.equalsIgnoreCase("PARE")) {
+                break; // Interrompe a entrada de dados
+            }
+
+            System.out.print("Digite a idade do hóspede: ");
+            idade = entrada.nextInt();
+            entrada.nextLine(); // Limpa o buffer
+
+            if (idade < 4) {
+                System.out.println(nome + " possui gratuidade");
+                quantidadeGratuidade++;
+            } else if (idade > 80) {
+                System.out.println(nome + " paga meia");
+                valorTotal += valorDiaria / 2;
+                quantidadeMeia++;
+            } else {
+                valorTotal += valorDiaria; // Hóspede paga o valor total
+            }
+        }
+
+        // Exibe o resultado final
+        System.out.printf("Total de hospedagens: R$%.2f; %d gratuidade(s); %d meia(s)\n", valorTotal, quantidadeGratuidade, quantidadeMeia);
+        
+        entrada.close(); // Fecha o scanner
+    }
+}
+```
+
+### Explicação do Código
+
+1. **Importação da Classe Scanner**: O programa utiliza a classe `Scanner` para ler a entrada do usuário.
+
+2. **Recebendo o Valor da Diária**: O programa solicita ao usuário que insira o valor padrão da diária.
+
+3. **Loop de Entrada de Dados**: Um loop `while` é utilizado para receber os nomes e idades dos hóspedes até que o usuário digite "PARE".
+
+4. **Condições para Gratuidades e Meias**:
+   - Se a idade do hóspede for menor que 4 anos, é exibida a mensagem de gratuidade e a contagem de gratuidades é incrementada.
+   - Se a idade for maior que 80 anos, é exibida a mensagem de meia hospedagem e o valor total é atualizado com metade do valor da diária.
+   - Para hóspedes com idades entre 4 e 80 anos, o valor total é atualizado com o valor total da diária.
+
+5. **Saída Final**: Após a entrada de dados ser encerrada, o programa exibe o total de hospedagens, a quantidade de gratuidades e a quantidade de meias.
+
+### Como Executar
+
+1. Copie o código acima para um arquivo chamado `Hospedagem.java`.
+2. Compile o programa usando o comando `javac Hospedagem.java`.
+3. Execute o programa com `java Hospedagem`.
+4. Siga as instruções na tela para inserir os dados dos hóspedes.
