@@ -1,0 +1,474 @@
+PDF: Olá! É com grande alegria que lhe dou as boas-vindas ao nosso guia sobre Desenvolvimento de Sistemas! Neste documento, você encontrará informações valiosas sobre a construção de interfaces gráficas de usuário (GUI) para aplicações desktop, utilizando o Apache NetBeans IDE e o kit de ferramentas Swing. Prepare-se para aprender a criar interfaces visuais que tornam a interação com o sistema muito mais amigável e acessível, especialmente para usuários sem conhecimentos técnicos. Vamos juntos explorar o fascinante mundo das interfaces gráficas!
+
+Aqui estão três perguntas que você pode fazer sobre o arquivo:
+
+1. Quais são os principais componentes do kit de ferramentas Swing utilizados na construção de interfaces gráficas?
+2. Como o GUI Builder do Apache NetBeans IDE facilita a criação de interfaces gráficas?
+3. Quais são as vantagens de usar uma interface gráfica em vez de um console de texto para interagir com o usuário?
+
+Me: Aja como um programador experiente e de 2 opções de solução. Contexto
+O Sindicato dos Nutricionistas pretende fazer uma ação diferente com seus associados. Ele distribuirá aos nutricionistas softwares desktop para realizar rapidamente cálculos muito comuns na rotina desses profissionais.
+ 
+O software precisa realizar:
+ 
+Cálculo de IMC (índice de massa corporal)
+Calculo de gasto calórico basal, que é quanto uma pessoa gasta de caloria para simplesmente sobreviver
+Cálculo de gasto calórico total, que considera a quantidade de atividades físicas que a pessoa realiza
+Recomendação de quantidade de carboidrato, proteína e gordura que a pessoa deve ingerir
+ 
+Atividade
+Crie um projeto Java no NetBeans e implemente as seguintes funcionalidade e telas usando a ferramenta visual do IDE (ambiente de desenvolvimento integrado, em inglês integrated development environment).
+ 
+Crie uma tela inicial baseada no wireframe a seguir. Ela será a tela que deve abrir ao executar o programa e, ao clicar nos botões, levar às telas seguintes.
+
+Descrição: Wireframe de uma tela com três botões ao centro, alinhados verticalmente: “IMC”, “Gasto Calórico” e “Recomendações”.Clique para obter mais opções
+ Figura 1 – IMC, gasto calórico e recomendações
+Fonte: Senac EAD (2022)
+ 
+Crie a tela IMC baseando-se no seguinte wireframe.
+ 
+
+Descrição: Wireframe da tela com título “Cálculo de IMC”, um painel com o rótulo “Altura (m)”, seguido de um campo de entrada de texto à direita. Abaixo, há o rótulo “Peso (kg)”, seguido de um campo de entrada e, mais abaixo, um botão “Calcular”. Ainda mais abaixo, há um painel com os rótulos “Resultado” e “Interpretação”. Clique para obter mais opções
+Figura 2 – Cálculo de IMC
+Fonte: Senac EAD (2022)
+ 
+Essa tela será acessada por meio do botão IMC da tela principal e deverá aparecer sobre ela (não por trás).
+ 
+Ao clicar em Calcular, o programa deve coletar os dados informados e realizar a operação “IMC = Peso / Altura²”. O resultado dessa operação aparecerá após o label Resultado. À direita do label Interpretação, deve conter um dos seguintes textos:
+ 
+“Magreza”, se o IMC for menor que 18,5
+“Normal”, se o IMC for entre 18,5 e 24,9
+“Sobrepeso”, se o IMC for entre 25 e 29,9
+“Obesidade”, se o IMC for entre 30 e 39,9
+“Obesidade grave”, se o IMC for maior ou igual a 40
+ 
+Essa tela será acessada por meio do botão IMC da tela principal e deverá aparecer sobre ela (não por trás).
+ 
+Validações: a tela não deve “quebrar” ao informar valores inválidos; a tela deve solicitar que o usuário preencha todos os campos.
+ 
+Crie a tela Gasto Calórico baseando-se no seguinte wireframe.
+ 
+
+Descrição: Wireframe de uma tela com o título “Cálculo de Gasto Calórico” e, abaixo, um painel contendo dois radio buttons com o rótulo “Mulher” e “Homem” desmarcados. Abaixo, há um rótulo “Peso (kg)”, seguido, à direita, de um campo de entrada de texto. Abaixo, há um rótulo “Altura (cm)”, seguido, à direita, de um campo de entrada de texto. Abaixo, há um rótulo “Idade”, seguido, à direita, de um campo de entrada de texto. Abaixo, há um rótulo “Nível de atividade”, seguido, à direita, de um campo de seleção. Ainda mais abaixo, há um segundo painel com os rótulos “Gasto Basal” e “Gasto Total”. Clique para obter mais opções
+Figura 3 – Cálculo de gasto calórico
+Fonte: Senac EAD (2022)
+ 
+Essa tela será acessada por meio do botão Gasto Calórico da tela principal.
+ 
+Ao clicar em Calcular, o programa deve, primeiro, realizar o cálculo de gasto calórico basal, que varia de acordo com o sexo da pessoa:
+ 
+Homem
+Mulher
+CalBasal = 66 + (13,8 * Peso) + (5 * Altura) – (6,8 * Idade)
+CalBasal = 655 + (9,6 * Peso) + (1,9 * Altura) – (4,7 * Idade)
+ 
+Esse valor deve aparecer à direita do label Gasto Basal na tela.
+ 
+Depois disso, com base no gasto de caloria basal obtido pelo cálculo anterior, deve-se calcular o gasto total, que varia de acordo com o nível de atividade física da pessoa:
+ 
+Nível de atividade
+Cálculo
+Sedentário
+calTotal = CalBasal * 1,2
+Leve (exercício leve 1 a 3 dias/semana)
+calTotal = CalBasal * 1,375
+Moderado (exercício moderado 3 a 5 dias/semana)
+calTotal = CalBasal * 1,55
+Ativo (exercício pesado 5 a 6 dias/semana)
+calTotal = CalBasal * 1,725
+Extremamente ativo (exercício pesado diário)
+calTotal = CalBasal * 1,9
+ 
+A combobox presente na tela deve oferecer as opções listadas anteriormente para “nível de atividade”.
+ 
+O valor obtido pelo cálculo deve aparecer à direita do label Gasto Total.
+ 
+Validações: a tela não deve “quebrar” ao informar valores inválidos; a tela deve solicitar que o usuário preencha todos os campos.
+ 
+Crie a tela Recomendações baseando-se no wireframe a seguir.
+ 
+
+Descrição: Wireframe de tela com o título “Recomendações” e um painel contendo um rótulo “Calorias diárias (kcal)”, seguido, à direita, de um campo de entrada de texto. Abaixo, há um botão “Calcular”. Abaixo, outro painel com os rótulos “Carboidratos (50%)”, “Proteína (25%)” e “Gordura (25%)”.Clique para obter mais opções
+ Figura 4 – Recomendações
+Fonte: Senac EAD (2022
+
+PDF: Para implementar o software solicitado para o Sindicato dos Nutricionistas, você pode seguir duas abordagens diferentes. Ambas as opções utilizam o Apache NetBeans IDE e a biblioteca Swing para a construção da interface gráfica. Aqui estão as duas opções de solução:
+
+### Opção 1: Implementação Modular com Classes Separadas
+
+1. **Estrutura do Projeto**:
+   - Crie um projeto Java no NetBeans chamado `NutricionistaApp`.
+   - Crie três classes separadas para cada funcionalidade: `IMCCalculator`, `CaloricExpenditureCalculator`, e `RecommendationsCalculator`.
+   - Crie uma classe principal `MainFrame` que será responsável pela tela inicial e navegação entre as telas.
+
+2. **Tela Inicial (`MainFrame`)**:
+   - Utilize o GUI Builder para criar a tela inicial com três botões: "IMC", "Gasto Calórico", e "Recomendações".
+   - Adicione ActionListeners aos botões para abrir as respectivas telas.
+
+3. **Tela IMC (`IMCCalculator`)**:
+   - Crie a interface gráfica com campos para altura e peso, e um botão "Calcular".
+   - No evento de clique do botão, implemente a lógica para calcular o IMC e exibir o resultado e a interpretação.
+   - Adicione validações para garantir que os campos não estejam vazios e que os valores sejam válidos.
+
+4. **Tela Gasto Calórico (`CaloricExpenditureCalculator`)**:
+   - Crie a interface com radio buttons para sexo, campos para peso, altura, idade e um combo box para nível de atividade.
+   - Implemente a lógica para calcular o gasto calórico basal e total com base nas fórmulas fornecidas.
+   - Adicione validações semelhantes à tela IMC.
+
+5. **Tela Recomendações (`RecommendationsCalculator`)**:
+   - Crie a interface com um campo para calorias diárias e um botão "Calcular".
+   - Implemente a lógica para calcular a quantidade de carboidratos, proteínas e gorduras com base nas porcentagens fornecidas.
+   - Exiba os resultados na tela.
+
+### Opção 2: Implementação em uma Única Classe com Painéis
+
+1. **Estrutura do Projeto**:
+   - Crie um projeto Java no NetBeans chamado `NutricionistaApp`.
+   - Utilize uma única classe chamada `NutricionistaApp` que conterá todos os painéis para as diferentes funcionalidades.
+
+2. **Tela Inicial**:
+   - Crie a tela inicial com três botões: "IMC", "Gasto Calórico", e "Recomendações".
+   - Utilize um CardLayout para gerenciar a troca entre os diferentes painéis.
+
+3. **Painéis para IMC, Gasto Calórico e Recomendações**:
+   - Crie três painéis separados dentro da classe principal, cada um contendo os componentes necessários para a funcionalidade correspondente.
+   - No evento de clique dos botões, altere o CardLayout para mostrar o painel correspondente.
+
+4. **Lógica de Cálculo**:
+   - Implemente a lógica de cálculo diretamente nos métodos de ação dos botões de cada painel.
+   - Adicione validações para garantir que os campos sejam preenchidos corretamente antes de realizar os cálculos.
+
+5. **Exibição de Resultados**:
+   - Após o cálculo, exiba os resultados diretamente nos rótulos apropriados em cada painel.
+
+### Considerações Finais
+
+Ambas as opções têm suas vantagens. A **Opção 1** oferece uma estrutura mais modular e organizada, facilitando a manutenção e a expansão futura do software. A **Opção 2** é mais simples e pode ser mais rápida de implementar, mas pode se tornar confusa se o número de funcionalidades aumentar.
+
+Escolha a abordagem que melhor se adapta às suas necessidades e ao seu estilo de programação. Certifique-se de testar cada funcionalidade e validar as entradas do usuário para garantir uma experiência de uso fluida e sem erros.
+
+Me: deste acima apresente os códigos para implementear utilizando java
+
+PDF: Abaixo estão os códigos para implementar as duas opções mencionadas anteriormente em Java, utilizando o Apache NetBeans IDE e a biblioteca Swing.
+
+### Opção 1: Implementação Modular com Classes Separadas
+
+#### 1. Classe Principal (`MainFrame.java`)
+
+```java
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MainFrame extends JFrame {
+    public MainFrame() {
+        setTitle("Nutricionista App");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        JButton btnIMC = new JButton("IMC");
+        JButton btnGastoCalorico = new JButton("Gasto Calórico");
+        JButton btnRecomendacoes = new JButton("Recomendações");
+
+        btnIMC.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new IMCCalculator().setVisible(true);
+            }
+        });
+
+        btnGastoCalorico.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new CaloricExpenditureCalculator().setVisible(true);
+            }
+        });
+
+        btnRecomendacoes.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new RecommendationsCalculator().setVisible(true);
+            }
+        });
+
+        add(btnIMC);
+        add(btnGastoCalorico);
+        add(btnRecomendacoes);
+    }
+
+    public static void main(String[] args) {
+        new MainFrame().setVisible(true);
+    }
+}
+```
+
+#### 2. Classe IMC (`IMCCalculator.java`)
+
+```java
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class IMCCalculator extends JFrame {
+    private JTextField txtPeso, txtAltura;
+    private JLabel lblResultado;
+
+    public IMCCalculator() {
+        setTitle("Calculadora de IMC");
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        txtPeso = new JTextField(10);
+        txtAltura = new JTextField(10);
+        JButton btnCalcular = new JButton("Calcular IMC");
+        lblResultado = new JLabel("Resultado: ");
+
+        btnCalcular.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                calcularIMC();
+            }
+        });
+
+        add(new JLabel("Peso (kg):"));
+        add(txtPeso);
+        add(new JLabel("Altura (m):"));
+        add(txtAltura);
+        add(btnCalcular);
+        add(lblResultado);
+    }
+
+    private void calcularIMC() {
+        try {
+            double peso = Double.parseDouble(txtPeso.getText());
+            double altura = Double.parseDouble(txtAltura.getText());
+            double imc = peso / (altura * altura);
+            lblResultado.setText("Resultado: " + String.format("%.2f", imc));
+        } catch (NumberFormatException e) {
+            lblResultado.setText("Por favor, insira valores válidos.");
+        }
+    }
+}
+```
+
+#### 3. Classe Gasto Calórico (`CaloricExpenditureCalculator.java`)
+
+```java
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class CaloricExpenditureCalculator extends JFrame {
+    private JTextField txtPeso, txtAltura, txtIdade;
+    private JComboBox<String> cbAtividade;
+    private JLabel lblResultado;
+
+    public CaloricExpenditureCalculator() {
+        setTitle("Calculadora de Gasto Calórico");
+        setSize(350, 250);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        txtPeso = new JTextField(10);
+        txtAltura = new JTextField(10);
+        txtIdade = new JTextField(10);
+        cbAtividade = new JComboBox<>(new String[]{"Sedentário", "Levemente ativo", "Moderadamente ativo", "Muito ativo"});
+        JButton btnCalcular = new JButton("Calcular Gasto Calórico");
+        lblResultado = new JLabel("Resultado: ");
+
+        btnCalcular.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                calcularGastoCalorico();
+            }
+        });
+
+        add(new JLabel("Peso (kg):"));
+        add(txtPeso);
+        add(new JLabel("Altura (cm):"));
+        add(txtAltura);
+        add(new JLabel("Idade (anos):"));
+        add(txtIdade);
+        add(new JLabel("Nível de Atividade:"));
+        add(cbAtividade);
+        add(btnCalcular);
+        add(lblResultado);
+    }
+
+    private void calcularGastoCalorico() {
+        try {
+            double peso = Double.parseDouble(txtPeso.getText());
+            double altura = Double.parseDouble(txtAltura.getText());
+            int idade = Integer.parseInt(txtIdade.getText());
+            double gastoCaloricoBasal = 10 * peso + 6.25 * altura - 5 * idade + 5; // Fórmula Mifflin-St Jeor para homens
+            double fatorAtividade = 1.2; // Sedentário
+
+            switch (cbAtividade.getSelectedItem().toString()) {
+                case "Levemente ativo":
+                    fatorAtividade = 1.375;
+                    break;
+                case "Moderadamente ativo":
+                    fatorAtividade = 1.55;
+                    break;
+                case "Muito ativo":
+                    fatorAtividade = 1.725;
+                    break;
+            }
+
+            double gastoTotal = gastoCaloricoBasal * fatorAtividade;
+            lblResultado.setText("Resultado: " + String.format("%.2f", gastoTotal) + " kcal");
+        } catch (NumberFormatException e) {
+            lblResultado.setText("Por favor, insira valores válidos.");
+        }
+    }
+}
+```
+
+#### 4. Classe Recomendações (`RecommendationsCalculator.java`)
+
+```java
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class RecommendationsCalculator extends JFrame {
+    private JTextField txtCalorias;
+    private JLabel lblResultado;
+
+    public RecommendationsCalculator() {
+        setTitle("Calculadora de Recomendações");
+        setSize(300, 150);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        txtCalorias = new JTextField(10);
+        JButton btnCalcular = new JButton("Calcular Recomendações");
+        lblResultado = new JLabel("Resultado: ");
+
+        btnCalcular.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                calcularRecomendacoes();
+            }
+        });
+
+        add(new JLabel("Calorias Diárias:"));
+        add(txtCalorias);
+        add(btnCalcular);
+        add(lblResultado);
+    }
+
+    private void calcularRecomendacoes() {
+        try {
+            double calorias = Double.parseDouble(txtCalorias.getText());
+            double carboidratos = calorias * 0.55 / 4; // 55% de carboidratos
+            double proteinas = calorias * 0.25 / 4; // 25% de proteínas
+            double gorduras = calorias * 0.20 / 9; // 20% de gorduras
+
+            lblResultado.setText(String.format("Carboidratos: %.2f g, Proteínas: %.2f g, Gorduras: %.2f g", carboidratos, proteinas, gorduras));
+        } catch (NumberFormatException e) {
+            lblResultado.setText("Por favor, insira um valor válido.");
+        }
+    }
+}
+```
+
+### Opção 2: Implementação em uma Única Classe com Painéis
+
+#### Classe Principal (`NutricionistaApp.java`)
+
+```java
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class NutricionistaApp extends JFrame {
+    private CardLayout cardLayout;
+    private JPanel mainPanel;
+
+    public NutricionistaApp() {
+        setTitle("Nutricionista App");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        cardLayout = new CardLayout();
+        mainPanel = new JPanel(cardLayout);
+
+        mainPanel.add(createMainMenu(), "Menu");
+        mainPanel.add(createIMCPanel(), "IMC");
+        mainPanel.add(createGastoCaloricoPanel(), "Gasto Calórico");
+        mainPanel.add(createRecomendacoesPanel(), "Recomendações");
+
+        add(mainPanel);
+    }
+
+    private JPanel createMainMenu() {
+        JPanel panel = new JPanel();
+        JButton btnIMC = new JButton("IMC");
+        JButton btnGastoCalorico = new JButton("Gasto Calórico");
+        JButton btnRecomendacoes = new JButton("Recomendações");
+
+        btnIMC.addActionListener(e -> cardLayout.show(mainPanel, "IMC"));
+        btnGastoCalorico.addActionListener(e -> cardLayout.show(mainPanel, "Gasto Calórico"));
+        btnRecomendacoes.addActionListener(e -> cardLayout.show(mainPanel, "Recomendações"));
+
+        panel.add(btnIMC);
+        panel.add(btnGastoCalorico);
+        panel.add(btnRecomendacoes);
+        return panel;
+    }
+
+    private JPanel createIMCPanel() {
+        JPanel panel = new JPanel();
+        JTextField txtPeso =
+
+Me: Quais são os principais componentes do kit de ferramentas Swing utilizados na construção de interfaces gráficas?
+
+PDF: Os principais componentes do kit de ferramentas Swing utilizados na construção de interfaces gráficas incluem:
+
+1. **JButton** - Um botão que pode ser clicado para executar uma ação.
+2. **JLabel** - Um componente que exibe texto ou imagens.
+3. **JTextField** - Um campo de texto onde o usuário pode inserir dados.
+4. **JTextArea** - Uma área de texto que permite a entrada de múltiplas linhas de texto.
+5. **JComboBox** - Um menu suspenso que permite ao usuário selecionar uma opção de uma lista.
+6. **JList** - Um componente que exibe uma lista de itens que o usuário pode selecionar.
+7. **JCheckBox** - Uma caixa de seleção que permite ao usuário escolher uma ou mais opções.
+8. **JRadioButton** - Um botão de opção que permite ao usuário selecionar uma única opção de um grupo.
+9. **JPanel** - Um contêiner que pode agrupar outros componentes.
+10. **JFrame** - A janela principal que contém outros componentes.
+
+Esses componentes são fundamentais para a construção de interfaces gráficas em aplicações Java, permitindo a interação do usuário com o software,.
+
+Me: Como o GUI Builder do Apache NetBeans IDE facilita a criação de interfaces gráficas?
+
+PDF: O GUI Builder do Apache NetBeans IDE facilita a criação de interfaces gráficas de várias maneiras:
+
+1. **Arrastar e Soltar**: O GUI Builder permite que os desenvolvedores arrastem e soltem componentes na tela, como botões, caixas de texto e rótulos, simplificando o processo de design da interface.
+
+2. **Geração Automática de Código**: À medida que os componentes são adicionados à interface, o GUI Builder gera automaticamente o código Java correspondente na aba de código-fonte. Isso economiza tempo e reduz a possibilidade de erros de codificação manual.
+
+3. **Configuração Visual**: Os desenvolvedores podem clicar com o botão direito em um componente e acessar a opção "Properties" para configurar atributos e métodos de forma visual, sem a necessidade de escrever código manualmente.
+
+4. **Componentes Diversificados**: O GUI Builder oferece uma ampla gama de componentes do Swing, permitindo que os desenvolvedores escolham entre diferentes elementos para atender às necessidades específicas de suas aplicações.
+
+5. **Interface Intuitiva**: A interface do GUI Builder é projetada para ser intuitiva, facilitando a navegação e a utilização, mesmo para aqueles que podem não ter experiência prévia em desenvolvimento de interfaces gráficas.
+
+Essas características tornam o GUI Builder uma ferramenta poderosa para desenvolvedores que desejam criar interfaces gráficas de forma eficiente e eficaz.
+
+Me: Quais são as vantagens de usar uma interface gráfica em vez de um console de texto para interagir com o usuário?
+
+PDF: As vantagens de usar uma interface gráfica em vez de um console de texto para interagir com o usuário incluem:
+
+1. **Intuitividade**: Interfaces gráficas são geralmente mais intuitivas e fáceis de usar, permitindo que usuários sem conhecimentos técnicos interajam com o software de maneira mais natural e visual.
+
+2. **Acessibilidade**: Elementos visuais, como botões, menus e caixas de diálogo, tornam a navegação e a interação mais acessíveis, especialmente para usuários que podem ter dificuldades em entender comandos de texto.
+
+3. **Feedback Visual**: Interfaces gráficas oferecem feedback visual imediato, como mudanças de cor ou animações, que ajudam os usuários a entenderem que suas ações foram registradas, melhorando a experiência do usuário.
+
+4. **Organização da Informação**: A disposição visual de componentes permite uma melhor organização da informação, facilitando a apresentação de dados complexos de forma clara e compreensível.
+
+5. **Multimídia**: Interfaces gráficas podem incorporar elementos multimídia, como imagens, vídeos e animações, que podem enriquecer a experiência do usuário e tornar a interação mais envolvente.
+
+6. **Interatividade**: A possibilidade de interagir com o software através de cliques, arrastos e outras ações visuais torna a experiência mais dinâmica e interessante em comparação com a entrada de texto em um console.
+
+Essas vantagens tornam as interfaces gráficas uma escolha preferencial para aplicações que visam um público amplo e que não possui formação técnica específica.
