@@ -1,3 +1,20 @@
+https://www.youtube.com/watch?v=D5sVyNn7IKY
+
+5:40 --> incluiu os dados no jtable e o código já está todo ali.
+
+8:14 --> tem como excluir do jtable
+
+---------------------------------------------------------------------------------------------------
+## vou primeiro fazer o jtable funcionar
+Agora tenho o funcionamento do jtable e a interação com o BD então posso implementar o Ativ02
+
+---------------------------------------------------------------------------------------------------
+
+https://www.youtube.com/watch?v=RO3F4xtZrXI
+
+Neste video tenho no papel anotado terei que usar ele para interajir com o BD
+
+---------------------------------------------------------------------------------------------------
 
 import java.sql.PreparedStatement;
 import java.sql.Connection;
@@ -27,7 +44,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
@@ -151,18 +168,18 @@ public class TelaCadastro extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
         txtCategoria.setText("");
         txtNome.setText("");
         txtDataLancamento.setText("");
 
 
-    }//GEN-LAST:event_btnLimparActionPerformed
+    }                                         
 
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         try {
             // TODO add your handling code here:
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -191,11 +208,11 @@ public class TelaCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao inserir filme: " + e.getMessage());
         }
 
-    }//GEN-LAST:event_btnCadastrarActionPerformed
+    }                                            
 
-    private void txtDataLancamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataLancamentoActionPerformed
+    private void txtDataLancamentoActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataLancamentoActionPerformed
+    }                                                 
 
     /**
      * @param args the command line arguments
@@ -232,7 +249,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JLabel jLabel1;
@@ -244,5 +261,5 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField txtCategoria;
     private javax.swing.JFormattedTextField txtDataLancamento;
     private javax.swing.JTextField txtNome;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
