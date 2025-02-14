@@ -1,16 +1,32 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
  * @author andre
  */
 public class TelaPesquisa extends javax.swing.JFrame {
+    
+    MaskFormatter mfdata;
 
-    /**
-     * Creates new form TelaPesquisa
-     */
     public TelaPesquisa() {
+        try {
+            mfdata = new MaskFormatter("##/##/####");
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
     }
 
@@ -34,7 +50,7 @@ public class TelaPesquisa extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         txtNome = new javax.swing.JTextField();
         txtCategoria = new javax.swing.JTextField();
-        Data = new javax.swing.JFormattedTextField();
+        DataLan = new javax.swing.JFormattedTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabela = new javax.swing.JTable();
 
@@ -61,6 +77,12 @@ public class TelaPesquisa extends javax.swing.JFrame {
 
         jButton4.setText("Deletar");
 
+        try {
+            DataLan.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -86,9 +108,9 @@ public class TelaPesquisa extends javax.swing.JFrame {
                                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Data)
                                     .addComponent(txtNome)
-                                    .addComponent(txtCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))))
+                                    .addComponent(txtCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+                                    .addComponent(DataLan, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 113, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -104,7 +126,7 @@ public class TelaPesquisa extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(Data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DataLan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -153,15 +175,45 @@ public class TelaPesquisa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // Por enquanto estou apenas colocando os dados no jtable
+           try {
+            // TODO add your handling code here:
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatoMySQL = new SimpleDateFormat("yyyy-MM-dd");
+        Date dataFormatada = null;
+        try {
+            dataFormatada = formatoEntrada.parse(DataLan.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String dataParaBanco = formatoMySQL.format(dataFormatada);
+        try (
+            
+                
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cenaflix_db2", "root", "Andrecararo1"); PreparedStatement stmt = conn.prepareStatement("INSERT INTO filmes (nome, datalancamento, categoria) VALUES (?, ?, ?)")) {
+            stmt.setString(1, txtNome.getText());
+            stmt.setString(2, dataParaBanco);
+            stmt.setString(3, txtCategoria.getText());
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Filme inserido com sucesso!");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao inserir filme: " + e.getMessage());
+        }
+        
+     
+
+// Por enquanto estou apenas colocando os dados no jtable
         DefaultTableModel modelo = (DefaultTableModel)tabela.getModel();
         
-        Object[] dados = {txtNome.getText(), Data.getText(), txtCategoria.getText()};
+        Object[] dados = {txtNome.getText(), DataLan.getText(), txtCategoria.getText()};
         
         modelo.addRow(dados);
         
         txtNome.setText(""); 
-        Data.setText("");
+        DataLan.setText("");
         txtCategoria.setText("");
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
@@ -201,7 +253,7 @@ public class TelaPesquisa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField Data;
+    private javax.swing.JFormattedTextField DataLan;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

@@ -1,0 +1,30 @@
+https://www.youtube.com/watch?v=D5sVyNn7IKY
+
+5:40 --> incluiu os dados no jtable e o código já está todo ali.
+
+8:14 --> tem como excluir do jtable
+
+---------------------------------------------------------------------------------------------------
+## vou primeiro fazer o jtable funcionar
+Agora tenho o funcionamento do jtable e a interação com o BD então posso implementar o Ativ02
+
+---------------------------------------------------------------------------------------------------
+
+https://www.youtube.com/watch?v=RO3F4xtZrXI
+
+Neste video tenho no papel anotado terei que usar ele para interajir com o BD
+
+---------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------
+UC02 
+1- vou cria a função de cadastrar --> ok
+2-agora vou criar uma função que resgata do bd e mostra no jtable para chamar en todos os botoes
+https://www.youtube.com/watch?v=RO3F4xtZrXI
+vou olhar este video para pegar oque tem no bd e colocar no jtable
+3:27 --> começa a fazer o código
+5:40 --> ele começa a fazer o código para buscar os dados
+7:44 --> mostra como chamar a função
+7:37 --> tem o codigo completo da função na tela.
