@@ -1,0 +1,710 @@
+PDF: Boa tarde, André!
+
+Esse material explora os conceitos fundamentais de mapeamento objeto-relacional (ORM) e sua aplicabilidade no desenvolvimento de sistemas.
+
+- ORM permite a interação com bancos de dados sem a necessidade de escrever SQL.
+- Facilita a comunicação entre o modelo de programação orientada a objetos e o armazenamento de dados.
+- Oferece maior produtividade e previne erros de tipo entre linguagens.
+
+Vamos conversar sobre como o ORM pode transformar o jeito que trabalhamos com dados?
+
+<q>Resuma este trabalho</q>
+<q>Quais são os principais benefícios de usar um ORM em vez de escrever SQL manualmente?</q>
+<q>Como o ORM facilita a troca de SGBD em um sistema já desenvolvido?</q>
+
+Me: Resuma este trabalho
+
+PDF: **Resumo do Desenvolvimento de Sistemas com ORM**
+
+**Introdução e Conceitos** [R1]
+
+- ORM (Object Relational Mapper) é uma técnica que permite o mapeamento entre objetos orientados a objetos e dados em bancos de dados [R1].
+- Essa técnica dispensa a necessidade de escrever código SQL, permitindo foco na estrutura das linguagens de programação [R1].
+- ORM facilita a interação com o banco de dados sem manipulação direta, beneficiando a independência do sistema em caso de troca de SGBD [R3].
+
+**Núcleos e Camadas do ORM** [R2]
+
+- O núcleo relacional armazena e gerencia dados usando SGBDs e SQL/NoSQL, focando "o que" guardar [R2].
+- O núcleo orientado a objetos lida com classes e métodos, definindo "como" os dados são manipulados e exibidos [R2].
+- A camada ORM possibilita o armazenamento de objetos do banco de dados por meio do mapeamento de objetos entre os dois núcleos [R2].
+
+**JPA (Java Persistence API)** [R4]
+
+- JPA é um framework genérico para organizar conceitos de ORM em projetos Java [R4].
+- JPA facilita consultas dinâmicas com JPQL (Java Persistence Query Language) ou Criteria API [R4].
+- Permite configurações simplificadas via arquivos XML ou anotações [R4].
+
+**Implementações de JPA (OpenJPA, Hibernate, e EclipseLink)** [R5]
+
+- JPA possui especificações que definem regras para implementações em projetos Java, com alternativas como OpenJPA, Hibernate e EclipseLink [R5].
+- Hibernate, um dos primeiros frameworks, possui ampla adoção e vasta documentação, sendo nativo em frameworks como Spring [R6].
+- EclipseLink implementa padrões JPA e outros serviços, sendo uma implementação de referência para novas especificações [R7].
+
+**Metadados: @Entity e @Table** [R7]
+
+- A anotação `@Entity` estabelece a ligação entre uma classe e uma tabela no banco de dados [R7].
+- `@Table` é usada para especificar o nome da tabela no banco de dados, caso seja diferente do nome da classe [R8].
+- Pode-se dar um apelido para a entidade usando o atributo `name` da anotação `@Entity`, útil em consultas [R8].
+
+**Metadados: @Id e @Column** [R9]
+
+- `@Id` define a chave primária de uma tabela mapeada por uma entidade [R9].
+- `@Column` permite direcionar um campo a uma coluna com nome diferente na tabela [R9].
+- Vários parâmetros em `@Column` determinam características da coluna [R9].
+
+**Metadados: @GeneratedValue** [R10]
+
+- `@GeneratedValue` indica que o valor do identificador único da entidade será gerado pelo provedor de persistência [R10].
+- `GenerationType.AUTO` é o valor padrão, permitindo que o provedor escolha a estratégia mais adequada [R10].
+- As estratégias incluem `IDENTITY` (definido pelo SGBD), `SEQUENCE` (gerado a partir de uma sequence) e `TABLE` (gerenciado por uma tabela) [R11].
+
+**Aplicabilidade: Criando o Projeto** [R12]
+
+- Para demonstrar os conceitos, um projeto Maven será criado utilizando a implementação Hibernate [R12].
+- O uso do Maven facilita o gerenciamento das dependências do projeto, baixando automaticamente as bibliotecas necessárias [R13].
+- As dependências do Hibernate e do MySQL Connector são adicionadas ao arquivo pom.xml do projeto [R14].
+
+**Configurando a Conexão com Banco de Dados** [R23]
+
+- A conexão com o banco de dados é configurada em um arquivo XML chamado `persistence.xml`, localizado em `src/main/resources/META-INF` [R23].
+- O arquivo `persistence.xml` define a unidade de persistência do projeto e as propriedades de conexão com o banco de dados, como driver, URL, usuário, senha e dialeto [R25].
+- As propriedades incluem informações como o driver JDBC, o caminho para o banco de dados, o usuário e a senha, e o dialeto do Hibernate [R26, R27, R30, R31].
+
+**Primeiras Operações com JPA** [R34]
+
+- Criação de um projeto para cadastramento e manipulação de despesas e receitas para controle de finanças pessoais [R34].
+- Criação do banco de dados e da tabela "despesa" no MySQL [R34].
+- Implementação das operações básicas com o banco de dados, como inclusão, recuperação, atualização e exclusão de dados, utilizando a JPA [R40, R42, R44].
+
+**Criando Aplicação Desktop com JPA** [R46]
+
+- Criação de uma aplicação desktop com operações JPA para persistência de dados, modificando o projeto FinancasJPA existente [R46].
+- Criação de um novo pacote Java chamado `br.com.senac.financasjpa.persistencia` e transferência da classe Despesa para este pacote [R46, R47].
+- Implementação das classes JPAUtil e DespesaDAO para criação do EntityManager e operações de acesso aos dados [R47, R48].
+
+**Implementando Receitas** [R55]
+
+- Implementação do cadastro de receitas, onde cada receita tem descrição, valor, data e conta relacionada [R55].
+- Criação das tabelas `conta` e `receita` no banco de dados, estabelecendo um relacionamento "1:N" entre elas [R55].
+- Criação das classes de entidade `Conta` e `Receita`, com a anotação `@ManyToOne` para representar o relacionamento entre as tabelas [R56, R57].
+
+**Definições de JPQL** [R67]
+
+- JPQL (Java Persistence Query Language) é uma linguagem para recuperar dados, semelhante à SQL, mas independente de SGBD [R67].
+- A sintaxe básica para uma busca em JPQL é `SELECT <alias> FROM <entidade><alias>` [R67].
+- Utiliza-se um objeto Query ou TypedQuery<T> para realizar a consulta, obtido por createQuery() de EntityManager [R67].
+
+**Parametrização com JPQL** [R71]
+
+- Para consultas dinâmicas, utilizam-se parâmetros nomeados, como `:data`, que são preenchidos antes da consulta [R71].
+- O método `setParameter()` de Query é usado para preencher esses parâmetros [R71].
+- Permite que dados informados pelo usuário influenciem os resultados da consulta [R71].
+
+**Criando Telas de Consulta no Projeto** [R72]
+
+- Criação de uma tela com listagem de despesas e filtros para a busca, implementando a pesquisa em DespesaDAO [R72].
+- Utilização de consultas JPQL com parâmetros para filtrar os resultados com base nos critérios de pesquisa informados pelo usuário [R74].
+- Implementação do método listar() em DespesaDAO para realizar a consulta JPQL e retornar a lista de despesas [R78].
+
+**Listagem de Receitas e Cláusula JOIN** [R82]
+
+- Implementação da listagem de receitas, onde a receita está associada à entidade Conta [R82].
+- Utilização da cláusula JOIN para retornar dados das duas tabelas, de forma explícita ou implícita [R82].
+- Criação da tela ListagemReceita e implementação do método preencheTabela() para exibir os dados na tabela [R83, R84].
+
+**Consultas com Criteria** [R86]
+
+- Criteria é um conjunto de métodos que formam uma alternativa à JPQL [R86].
+- A vantagem de usar Criteria é que falhas nas consultas se tornam detectáveis em tempo de compilação [R86].
+- A desvantagem de Criteria é sua complexidade e verbosidade na construção das consultas [R86].
+
+**Exclusão de Dados** [R89]
+
+- Implementação da exclusão de dados de Despesas, incluindo um novo método excluir() em DespesaDAO [R89].
+- Criação de um botão "Excluir" na tela ListagemDespesa e implementação do evento de clique para excluir o registro selecionado [R90].
+- Utilização de transações para garantir a integridade dos dados durante a operação de exclusão [R89].
+
+**Atualizando Dados** [R92]
+
+- Implementação da operação de atualização de dados de despesas, exigindo um trabalho um pouco maior [R92].
+- Criação de dois novos métodos em DespesaDAO: obter() para recuperar o registro selecionado e atualizar() para salvar as informações no banco de dados [R92].
+- Utilização da mesma tela de cadastro para realizar a edição, ajustando o código da classe CadastroDespesa e da ListagemDespesa [R93].
+
+**Finalizando a Aplicação** [R97]
+
+- Criação de um novo JFrame Form para incluir um componente "Menu Bar", editar os itens padrão para Despesa e Receita, e incluir itens nesses menus [R97].
+- Configuração de CadastroDespesa, CadastroReceita, ListagemDespesa e ListagemReceita para que não encerrem a aplicação ao clicar no botão fechar [R98].
+- Substituição do conteúdo de main() da classe principal para que ela crie e exiba a janela "Principal" [R98].
+
+
+Me: Quais são os principais benefícios de usar um ORM em vez de escrever SQL manualmente?
+
+PDF: Os principais benefícios de usar um ORM em vez de escrever SQL manualmente incluem:
+
+1. **Abstração de SQL**: O ORM permite que os desenvolvedores interajam com o banco de dados usando objetos em vez de escrever comandos SQL diretamente. Isso simplifica o desenvolvimento, pois os programadores podem focar na lógica da aplicação sem se preocupar com a sintaxe das consultas SQL.
+
+2. **Produtividade**: Ao eliminar a necessidade de escrever e executar manualmente SQL, um ORM pode aumentar a produtividade. Os desenvolvedores podem trabalhar mais rapidamente, aproveitando a manipulação de dados por meio de objetos,.
+
+3. **Validação de Tipos de Dados**: O uso de um ORM ajuda a garantir que os tipos de dados sejam compatíveis entre o banco de dados e a aplicação, reduzindo erros de tipo e problemas de compatibilidade.
+
+4. **Independência do Banco de Dados**: Com a camada intermediária que o ORM fornece, é possível trocar o Sistema de Gerenciamento de Banco de Dados (SGBD) sem grandes modificações no código da aplicação.
+
+5. **Facilidade nas Consultas**: ORMs como a JPA oferecem linguagens de consulta que são semelhantes ao SQL, mas que retornam objetos ou entidades, facilitando a manipulação dos dados. Isso é uma vantagem em relação à SQL convencional, onde o retorno é mais limitado.
+
+6. **Menor Necessidade de Código Específico**: O ORM pode automatizar a geração de SQL, reduzindo a quantidade de código específico para cada SGBD, o que simplifica o desenvolvimento e manutenção do código.
+
+7. **Configurações Simplificadas**: Sistemas como a JPA permitem fácil configuração através de arquivos XML ou anotações, facilitando o início de um projeto de software.
+
+Esses benefícios tornam o uso de ORM uma escolha popular para o desenvolvimento de sistemas que precisam interagir com bancos de dados, especialmente em ambientes onde a agilidade e a manutenção são cruciais.
+
+Me: Como o ORM facilita a troca de SGBD em um sistema já desenvolvido?
+
+PDF: O ORM facilita a troca de Sistemas de Gerenciamento de Banco de Dados (SGBD) em um sistema já desenvolvido através dos seguintes mecanismos:
+
+1. **Abstração da Lógica de Acesso a Dados**: O ORM atua como uma camada de abstração entre a aplicação e o banco de dados. Isso significa que, ao invés de a aplicação interagir diretamente com o SQL do banco de dados específico, ela interage com objetos e métodos fornecidos pelo ORM. Essa abstração independentemente do SGBD permite que a lógica de acesso aos dados permaneça constante, mesmo que o banco de dados subjacente mude.
+
+2. **Código SQL Gerado Automaticamente**: A maioria dos ORMs, como o Hibernate e a JPA, geram o SQL necessário para operar com os dados com base na estrutura das classes e entidades definidas na aplicação. Esta geração automática do SQL significa que o desenvolvedor não precisa reescrever consultas específicas para cada SGBD, pois o ORM adapta as consultas conforme o SGBD utilizado.
+
+3. **Regras e Padrões Comuns**: O uso de padrões e especificações comuns dentro do ORM, como JPQL (Java Persistence Query Language), proporciona uma sintaxe que pode ser aplicada a diferentes bancos de dados. Isso minimiza a necessidade de alterações na lógica do aplicativo, concentrando-se apenas nas configurações específicas do SGBD quando necessário.
+
+4. **Configurações Centralizadas**: As configurações do ORM, incluindo detalhes da conexão e propriedades do banco de dados, são frequentemente centralizadas em arquivos de configuração (como XML ou anotações), facilitando a mudança do banco de dados apenas alterando essas configurações, sem a necessidade de modificar a lógica principal da aplicação.
+
+5. **Menor Acoplamento**: O ORM promove um design menos acoplado, permitindo que diferentes partes da aplicação possam ser substituídas ou alteradas sem afetar o restante do sistema. Isso significa que a troca do SGBD pode ser realizada com um impacto mínimo nas funcionalidades do sistema.
+
+Esses mecanismos fazem do ORM uma solução prática e eficiente para permitir que as aplicações se mantenham flexíveis e adaptáveis, especialmente em contextos onde mudanças de banco de dados podem ser necessárias ao longo do ciclo de vida do software.
+
+Me: ﻿
+
+Atividade 3
+1) Para entregar sua Atividade, clique no título "Atividade 3";
+2) Role até o final da página;
+3) Vá até o botão "Carregar arquivos". Prontinho, agora é só selecionar o arquivo correto no seu dispositivo.
+Atividade 3
+Contexto
+A empresa Cenaflix deseja ampliar seu ramo de atuação devido ao grande sucesso e agora quer expandir para streaming de áudio, com foco em podcast. Será desenvolvido para isso um módulo para gestão dos cadastros de podcast, a fim de que a equipe do Cenaflix consiga acompanhar e cadastrar as informações da plataforma. A tecnologia mais recomendada nesse caso seria JPA (Java Persistence API), por ser um framework mais seguro, que atualmente tem crescido muito no mercado, e também por ter fácil manutenção.
+Atividade
+Sua interface de cadastro deve estar de acordo com o wireframe que se encontra no material complementar da atividade.
+Desenvolva uma aplicação com três telas:
+• A primeira tela será um login contendo usuário e senha. Ao se conectar, o usuário receberá uma mensagem em um JOptionPane semelhante a essa:
+"Olá USUÁRIO, sua permissão é de TIPO_DE_USUÁRIO. Seja bem-vindo!"
+Você terá que criar pelo menos três tipos de usuários diferentes, por exemplo: Administrador, Operador e Usuário. Cada usuário terá permissões diferentes, tais como:
+■ Administrador: cadastrar, excluir e listar
+■ Operador: cadastrar e listar
+. Usuário: listar
+Dica: utilize a propriedade .setEnabled() para desabilitar, segundo a permissão de acesso de cada usuário, a visibilidade do botão ou menu que leva às telas desenvolvidas. Defina essa propriedade junto à mensagem que o usuário recebe ao se conectar.
+• A segunda tela será um cadastro do repositório de podcast, contendo os campos: ID, produtor, nome do episódio, no do episódio, duração e URL do repositório.
+• A terceira tela será uma listagem de todos os dados cadastrados.
+Entrega
+■ Realize a criação de um filtro por produtor.
+No espaço dedicado à entrega da atividade, envie um arquivo compactado (ZIP, RAR ou 7z) contendo todo o projeto NetBeans criado para a atividade, o script SQL, a documentação do projeto gerado pelo NetBeans (Javadoc) e também o arquivo executável do projeto (.jar).
+Dica de leitura
+Para esta atividade, leia os seguintes materiais:
+• ORM (mapeadores objeto-relacional): conceitos, alternativas e aplicabilidade
+• Segurança da informação: tratamento a SQL injection, parametrização de consulta
+
+PDF: A sua atividade para a empresa Cenaflix envolve desenvolver um módulo de gestão de podcasts, utilizando JPA para persistência de dados e implementando uma interface com três telas distintas. Abaixo estão algumas orientações para ajudá-lo a abordar essa tarefa:
+
+### Estrutura Geral do Projeto
+
+1. **Configuração do Projeto**:
+   - Crie um novo projeto em NetBeans tipo Maven para gerenciar as dependências do JPA.
+   - Adicione as dependências do Hibernate ou outro provedor JPA no arquivo `pom.xml`.
+
+2. **Estrutura de Classes**:
+   - **Entidade Podcast**: Crie uma classe `Podcast` com atributos como ID, produtor, nome do episódio, número do episódio, duração e URL do repositório.
+   - **Usuário**: Crie uma classe `Usuario` que inclui atributos como nome de usuário, senha e tipo de usuário (Administrador, Operador, Usuário).
+
+3. **Tela de Login**:
+   - Implemente um `JFrame` para o login com campos de texto para usuário e senha.
+   - Valide as credenciais e apresente uma mensagem no `JOptionPane`, informando o tipo de usuário e suas permissões.
+   - Use a propriedade `.setEnabled()` para desabilitar ou habilitar botões ou menus com base nas permissões.
+   - Exemplo de código para o login:
+     ```java
+     if (usuarioValido) {
+         JOptionPane.showMessageDialog(this, "Olá " + usuario.getNome() + ", sua permissão é de " + usuario.getTipo() + ". Seja bem-vindo!");
+         // Habilite ou desabilite funcionalidades conforme o tipo
+     }
+     ```
+
+4. **Tela de Cadastro de Podcast**:
+   - Crie um segundo `JFrame` que contenha campos para o cadastro de podcasts.
+   - Adicione um botão para salvar os dados que serão persistidos utilizando JPA.
+   - Para o cadastro, você pode usar um código semelhante ao seguinte:
+     ```java
+     EntityManager em = entityManagerFactory.createEntityManager();
+     em.getTransaction().begin();
+     em.persist(novoPodcast);
+     em.getTransaction().commit();
+     em.close();
+     ```
+
+5. **Tela de Listagem de Podcasts**:
+   - Crie um terceiro `JFrame` que exiba os dados cadastrados em um `JTable`.
+   - Adicione um filtro por produtor, permitindo que o usuário digite o nome do produtor e veja apenas os podcasts relacionados.
+   - Para listar os dados, você pode usar uma consulta JPQL:
+     ```java
+     List<Podcast> podcasts = em.createQuery("SELECT p FROM Podcast p WHERE p.produtor = :produtor", Podcast.class)
+                                 .setParameter("produtor", filtro)
+                                 .getResultList();
+     ```
+
+### Entrega do Projeto
+
+- **Compactação**: Ao finalizar o projeto, compacte a pasta do projeto (incluindo todas as classes e configurações do NetBeans) em um arquivo ZIP/RAR/7z.
+- **Script SQL**: Exporte o script SQL que cria as tabelas necessárias (pode ser feito através de ferramentas como o DBeaver ou diretamente no seu SGBD).
+- **Documentação Javadoc**: Gere a documentação Javadoc diretamente no NetBeans (selecione o projeto e clique com o botão direito > `Generate Javadoc`).
+- **Arquivo Executável (.jar)**: Construa o arquivo JAR do seu projeto em NetBeans (Build > Build Project).
+
+### Considerações Finais
+
+- **Segurança**: Ao implementar o sistema, esteja atento ao tratamento de SQL injection, especialmente se você estiver usando consultas que não são parametrizadas. Utilize sempre as funcionalidades que o JPA oferece para evitar esses problemas.
+- **Validação de Entrada**: Lembre-se de validar as entradas dos usuários e tratar exceções para evitar falhas durante a execução.
+
+Seguindo essas orientações, você estará em um bom caminho para completar a atividade proposta pela Cenaflix. Boa sorte!
+
+Me: aja como um programador profissional.me mostre o código de implementação.
+
+PDF: Claro! Abaixo está um exemplo básico da implementação para o módulo de gestão de podcasts em Java utilizando JPA, com três telas principais: tela de login, tela de cadastro de podcast e tela de listagem de podcasts.
+
+### 1. Dependências no `pom.xml`
+
+Certifique-se de incluir as dependências necessárias no seu arquivo `pom.xml`:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.4.31.Final</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.persistence</groupId>
+        <artifactId>javax.persistence-api</artifactId>
+        <version>2.2</version>
+    </dependency>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.23</version>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.30</version>
+    </dependency>
+</dependencies>
+```
+
+### 2. Classe de Entidade `Podcast`
+
+```java
+import javax.persistence.*;
+
+@Entity
+@Table(name = "podcasts")
+public class Podcast {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String produtor;
+    private String nomeEpisodio;
+    private int numeroEpisodio;
+    private String duracao;
+    private String url;
+
+    // Getters e Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getProdutor() { return produtor; }
+    public void setProdutor(String produtor) { this.produtor = produtor; }
+    public String getNomeEpisodio() { return nomeEpisodio; }
+    public void setNomeEpisodio(String nomeEpisodio) { this.nomeEpisodio = nomeEpisodio; }
+    public int getNumeroEpisodio() { return numeroEpisodio; }
+    public void setNumeroEpisodio(int numeroEpisodio) { this.numeroEpisodio = numeroEpisodio; }
+    public String getDuracao() { return duracao; }
+    public void setDuracao(String duracao) { this.duracao = duracao; }
+    public String getUrl() { return url; }
+    public void setUrl(String url) { this.url = url; }
+}
+```
+
+### 3. Tela de Login
+
+```java
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class TelaLogin extends JFrame {
+    private JTextField txtUsuario;
+    private JPasswordField txtSenha;
+
+    public TelaLogin() {
+        setTitle("Login");
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setLayout(null);
+
+        JLabel lblUsuario = new JLabel("Usuário:");
+        lblUsuario.setBounds(20, 20, 80, 25);
+        add(lblUsuario);
+
+        txtUsuario = new JTextField();
+        txtUsuario.setBounds(100, 20, 160, 25);
+        add(txtUsuario);
+
+        JLabel lblSenha = new JLabel("Senha:");
+        lblSenha.setBounds(20, 60, 80, 25);
+        add(lblSenha);
+
+        txtSenha = new JPasswordField();
+        txtSenha.setBounds(100, 60, 160, 25);
+        add(txtSenha);
+
+        JButton btnLogin = new JButton("Login");
+        btnLogin.setBounds(100, 100, 80, 25);
+        add(btnLogin);
+
+        btnLogin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String usuario = txtUsuario.getText();
+                String senha = new String(txtSenha.getPassword());
+                // Aqui você deve validar o usuário e senha
+                if (validarUsuario(usuario, senha)) {
+                    new TelaCadastroPodcast().setVisible(true);
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos!");
+                }
+            }
+        });
+    }
+
+    private boolean validarUsuario(String usuario, String senha) {
+        // Implementar validação (exemplo fixo)
+        return "admin".equals(usuario) && "1234".equals(senha);
+    }
+
+    public static void main(String[] args) {
+        new TelaLogin().setVisible(true);
+    }
+}
+```
+
+### 4. Tela de Cadastro de Podcast
+
+```java
+import javax.swing.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class TelaCadastroPodcast extends JFrame {
+    private JTextField txtProdutor, txtNomeEpisodio, txtNumeroEpisodio, txtDuracao, txtUrl;
+
+    public TelaCadastroPodcast() {
+        setTitle("Cadastro de Podcast");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setLayout(null);
+
+        addComponents();
+    }
+
+    private void addComponents() {
+        JLabel lblProdutor = new JLabel("Produtor:");
+        lblProdutor.setBounds(20, 20, 100, 25);
+        add(lblProdutor);
+
+        txtProdutor = new JTextField();
+        txtProdutor.setBounds(120, 20, 250, 25);
+        add(txtProdutor);
+
+        JLabel lblNomeEpisodio = new JLabel("Nome do Episódio:");
+        lblNomeEpisodio.setBounds(20, 60, 150, 25);
+        add(lblNomeEpisodio);
+
+        txtNomeEpisodio = new JTextField();
+        txtNomeEpisodio.setBounds(150, 60, 250, 25);
+        add(txtNomeEpisodio);
+
+        JLabel lblNumeroEpisodio = new JLabel("Número do Episódio:");
+        lblNumeroEpisodio.setBounds(20, 100, 150, 25);
+        add(lblNumeroEpisodio);
+
+        txtNumeroEpisodio = new JTextField();
+        txtNumeroEpisodio.setBounds(150, 100, 50, 25);
+        add(txtNumeroEpisodio);
+
+        JLabel lblDuracao = new JLabel("Duração:");
+        lblDuracao.setBounds(20, 140, 150, 25);
+        add(lblDuracao);
+
+        txtDuracao = new JTextField();
+        txtDuracao.setBounds(150, 140, 80, 25);
+        add(txtDuracao);
+
+        JLabel lblUrl = new JLabel("URL:");
+        lblUrl.setBounds(20, 180, 150, 25);
+        add(lblUrl);
+
+        txtUrl = new JTextField();
+        txtUrl.setBounds(150, 180, 250, 25);
+        add(txtUrl);
+
+        JButton btnSalvar = new JButton("Salvar");
+        btnSalvar.setBounds(150, 220, 80, 25);
+        add(btnSalvar);
+
+        btnSalvar.addActionListener(e -> salvarPodcast());
+    }
+
+    private void salvarPodcast() {
+        String produtor = txtProdutor.getText();
+        String nomeEpisodio = txtNomeEpisodio.getText();
+        int numeroEpisodio = Integer.parseInt(txtNumeroEpisodio.getText());
+        String duracao = txtDuracao.getText();
+        String url = txtUrl.getText();
+
+        // Persistir o podcast no banco de dados
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("meu-persistence-unit");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        Podcast podcast = new Podcast();
+        podcast.setProdutor(produtor);
+        podcast.setNomeEpisodio(nomeEpisodio);
+        podcast.setNumeroEpisodio(numeroEpisodio);
+        podcast.setDuracao(duracao);
+        podcast.setUrl(url);
+
+        em.persist(podcast);
+        em.getTransaction().commit();
+        em.close();
+
+        JOptionPane.showMessageDialog(this, "Podcast cadastrado com sucesso!");
+    }
+
+    public static void main(String[] args) {
+        new TelaCadastroPodcast().setVisible(true);
+    }
+}
+```
+
+### 5. Tela de Listagem de Podcasts
+
+```java
+import javax.swing.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+import java.awt.*;
+import java.util.List;
+
+public class TelaListagemPodcasts extends JFrame {
+    private JTable table;
+
+    public TelaListagemPodcasts() {
+        setTitle("Listagem de Podcasts");
+        setSize(500, 300);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+        loadPodcasts();
+    }
+
+    private void loadPodcasts() {
+        // Configurando tabela
+        String[] columns = {"ID", "Produtor", "Nome do Episódio", "Número do Episódio", "Duração", "URL"};
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("meu-persistence-unit");
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<Podcast> query = em.createQuery("SELECT p FROM Podcast p", Podcast.class);
+        List<Podcast> podcasts = query.getResultList();
+        em.close();
+
+        Object[][] data = new Object[podcasts.size()][6];
+        for (
+
+Me: quero que mostre o código caso eu use o java swing e também a organização das pastas
+
+PDF: Para criar uma aplicação que usa Java Swing para registrar receitas e despesas, é fundamental estruturar corretamente o projeto. Segue abaixo uma proposta de organização das pastas e um exemplo de código básico utilizando Java Swing.
+
+### Organização das Pastas
+
+```plaintext
+financasjpa/
+│
+├── src/
+│   ├── br/
+│   │   └── com/
+│   │       └── senac/
+│   │           └── financasjpa/
+│   │               ├── gui/               // Interface gráfica
+│   │               │   ├── CadastroDespesa.java
+│   │               │   ├── CadastroReceita.java
+│   │               │   ├── ListagemDespesa.java
+│   │               │   └── Principal.java
+│   │               │
+│   │               ├── modelo/            // Classes de modelo (entidades)
+│   │               │   └── Despesa.java
+│   │               │
+│   │               ├── persistencia/       // Classes de persistência (DAO)
+│   │               │   └── DespesaDAO.java
+│   │               │
+│   │               └── FinancasJPA.java   // Classe principal
+│   │                   
+│   └── resources/                          // Recursos (ex: arquivos de configuração)
+│
+└── pom.xml                                  // Arquivo de configuração do Maven
+```
+
+### Exemplo de Código
+
+**1. Classe `Despesa.java` (Modelo)**
+
+```java
+package br.com.senac.financasjpa.modelo;
+
+import java.time.LocalDate;
+
+public class Despesa {
+    private int id;
+    private String descricao;
+    private double valor;
+    private LocalDate data;
+
+    // Getters e Setters
+}
+```
+
+**2. Classe `DespesaDAO.java` (Persistência)**
+
+```java
+package br.com.senac.financasjpa.persistencia;
+
+import br.com.senac.financasjpa.modelo.Despesa;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
+public class DespesaDAO {
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("Financas");
+
+    public void salvar(Despesa despesa) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(despesa);
+        em.getTransaction().commit();
+        em.close();
+    }
+}
+```
+
+**3. Classe `CadastroDespesa.java` (Interface Gráfica)**
+
+```java
+package br.com.senac.financasjpa.gui;
+
+import br.com.senac.financasjpa.modelo.Despesa;
+import br.com.senac.financasjpa.persistencia.DespesaDAO;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+
+public class CadastroDespesa extends JFrame {
+    private JTextField txtDescricao;
+    private JTextField txtValor;
+    private JFormattedTextField fmtData;
+    private JButton btnSalvar;
+
+    public CadastroDespesa() {
+        setTitle("Cadastro de Despesa");
+        setLayout(null);
+        setSize(400, 300);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        // Componentes
+        JLabel lblDescricao = new JLabel("Descrição:");
+        lblDescricao.setBounds(30, 30, 100, 30);
+        add(lblDescricao);
+        
+        txtDescricao = new JTextField();
+        txtDescricao.setBounds(130, 30, 200, 30);
+        add(txtDescricao);
+        
+        JLabel lblValor = new JLabel("Valor:");
+        lblValor.setBounds(30, 80, 100, 30);
+        add(lblValor);
+        
+        txtValor = new JTextField();
+        txtValor.setBounds(130, 80, 200, 30);
+        add(txtValor);
+        
+        JLabel lblData = new JLabel("Data:");
+        lblData.setBounds(30, 130, 100, 30);
+        add(lblData);
+        
+        fmtData = new JFormattedTextField();
+        fmtData.setBounds(130, 130, 200, 30);
+        add(fmtData);
+        
+        btnSalvar = new JButton("Salvar");
+        btnSalvar.setBounds(150, 200, 100, 30);
+        add(btnSalvar);
+        
+        // Ação do botão
+        btnSalvar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                salvarDespesa();
+            }
+        });
+    }
+
+    private void salvarDespesa() {
+        Despesa despesa = new Despesa();
+        despesa.setDescricao(txtDescricao.getText());
+        despesa.setValor(Double.parseDouble(txtValor.getText()));
+        despesa.setData(LocalDate.parse(fmtData.getText()));
+        
+        DespesaDAO dao = new DespesaDAO();
+        dao.salvar(despesa);
+        
+        JOptionPane.showMessageDialog(this, "Despesa cadastrada com sucesso!");
+        clearFields();
+    }
+
+    private void clearFields() {
+        txtDescricao.setText("");
+        txtValor.setText("");
+        fmtData.setText("");
+    }
+
+    public static void main(String[] args) {
+        new CadastroDespesa().setVisible(true);
+    }
+}
+```
+
+**4. Classe `FinancasJPA.java` (Classe Principal)**
+
+```java
+package br.com.senac.financasjpa;
+
+import br.com.senac.financasjpa.gui.CadastroDespesa;
+
+public class FinancasJPA {
+    public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(() -> new CadastroDespesa().setVisible(true));
+    }
+}
+```
+
+### Considerações Finais
+
+Esse exemplo fornece uma estrutura básica de uma aplicação Java Swing que cadastra despesas. Você pode expandir a aplicação implementando a persistência para receitas, opções de listagens, e muito mais, conforme os capítulos do documento fornecem orientações adicionais,,,.

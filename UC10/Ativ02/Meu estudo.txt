@@ -1,3 +1,10 @@
+-------------- Meu resumo do PDF manipulação de dados -------------------------------------------------
+17/37 --> deletando dados.
+19/37 --> padrão DAO(data acess object): este que devo utilizar porque é mais rápido e seguro
+ 20/37 explica com exemplo o dao.
+25/37 --> tem um exemplo de excluir
+35/37 --> tem o código que devo utilizar
+------------------------------------------------------------------------------------------------------------
 https://www.youtube.com/watch?v=D5sVyNn7IKY
 
 5:40 --> incluiu os dados no jtable e o código já está todo ali.
@@ -8,18 +15,8 @@ https://www.youtube.com/watch?v=D5sVyNn7IKY
 ## vou primeiro fazer o jtable funcionar
 Agora tenho o funcionamento do jtable e a interação com o BD então posso implementar o Ativ02
 
----------------------------------------------------------------------------------------------------
-
-https://www.youtube.com/watch?v=RO3F4xtZrXI
-
-Neste video tenho no papel anotado terei que usar ele para interajir com o BD
-
----------------------------------------------------------------------------------------------------
-
-
-
 ------------------------------------------------------------------------------------------------------------
-UC02 
+UC10 ativ 02
 1- vou cria a função de cadastrar --> ok
 2-agora vou criar uma função que resgata do bd e mostra no jtable para chamar en todos os botoes
 https://www.youtube.com/watch?v=RO3F4xtZrXI
@@ -27,4 +24,34 @@ vou olhar este video para pegar oque tem no bd e colocar no jtable
 3:27 --> começa a fazer o código
 5:40 --> ele começa a fazer o código para buscar os dados
 7:44 --> mostra como chamar a função
-7:37 --> tem o codigo completo da função na tela.
+7:37 --> tem o codigo completo da função na tela.	
+
+------------------------------------------------------------------------------------------------------------
+
+# Agora vou selecionar e deletar do BD
+https://www.youtube.com/watch?v=07OzmjexZYc 
+Neste vídeo parece que tem o processo inteiro
+
+10:56 --> coloca a comunicação com BD
+
+11:18 --> começa o create. 
+20:00 --> começa o read.
+
+37:32 --> começa o delete, 39:07 e 40:11,  tem todo o código na tela para deletar.
+
+--> este video não mostra como selecionar jtable e excluir.
+----------------------------------------------------------------------------------------------------------
+https://www.youtube.com/watch?v=4_fMLfANDMw&list=PLGEWTAaT6KlV0yhCZsmwWOpMIu3WSJJd-&index=3
+--> Agora vou tentar este acima. 5:32 tem todo código na tela.
+
+-----------------------------------------------------------------------------------------------------------
+Este abaixo mostra como clicar encima daí excluir
+https://www.youtube.com/watch?v=C0BoZxc7o6M
+5:16 tem o código para fazer a pesquisa.
+5:51 --> evita movidementação da colona e edição das células 6:12 (cabeçalho)
+
+----------------------------------------------------------------------------------------------------------
+Novo método de pesquisa (preciso mudar meu método de pesquisa porque está muito difícil achar oque eu quero)
+1- Olhar meus PDF
+2- Colocar na IA o código e pergunta a ela como fazer
+3- Coloco funcionar sem ser tão exigente

@@ -6,18 +6,20 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
+import java.sql.ResultSet;
 
 /**
  *
  * @author andre
  */
-public class TelaPesquisa extends javax.swing.JFrame {
-    
+public final class TelaPesquisa extends javax.swing.JFrame {
+
     MaskFormatter mfdata;
 
     public TelaPesquisa() {
@@ -26,8 +28,10 @@ public class TelaPesquisa extends javax.swing.JFrame {
         } catch (ParseException ex) {
             Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         initComponents();
+        lermostrarbanco();
+        configurarCliqueTabela(); // Configura o evento de clique na tabela
     }
 
     /**
@@ -45,9 +49,9 @@ public class TelaPesquisa extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnPesquisar = new javax.swing.JButton();
+        btnAtualizar = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         txtNome = new javax.swing.JTextField();
         txtCategoria = new javax.swing.JTextField();
         DataLan = new javax.swing.JFormattedTextField();
@@ -71,11 +75,26 @@ public class TelaPesquisa extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Pesquisar");
+        btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Alterar");
+        btnAtualizar.setText("Atualizar");
+        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Deletar");
+        btnDelete.setText("Deletar");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         try {
             DataLan.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -96,11 +115,11 @@ public class TelaPesquisa extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)
+                                .addComponent(btnPesquisar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton3)
+                                .addComponent(btnAtualizar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton4))
+                                .addComponent(btnDelete))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -111,7 +130,7 @@ public class TelaPesquisa extends javax.swing.JFrame {
                                     .addComponent(txtNome)
                                     .addComponent(txtCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
                                     .addComponent(DataLan, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 113, Short.MAX_VALUE)))
+                        .addGap(0, 103, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -134,9 +153,9 @@ public class TelaPesquisa extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnPesquisar)
+                    .addComponent(btnAtualizar)
+                    .addComponent(btnDelete))
                 .addContainerGap())
         );
 
@@ -175,8 +194,8 @@ public class TelaPesquisa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-           try {
-            // TODO add your handling code here:
+        try {
+            // Aqui eu cadastro no Banco de Dados e mostro algumas mensagens de aviso
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
@@ -191,31 +210,156 @@ public class TelaPesquisa extends javax.swing.JFrame {
         }
         String dataParaBanco = formatoMySQL.format(dataFormatada);
         try (
-            
-                
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cenaflix_db2", "root", "Andrecararo1"); PreparedStatement stmt = conn.prepareStatement("INSERT INTO filmes (nome, datalancamento, categoria) VALUES (?, ?, ?)")) {
             stmt.setString(1, txtNome.getText());
             stmt.setString(2, dataParaBanco);
             stmt.setString(3, txtCategoria.getText());
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Filme inserido com sucesso!");
+            lermostrarbanco();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao inserir filme: " + e.getMessage());
         }
-        
-     
 
 // Por enquanto estou apenas colocando os dados no jtable
-        DefaultTableModel modelo = (DefaultTableModel)tabela.getModel();
-        
+        /* DefaultTableModel modelo = (DefaultTableModel) tabela.getModel();
+
         Object[] dados = {txtNome.getText(), DataLan.getText(), txtCategoria.getText()};
-        
-        modelo.addRow(dados);
-        
-        txtNome.setText(""); 
+
+        modelo.addRow(dados);*/
+        txtNome.setText("");
         DataLan.setText("");
         txtCategoria.setText("");
+        desconectar();
     }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        try {
+            // Aqui vou deletar os registos selecionados.
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cenaflix_db2", "root", "Andrecararo1");
+            PreparedStatement ps = con.prepareStatement("delete from filmes where nome=?");
+            ps.setString(1, txtNome.getText());
+            int k = ps.executeUpdate();
+            if (k > 0) {
+                SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat formatoMySQL = new SimpleDateFormat("yyyy-MM-dd");
+                Date dataFormatada = null;
+                try {
+                    dataFormatada = formatoEntrada.parse(DataLan.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                String dataParaBanco = formatoMySQL.format(dataFormatada);
+                JOptionPane.showMessageDialog(null, "Filme deletado com sucesso!");
+
+                txtNome.setText("");
+                txtNome.requestFocus();
+                DataLan.setText("");
+                txtCategoria.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "O filme não foi excluído!");
+            }
+
+            lermostrarbanco();
+
+            desconectar();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+
+        int row = tabela.getSelectedRow();
+        if (row != -1) {
+            SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat formatoMySQL = new SimpleDateFormat("yyyy-MM-dd");
+            Date dataFormatada = null;
+            try {
+                dataFormatada = formatoEntrada.parse(DataLan.getText());
+            } catch (ParseException ex) {
+                Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            String dataParaBanco = formatoMySQL.format(dataFormatada);
+            String nomeAtualizado = txtNome.getText();
+            String dataLancamentoAtualizada = dataParaBanco;
+            String categoriaAtualizada = txtCategoria.getText();
+
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cenaflix_db2", "root", "Andrecararo1");
+
+                // Supondo que o nome seja a chave única, mas o ideal seria usar um ID
+                PreparedStatement ps = con.prepareStatement("UPDATE filmes SET nome = ?, datalancamento = ?, categoria = ? WHERE nome = ?");
+                ps.setString(1, nomeAtualizado);
+                ps.setString(2, dataLancamentoAtualizada);
+                ps.setString(3, categoriaAtualizada);
+                ps.setString(4, tabela.getValueAt(row, 0).toString()); // Nome antigo para localizar o registro
+
+                int rowsUpdated = ps.executeUpdate();
+
+                if (rowsUpdated > 0) {
+                    JOptionPane.showMessageDialog(null, "Filme atualizado com sucesso!");
+                    btnPesquisarActionPerformed(null); // Atualiza a tabela
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro ao atualizar o filme.");
+                }
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um filme para atualizar.");
+        }
+
+
+    }//GEN-LAST:event_btnAtualizarActionPerformed
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+
+        DefaultTableModel tt = (DefaultTableModel) tabela.getModel();
+        tt.setRowCount(0); // Limpa a tabela antes de exibir o resultado
+
+        String nomePesquisa = txtNome.getText();
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cenaflix_db2", "root", "Andrecararo1");
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM filmes WHERE nome LIKE ?");
+            ps.setString(1, "%" + nomePesquisa + "%");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Vector<Object> v = new Vector<>();
+                v.add(rs.getString(2)); // Nome do filme
+                v.add(rs.getString(3)); // Data de lançamento
+                v.add(rs.getString(4)); // Categoria
+                tt.addRow(v);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+// Evento de clique na tabela para preencher os campos automaticamente
+    private void configurarCliqueTabela() {
+        tabela.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                int row = tabela.getSelectedRow();
+                if (row != -1) {
+                    txtNome.setText(tabela.getValueAt(row, 0).toString());
+                    DataLan.setText(tabela.getValueAt(row, 1).toString());
+                    txtCategoria.setText(tabela.getValueAt(row, 2).toString());
+                }
+            }
+        });
+    }//GEN-LAST:event_btnPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,12 +396,48 @@ public class TelaPesquisa extends javax.swing.JFrame {
         });
     }
 
+    public void desconectar() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cenaflix_db2", "root", "Andrecararo1");
+            con.close();
+
+        } catch (SQLException ex) {
+            //pode-se deixar vazio para evitar uma mensagem de erro desnecessária ao usuário
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void lermostrarbanco() {
+        DefaultTableModel tt = (DefaultTableModel) tabela.getModel();
+        tt.setRowCount(0);
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cenaflix_db2", "root", "Andrecararo1");
+            PreparedStatement ps = con.prepareStatement("select * from filmes");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString(2));
+                v.add(rs.getString(3));
+                v.add(rs.getString(4));
+
+                tt.addRow(v);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(TelaPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField DataLan;
+    private javax.swing.JButton btnAtualizar;
     private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnPesquisar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -269,3 +449,4 @@ public class TelaPesquisa extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
+// é este
