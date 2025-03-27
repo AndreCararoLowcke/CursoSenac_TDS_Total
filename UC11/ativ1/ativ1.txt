@@ -1,0 +1,202 @@
+PDF: Ótimo ver você por aqui, André!
+
+Este material aborda o gerenciamento de configuração na área de desenvolvimento de sistemas, focando em como controlar e documentar alterações em projetos de software.
+
+- O gerenciamento de configuração é essencial para evitar conflitos em projetos com múltiplos desenvolvedores.
+- Ele ajuda a manter o controle das versões e alterações, mitigando problemas ao fazer ajustes.
+- A configuração de software é composta por artefatos organizados em três categorias.
+
+Pronto para trocar algumas ideias sobre isso?
+
+<q>Resuma este conteúdo</q>
+<q>Quais são as categorias de artefatos na configuração de software?</q>
+<q>Como o gerenciamento de configuração pode facilitar o trabalho em equipe em um projeto de software?</q>
+
+Me: Nesta atividade, você deverá criar um relatório evidenciando as operações de versionamento no GitHub do projeto Java utilizando a ferramenta Git Bash.
+ 
+Baixe o projeto disponibilizado em Material Complementar, extraia-o em seu computador e importe o banco de dados para o seu SGBD (sistema de gerenciamento de banco de dados) – ele será necessário para as próximas etapas. Após isso, inicie o processo de versionamento:
+ 
+Iniciar versionamento no repositório local.
+Adicionar arquivos do projeto ao registro de commit.
+Realizar o commit com a descrição “Projeto inicial”.
+Criar um repositório remoto no GitHub.
+Criar o link para o repositório remoto com o comando git remote.
+Enviar para o repositório remoto.
+ 
+Lembre-se de anotar cada comando digitado, pois eles deverão estar presentes no seu relatório. Lembre-se também de que o repositório deve ficar público.
+ 
+Após isso, crie um arquivo README.md que contenha as seguintes informações:
+ 
+Nome do projeto
+Explicação sobre o que se trata o projeto
+Tecnologias utilizadas (exemplo: Java e MySQL)
+ 
+Após isso, sincronize as informações do repositório local e remoto. Essa etapa também deve constar no seu relatório.
+
+PDF: Abaixo está um relatório que descreve as operações de versionamento realizadas no GitHub usando a ferramenta Git Bash para o projeto Java:
+
+---
+
+# Relatório de Versionamento do Projeto Java
+
+## 1. Introdução
+
+Este documento descreve o processo de versionamento de um projeto Java utilizando a ferramenta Git Bash. O repositório Git foi criado para o gerenciamento das versões do projeto, e as operações realizadas foram registradas para documentação.
+
+## 2. Operações de Versionamento
+
+### 2.1 Preparação do Ambiente
+
+Antes de iniciar o versionamento, o projeto foi baixado e o banco de dados foi importado para o SGBD. 
+
+### 2.2 Iniciando o Versionamento no Repositório Local
+
+```bash
+git init
+```
+Esse comando inicializa um novo repositório Git no diretório do projeto.
+
+### 2.3 Adicionando Arquivos do Projeto ao Registro de Commit
+
+```bash
+git add .
+```
+Este comando adiciona todos os arquivos do projeto ao staging area, preparando-os para serem incluídos no commit.
+
+### 2.4 Realizando o Commit com a Descrição “Projeto inicial”
+
+```bash
+git commit -m "Projeto inicial"
+```
+O comando acima cria um commit com a mensagem “Projeto inicial”, registrando o estado atual dos arquivos.
+
+### 2.5 Criando um Repositório Remoto no GitHub
+
+- Acesse o GitHub e crie um novo repositório. 
+- Dê um nome ao seu repositório (por exemplo, "projeto-java") e defina-o como público.
+
+### 2.6 Criando o Link para o Repositório Remoto com o Comando `git remote`
+
+```bash
+git remote add origin https://github.com/seu_usuario/projeto-java.git
+```
+Neste comando, o URL do repositório remoto no GitHub é adicionado ao repositório local.
+
+### 2.7 Enviando para o Repositório Remoto
+
+```bash
+git push -u origin master
+```
+Esse comando envia os commits locais para o repositório remoto no GitHub.
+
+## 3. Criação do Arquivo README.md
+
+Um arquivo `README.md` foi criado com as seguintes informações:
+
+```markdown
+# Nome do Projeto
+Projeto Java
+
+## Descrição
+Este projeto é uma aplicação desenvolvida em Java, que tem como objetivo demonstrar o versionamento utilizando Git e GitHub.
+
+## Tecnologias Utilizadas
+- Java
+- MySQL
+```
+
+### 3.1 Sincronizando Informações do Repositório Local e Remoto
+
+Para sincronizar as informações após realizar alterações ou adições, use os seguintes comandos:
+
+```bash
+git add README.md
+git commit -m "Adiciona README.md"
+git push origin master
+```
+
+## 4. Conclusão
+
+As operações de versionamento foram realizadas com sucesso, garantindo que o projeto esteja versionado e disponível no GitHub. O repositório é público e pode ser acessado por qualquer pessoa interessada.
+
+---
+
+Este relatório documenta os passos essenciais para o versionamento de um projeto Java, permitindo rastrear os desenvolvimentos e mudanças feitas ao longo do tempo.
+
+Me: Resuma este conteúdo
+
+PDF: **Introdução** [R1]
+
+- O gerenciamento de configuração é essencial para controlar e relatar mudanças em projetos de software, especialmente em grandes projetos com múltiplos desenvolvedores [R1].
+- Sem o gerenciamento de configuração, podem ocorrer conflitos e perda de funcionalidades devido à sobreposição de códigos e dificuldade em rastrear alterações [R1].
+- O versionamento de código é crucial para gerenciar o desenvolvimento de várias etapas de um sistema, unindo-as em novas versões e mantendo o histórico das versões anteriores [R3].
+
+**Gerenciamento de Configuração** [R2]
+
+- O gerenciamento de configuração visa identificar, controlar, garantir a implementação e relatar as mudanças em um projeto de software [R2].
+- A configuração de software engloba um conjunto de artefatos produzidos e presentes em um projeto, divididos em três categorias [R2].
+- O versionamento de código permite que vários desenvolvedores editem funcionalidades separadamente e unam os ajustes em uma versão final [R3].
+
+**O que é Versionamento de Código?** [R3]
+
+- O versionamento de código é uma forma de obter maior controle do que acontece no decorrer de um projeto [R3].
+- É comum que vários desenvolvedores trabalhem em um mesmo sistema e, com isso, um mesmo arquivo seja alterado por várias pessoas diferentes [R3].
+- O versionamento permite manter versões antigas do sistema ativas para uso, enquanto novas versões são desenvolvidas [R3].
+
+**Softwares e Ferramentas de Gerenciamento de Configuração** [R6]
+
+- Ferramentas de controle de modificação, controle de versão e gerenciamento de construção são usadas no processo de gerenciamento de configuração [R6].
+- Ferramentas de controle de modificação auxiliam no acompanhamento das alterações, registrando tarefas e o histórico de cada uma [R6].
+- Ferramentas de gerenciamento de construção auxiliam ou automatizam as tarefas de construção do código-fonte em código executável [R7].
+
+**Ferramentas de Controle de Versão** [R8]
+
+- As ferramentas de versionamento são sistemas utilizados para realizar todo o gerenciamento de desenvolvimento e evolução do código para novas versões [R8].
+- Benefícios comuns incluem o registro de alterações em um histórico, identificação do usuário que aplicou as alterações e facilidade de trabalho em equipe [R8].
+- Existem dois tipos de sistemas de controle de versão: centralizado e distribuído [R8].
+
+**Git e GitHub no Open Source** [R11]
+
+- Git é um sistema de versionamento open source amplamente utilizado [R10].
+- GitHub é uma plataforma de hospedagem de código para controle de versão e colaboração [R12].
+- Projetos open source permitem que qualquer pessoa acesse, analise e adapte o código [R13].
+
+**Licenças Open Source** [R14]
+
+- Existem várias licenças open source que impõem limitações ou obrigatoriedades em seu uso, como Apache License 2.0, Mozilla Public License 2.0, GPLv3, MIT e BSD 3 [R14, R15, R16, R17].
+- É importante estar atento às permissões e condições apresentadas em cada licença [R17].
+- As condições de uso podem variar e devem ser analisadas com atenção [R17].
+
+**Encerramento** [R17]
+
+- O uso de ferramentas de versionamento é essencial para o registro de alterações, facilidade para trabalhar em grupo e criação de novas versões do sistema [R17].
+- A participação em projetos open source e o uso de bibliotecas de código aberto trazem grandes benefícios [R18].
+- O GitHub se tornou um ótimo portfólio para desenvolvedores, sendo analisado por empresas para novas contratações [R18].
+
+Me: Quais são as categorias de artefatos na configuração de software?
+
+PDF: A configuração de software é dividida em três categorias de artefatos, conforme mencionado no documento:
+
+1. **Código-Fonte**: Inclui todos os arquivos de código que compõem o sistema.
+2. **Documentação**: Abrange documentos que descrevem o sistema, como especificações, manuais de uso e documentação técnica.
+3. **Carga de Executáveis**: Refere-se a versões do software que estão prontas para serem executadas ou distribuídas.
+
+Essas categorias são essenciais para gerenciar e controlar as mudanças durante o ciclo de vida do desenvolvimento de software [R2].
+
+Me: Como o gerenciamento de configuração pode facilitar o trabalho em equipe em um projeto de software?
+
+PDF: O gerenciamento de configuração facilita o trabalho em equipe em um projeto de software de várias maneiras:
+
+1. **Controle de Mudanças**: Permite que múltiplos desenvolvedores trabalhem simultaneamente em diferentes partes do código, controlando alterações e evitando conflitos [R6].
+
+2. **Histórico de Alterações**: Mantém um registro detalhado de todas as alterações feitas, possibilitando que a equipe veja quem fez o quê, quando e por que [R8]. Isso é crucial para auditorias e para compreender a evolução do projeto.
+
+3. **Colaboração Segura**: Com ferramentas de controle de versão, cada membro da equipe pode fazer suas alterações de forma segura, sem afetar o trabalho dos outros desenvolvedores [R6]. Somente pessoas autorizadas podem modificar arquivos, reduzindo o risco de erros.
+
+4. **Facilidade para Reverter Mudanças**: O gerenciamento de configuração torna mais fácil voltar a versões anteriores do software se uma alteração causar problemas, permitindo que a equipe recupere rapidamente a funcionalidade desejada [R8].
+
+5. **Integração de Trabalho**: Permite que todos os ajustes sejam integrados em uma versão final de forma organizada, facilitando os lançamentos e a entrega ao cliente [R3].
+
+6. **Visibilidade e Comunicação**: As ferramentas de gerenciamento de configuração muitas vezes incluem funcionalidades de rastreamento de progresso e comunicação, ajudando a manter todos na mesma página e cientes das mudanças [R6].
+
+Esses aspectos contribuem para uma colaboração mais eficiente e produtiva, reduzindo erros e melhorando a qualidade do software final.
