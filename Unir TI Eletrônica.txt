@@ -1,0 +1,32 @@
+Ótima escolha! Ficar responsável pela TI de uma empresa significa garantir que **infraestrutura, segurança, redes e sistemas** funcionem sem falhas. Dependendo do porte da empresa, o trabalho pode incluir:  
+
+### **📌 Principais Responsabilidades**
+✅ **Gerenciar a infraestrutura de TI** – Servidores, redes, backups e dispositivos.  
+✅ **Garantir a cibersegurança** – Firewall, antivírus, controle de acessos e políticas de segurança.  
+✅ **Suporte e manutenção** – Resolver problemas de hardware/software e garantir que tudo esteja atualizado.  
+✅ **Gestão de redes** – Configuração de roteadores, switches, VPNs e acesso remoto.  
+✅ **Automação e integração** – Melhorar processos com sistemas automatizados e integração de dados.  
+✅ **Sistemas corporativos** – Gerenciar ERPs, CRMs, banco de dados e serviços em nuvem.  
+
+---
+
+### **📚 Quais Habilidades Você Precisa?**
+🔹 **Redes e Infraestrutura:** Administração de redes, VPN, cabeamento, servidores Linux/Windows.  
+🔹 **Cibersegurança:** Firewalls, proteção contra ataques, controle de acesso e backups.  
+🔹 **Banco de Dados:** MySQL, PostgreSQL, SQL Server para gerenciar dados da empresa.  
+🔹 **Cloud Computing:** AWS, Azure ou Google Cloud para escalabilidade e serviços online.  
+🔹 **Automação de Processos:** Ferramentas como Python, Shell Script e integração de APIs.  
+🔹 **ERP e Softwares Empresariais:** Conhecimento em SAP, TOTVS, Oracle, etc.  
+
+---
+
+### **🎓 O que Estudar para Ser um Profissional de TI na Empresa?**
+📌 **Cursos Recomendados:**  
+- **Técnico em Redes de Computadores** (SENAI, IFs) – Para aprender infraestrutura.  
+- **Tecnólogo em Gestão da Tecnologia da Informação** (3 anos) – Para administração de TI.  
+- **Especializações em Cibersegurança** (Udemy, Coursera, CISSP) – Para proteção dos sistemas.  
+- **Certificações:** CCNA (Redes), ITIL (Gestão de TI), CompTIA Security+ (Segurança).  
+
+💡 **Dica:** Se a empresa for industrial, é bom aprender **redes industriais e automação (Modbus, OPC-UA, IoT)**.  
+
+Quer ajuda para traçar um plano de estudos ou saber quais ferramentas aprender primeiro? 🚀

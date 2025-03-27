@@ -1,0 +1,14 @@
+A grade curricular de um curso de **Técnico em Redes de Computadores com foco Industrial** varia dependendo da instituição, mas geralmente inclui os seguintes componentes:
+
+1. **Comunicação e Redação Técnica** – Enfoque nas melhores práticas de comunicação, com foco em linguagem técnica e relatórios.
+2. **Boas Práticas de Gestão em TI** – Introdução às metodologias de gestão de infraestrutura e serviços de TI, aplicadas ao ambiente industrial.
+3. **Infraestrutura de Redes de Computadores** – Configuração e instalação de redes locais (LAN), industriais e corporativas.
+4. **Estruturas de Computadores** – Componentes de hardware e arquitetura de sistemas, aplicados a redes.
+5. Não **Lógica de Programação** – Programação básica para automação e controle de sistemas conectados em rede.
+6. **Instalação e Manutenção de Redes SOHO** – Práticas para instalação e manutenção de redes de pequeno porte.
+7. **Instalação e Manutenção de Redes Corporativas** – Manutenção e otimização de redes maiores, usadas em ambientes industriais.
+8. **Configuração de Servidores de Rede** – Criação e administração de servidores para redes industriais.
+9. **Implementação e Integração de Redes** – Práticas de integração de diferentes sistemas de rede, incluindo automação industrial.
+10. **Projeto de Redes de Computadores** – Planejamento e execução de projetos de rede com foco em ambientes industriais【13†source】【14†source】.
+
+Essa grade curricular é desenhada para preparar o aluno a lidar com redes em ambientes fabris e corporativos, onde a conectividade e segurança são essenciais.
