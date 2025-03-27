@@ -1,0 +1,15 @@
+--> em cada alteração darei commit
+
+----------------------------------------Abaixo comandos utilizados--------------------------------------
+
+--> git commit -m "Retirei main do arquivo listagemVIEW"
+--> git push origin master
+--> git commit -m "Criei uma pasta Main"
+--> git push origin master
+Ok, criação das pasta main e definição como inicial dela
+
+git commit -am "Forçando atualização" ( é para quando o código tem erro e você quer salvar mesmo assim)
+
+
+------------------------------------------------------------IA ---------------------------------------------
+https://chatgpt.com/c/67d54bfb-9f1c-8011-a52a-a79cfae8e89c
