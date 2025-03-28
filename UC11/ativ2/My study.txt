@@ -10,6 +10,9 @@ Ok, criação das pasta main e definição como inicial dela
 
 git commit -am "Forçando atualização" ( é para quando o código tem erro e você quer salvar mesmo assim)
 
+# Agora vou dar o commit depois de ter conseguido cadastrar o produto, mas ainda tenho que usar a segurança ssl este ultimo eu n fiz.
+
+
 
 ------------------------------------------------------------IA ---------------------------------------------
 https://chatgpt.com/c/67d54bfb-9f1c-8011-a52a-a79cfae8e89c
