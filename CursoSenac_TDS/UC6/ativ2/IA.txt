@@ -1,0 +1,271 @@
+Para desenvolver o módulo do sistema de agências de viagens em Java, você pode seguir a estrutura abaixo, que inclui as classes necessárias e a interação com o usuário. Vou fornecer um exemplo básico de como implementar cada uma das classes e a classe principal.
+
+### 1. Classe `Transporte`
+
+```java
+public class Transporte {
+    private String tipo;
+    private double valor;
+
+    public Transporte(String tipo, double valor) {
+        this.tipo = tipo;
+        this.valor = valor;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+}
+```
+
+### 2. Classe `Hospedagem`
+
+```java
+public class Hospedagem {
+    private String descricao;
+    private double valorDiaria;
+
+    public Hospedagem(String descricao, double valorDiaria) {
+        this.descricao = descricao;
+        this.valorDiaria = valorDiaria;
+    }
+
+    public double calcularTotal(int dias) {
+        return valorDiaria * dias;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public double getValorDiaria() {
+        return valorDiaria;
+    }
+}
+```
+
+### 3. Classe `PacoteViagem`
+
+```java
+public class PacoteViagem {
+    private Transporte transporte;
+    private Hospedagem hospedagem;
+    private String destino;
+    private int quantidadeDias;
+
+    public PacoteViagem(Transporte transporte, Hospedagem hospedagem, String destino, int quantidadeDias) {
+        this.transporte = transporte;
+        this.hospedagem = hospedagem;
+        this.destino = destino;
+        this.quantidadeDias = quantidadeDias;
+    }
+
+    public double calcularTotal(double margemLucro, double taxasAdicionais) {
+        double totalHospedagem = hospedagem.calcularTotal(quantidadeDias);
+        double totalPacote = transporte.getValor() + totalHospedagem + taxasAdicionais;
+        double lucro = totalPacote * (margemLucro / 100);
+        return totalPacote + lucro;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+}
+```
+
+### 4. Classe `Venda`
+
+```java
+public class Venda {
+    private String nomeCliente;
+    private String formaPagamento;
+    private PacoteViagem pacoteViagem;
+
+    public Venda(String nomeCliente, String formaPagamento, PacoteViagem pacoteViagem) {
+        this.nomeCliente = nomeCliente;
+        this.formaPagamento = formaPagamento;
+        this.pacoteViagem = pacoteViagem;
+    }
+
+    public double converterDolarParaReais(double valorDolar, double cotacao) {
+        return valorDolar * cotacao;
+    }
+
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public PacoteViagem getPacoteViagem() {
+        return pacoteViagem;
+    }
+}
+```
+
+### 5. Classe Principal
+
+```java
+import java.util.Scanner;
+
+public class AgenciaViagens {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Cadastro do transporte
+        System.out.print("Informe o tipo de transporte: ");
+        String tipoTransporte = scanner.nextLine();
+        System.out.print("Informe o valor do transporte (em dólar): ");
+        double valorTransporte = scanner.nextDouble();
+        Transporte transporte = new Transporte(tipoTransporte, valorTransporte);
+
+        // Cadastro da hospedagem
+        scanner.nextLine(); // Limpar o buffer
+        System.out.print("Informe a descrição da hospedagem: ");
+        String descricaoHospedagem = scanner.nextLine();
+        System.out.print("Informe o valor da diária (em dólar): ");
+        double valorDiaria = scanner.nextDouble();
+        Hospedagem hospedagem = new Hospedagem(descricaoHospedagem, valorDiaria);
+
+        // Cadastro do pacote de viagem
+        scanner.nextLine(); // Limpar o buffer
+        System.out.print("Informe o destino: ");
+        String destino = scanner.nextLine();
+        System.out.print("Informe a quantidade de dias: ");
+        int quantidadeDias = scanner.nextInt();
+        PacoteViagem pacoteViagem = new PacoteViagem(transporte, hospedagem, destino, quantidadeDias);
+
+        // Cálculo do total do pacote
+        System.out.print("Informe a margem de lucro (em %): ");
+        double margemLucro = scanner.nextDouble();
+        System.out.print("Informe as taxas adicionais (em dólar): ");
+        double taxasAdicionais = scanner.nextDouble();
+        double totalPacote = pacoteViagem.calcularTotal(margemLucro, taxasAdicionais);
+
+        // Cadastro da venda
+        scanner.nextLine(); // Limpar o buffer
+        System.out.print("Informe o nome do cliente: ");
+        String nomeCliente = scanner.nextLine();
+        System.out.print("Informe a forma de pagamento: ");
+        String formaPagamento = scanner.nextLine();
+        Venda venda = new Venda(nomeCliente, formaPagamento, pacoteViagem);
+
+        // Conversão de valores
+        System.out.print("Informe a cotação do dólar: ");
+        double cotacao = scanner.nextDouble();
+        double totalEmReais = venda.converterDolarParaReais(totalPacote, cotacao);
+
+        // Exibição dos resultados
+        System.out.println("\n--- Informações da Venda ---");
+        System.out.println("Nome do Cliente: " + venda.getNomeCliente());
+        System.out.println("Forma de Pagamento: " + venda.getFormaPagamento());
+        System.out.println("Destino: " + pacoteViagem.getDestino());
+        System.out.println("Total do Pacote (em dólar): " + totalPacote);
+        System.out.println("Total do Pacote (em reais): " + totalEmReais);
+
+        scanner.close();
+    }
+}
+```
+
+### Explicação do Código
+
+1. **Classes**: Cada classe representa um conceito do sistema (Transporte, Hospedagem, PacoteViagem, Venda) e possui atributos e métodos relevantes.
+2. **Cálculos**: A classe `PacoteViagem` possui métodos para calcular o total da hospedagem, o lucro e o total do pacote.
+3. **Interação com o Usuário**: A classe principal (`AgenciaViagens`) interage com o usuário para coletar informações e exibir os resultados.
+
+### Execução
+
+Para executar o código, você deve criar um novo projeto no NetBeans, adicionar as classes conforme descrito e executar a classe principal. O sistema permitirá que você cadastre pacotes de viagem e vendas, calculando os valores necessários e exibindo as informações na tela.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Para representar a estrutura do código Java fornecido em um banco de dados SQL, precisamos criar tabelas que correspondam às classes e suas relações. O código Java menciona três principais entidades: `Transporte`, `Hospedagem`, `PacoteViagem` e `Venda`. Vamos criar tabelas para cada uma dessas entidades.
+
+### Código SQL
+
+```sql
+-- Criação da tabela Transporte
+CREATE TABLE Transporte (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    tipo VARCHAR(100),
+    valor DECIMAL(10, 2) -- Valor em dólar
+);
+
+-- Criação da tabela Hospedagem
+CREATE TABLE Hospedagem (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR(255),
+    valorDiaria DECIMAL(10, 2) -- Valor da diária em dólar
+);
+
+-- Criação da tabela PacoteViagem
+CREATE TABLE PacoteViagem (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    transporte_id INT,
+    hospedagem_id INT,
+    destino VARCHAR(100),
+    quantidadeDias INT,
+    FOREIGN KEY (transporte_id) REFERENCES Transporte(id),
+    FOREIGN KEY (hospedagem_id) REFERENCES Hospedagem(id)
+);
+
+-- Criação da tabela Venda
+CREATE TABLE Venda (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    clienteNome VARCHAR(100),
+    formaPagamento VARCHAR(50),
+    pacoteViagem_id INT,
+    FOREIGN KEY (pacoteViagem_id) REFERENCES PacoteViagem(id)
+);
+
+-- Exemplo de inserção de dados na tabela Transporte
+INSERT INTO Transporte (tipo, valor) VALUES ('Aéreo', 500.00);
+INSERT INTO Transporte (tipo, valor) VALUES ('Terrestre', 200.00);
+
+-- Exemplo de inserção de dados na tabela Hospedagem
+INSERT INTO Hospedagem (descricao, valorDiaria) VALUES ('Hotel 5 estrelas', 150.00);
+INSERT INTO Hospedagem (descricao, valorDiaria) VALUES ('Pousada', 80.00);
+
+-- Exemplo de inserção de dados na tabela PacoteViagem
+INSERT INTO PacoteViagem (transporte_id, hospedagem_id, destino, quantidadeDias) 
+VALUES (1, 1, 'Paris', 7);
+
+-- Exemplo de inserção de dados na tabela Venda
+INSERT INTO Venda (clienteNome, formaPagamento, pacoteViagem_id) 
+VALUES ('João Silva', 'Cartão de Crédito', 1);
+```
+
+### Explicação
+
+1. **Tabela Transporte**:
+   - `id`: Chave primária que identifica unicamente cada transporte.
+   - `tipo`: Tipo de transporte (ex: Aéreo, Terrestre).
+   - `valor`: Valor do transporte em dólar.
+
+2. **Tabela Hospedagem**:
+   - `id`: Chave primária que identifica unicamente cada hospedagem.
+   - `descricao`: Descrição da hospedagem.
+   - `valorDiaria`: Valor da diária em dólar.
+
+3. **Tabela PacoteViagem**:
+   - `id`: Chave primária que identifica unicamente cada pacote de viagem.
+   - `transporte_id`: Chave estrangeira que referencia a tabela Transporte.
+   - `hospedagem_id`: Chave estrangeira que referencia a tabela Hospedagem.
+   - `destino`: Destino da viagem.
+   - `quantidadeDias`: Quantidade de dias da viagem.
+
+4. **Tabela Venda**:
+   - `id`: Chave primária que identifica unicamente cada venda.
+   - `clienteNome`: Nome do cliente.
+   - `formaPagamento`: Forma de pagamento utilizada.
+   - `pacoteViagem_id`: Chave estrangeira que referencia a tabela PacoteViagem.
+
+5. **Inserções**: Exemplos de como inserir dados nas tabelas criadas.
+
+Esse código SQL cria a estrutura básica para armazenar informações sobre transporte, hospedagem, pacotes de viagem e vendas, conforme descrito no código Java. Você pode expandir isso conforme necessário, adicionando mais atributos ou tabelas para representar outras funcionalidades do seu sistema.

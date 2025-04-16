@@ -1,0 +1,67 @@
+sapackage classes;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+
+public class IMC extends JFrame {
+
+    private JTextField txtPeso, txtAltura;
+    private JLabel lblResultado;
+
+    public IMC() {
+        setTitle("IMC");
+         // Define um ícone transparente
+        BufferedImage transparentIcon = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+        setIconImage(transparentIcon);
+
+        setSize(300, 340);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLayout(new FlowLayout());
+        
+        // Criação do JPanel
+        JPanel panel = new JPanel();
+        panel.getContentPane().add(panel);
+        panel.setLayout(new GridLayout(30, 20)); // Define um layout de grade com 3 linhas e 2 colunas
+
+        // Adicionando componentes ao JPanel
+        JLabel weightLabel = new JLabel("Peso (kg):");
+        JTextField weightField = new JTextField();
+        JLabel heightLabel = new JLabel("Altura (m):");
+        JTextField heightField = new JTextField();
+        JButton calculateButton = new JButton("Calcular IMC");
+        JLabel resultLabel = new JLabel("IMC: ");
+
+
+        txtPeso = new JTextField(8);
+        txtAltura = new JTextField(8);
+        JButton btnCalcular = new JButton("Calcular");
+        lblResultado = new JLabel("Resultado: ");
+
+        btnCalcular.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                calcularIMC();
+            }
+        });
+
+        add(new JLabel("Peso (kg):"));
+        add(txtPeso);
+        add(new JLabel("Altura (m):"));
+        add(txtAltura);
+        add(btnCalcular);
+        add(lblResultado);
+    }
+
+    private void calcularIMC() {
+        try {
+            double peso = Double.parseDouble(txtPeso.getText());
+            double altura = Double.parseDouble(txtAltura.getText());
+            double imc = peso / (altura * altura);
+            lblResultado.setText("Resultado: " + String.format("%.2f", imc));
+        } catch (NumberFormatException e) {
+            lblResultado.setText("Por favor, insira valores válidos.");
+        }
+    }
+}

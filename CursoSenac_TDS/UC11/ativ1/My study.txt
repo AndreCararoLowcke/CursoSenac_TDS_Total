@@ -1,0 +1,14 @@
+https://chatgpt.com/c/67c6b494-69e0-8011-b4c3-d74c72632510
+
+1. vou ler a questão e seguir aqueles passos do PDF comandos 
+
+---------------------------------------------------------------------------------------------------
+https://www.youtube.com/watch?v=-LzPaOva2Vo&ab_channel=Prof.LucasFraga
+acima video sobre versionamento.
+
+
+---------------------------------------------------------------------------------------------------
+Anotando comandos que utilizei:
+
+1- git init
+2- git config --global user.name "”

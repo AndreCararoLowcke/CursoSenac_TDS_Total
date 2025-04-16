@@ -1,0 +1,71 @@
+Aqui estão alguns comandos básicos para manipulação de dados em MongoDB, conforme descrito no documento:
+
+1. **Listar bancos de dados**:
+   ```bash
+   show dbs
+   ```
+
+2. **Selecionar um banco de dados**:
+   ```bash
+   use <nome_banco_dados>
+   ```
+
+3. **Inserir um documento em uma coleção**:
+   ```bash
+   db.jogo.insertOne({
+       nomeJogo: "Tetris",
+       anoLancamento: 1984,
+       generoJogo: "Puzzle"
+   })
+   ```
+
+4. **Inserir múltiplos documentos em uma coleção**:
+   ```bash
+   db.participante.insertMany([
+       {
+           nomeParticipante: "Joao",
+           dtaNasc: "1995/05/05",
+           jogo: {
+               nomeJogo: "Pac-Man",
+               anoLancamento: 1982,
+               generoJogo: "Puzzle"
+           },
+           pontuacao: [100, 200]
+       },
+       {
+           nomeParticipante: "Maria",
+           dtaNasc: "1997/10/11",
+           jogo: {
+               nomeJogo: "Tetris",
+               anoLancamento: 1984,
+               generoJogo: "Puzzle"
+           },
+           pontuacao: [6000, 500, 1000]
+       }
+   ])
+   ```
+
+5. **Buscar documentos em uma coleção**:
+   ```bash
+   db.participante.find()
+   ```
+
+6. **Filtrar documentos por um campo específico**:
+   ```bash
+   db.participante.find({"nomeParticipante": "João"})
+   ```
+
+7. **Atualizar um documento**:
+   ```bash
+   db.participante.updateOne(
+       { "nomeParticipante": "Joao" },
+       { $set: { "nomeParticipante": "João Pedro", "dtaNasc": "1999/01/27" } }
+   )
+   ```
+
+8. **Deletar um banco de dados**:
+   ```bash
+   db.dropDatabase()
+   ```
+
+Esses comandos são fundamentais para realizar operações CRUD (Create, Read, Update, Delete) no MongoDB [T1], [T2], [T4], [T5], [T6].

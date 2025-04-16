@@ -1,0 +1,27 @@
+https://www.chatpdf.com/pt/c/hw4Rb8lJ5v7a4XNYsp0zd
+
+https://chatgpt.com/c/67f626ec-76b8-8011-9bcd-b60a9f270d14
+
+git checkout -b melhorias
+# Faz alterações
+git add .
+git commit -m "Descrição da primeira funcionalidade"
+
+# Faz outra alteração
+git add .
+git commit -m "Descrição da segunda funcionalidade"
+
+# Quando terminar tudo
+git push origin melhorias
+
+
+git init
+git remote add origin https://github.com/seu-usuario/seu-repo.git --> conecta ao repositório
+git add .
+git commit -m "Primeiro commit"
+git branch melhorias --> cria a branch melhorias
+git checkout melhorias
+# faz alterações
+git add .
+git commit -m "Descrição da alteração"
+git push -u origin melhorias

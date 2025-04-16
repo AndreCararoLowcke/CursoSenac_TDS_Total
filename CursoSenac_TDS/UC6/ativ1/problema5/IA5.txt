@@ -1,0 +1,73 @@
+Aqui está um programa Java que atende aos requisitos que você descreveu. O programa permite que o usuário registre os quartos ocupados em um hotel com 4 andares e 3 quartos por andar, e depois exibe uma tabela mostrando quais quartos estão ocupados e quais estão desocupados.
+
+```java
+import java.util.Scanner;
+
+public class HotelQuartos {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        boolean[][] quartos = new boolean[4][3]; // 4 andares e 3 quartos por andar
+        String resposta;
+
+        do {
+            System.out.println("Informe Andar (1 a 4): ");
+            int andar = entrada.nextInt() - 1; // Ajusta para índice 0
+            System.out.println("Informe Quarto (1 a 3): ");
+            int quarto = entrada.nextInt() - 1; // Ajusta para índice 0
+
+            // Verifica se o andar e o quarto estão dentro dos limites
+            if (andar >= 0 && andar < 4 && quarto >= 0 && quarto < 3) {
+                quartos[andar][quarto] = true; // Marca o quarto como ocupado
+            } else {
+                System.out.println("Andar ou quarto inválido. Tente novamente.");
+            }
+
+            System.out.println("Deseja informar outra ocupação? (S/N)");
+            resposta = entrada.next();
+        } while (resposta.equalsIgnoreCase("S"));
+
+        // Exibe a tabela de quartos
+        System.out.println("\nTabela de Ocupação dos Quartos:");
+        System.out.println("Andar \\ Quarto |  1  |  2  |  3  |");
+        System.out.println("-------------------------------");
+        for (int i = 0; i < 4; i++) {
+            System.out.print("      " + (i + 1) + "      |");
+            for (int j = 0; j < 3; j++) {
+                if (quartos[i][j]) {
+                    System.out.print("  X  |"); // Quarto ocupado
+                } else {
+                    System.out.print("     |"); // Quarto desocupado
+                }
+            }
+            System.out.println();
+        }
+
+        entrada.close(); // Fecha o scanner
+    }
+}
+```
+
+### Explicação do Código
+
+1. **Importação da Classe Scanner**: O programa utiliza a classe `Scanner` para ler a entrada do usuário.
+
+2. **Array de Quartos**: Um array bidimensional `quartos` é criado para representar os 4 andares e 3 quartos por andar. O valor `true` indica que o quarto está ocupado, enquanto `false` indica que está desocupado.
+
+3. **Loop para Registro de Ocupações**:
+   - O programa solicita ao usuário que informe o andar e o número do quarto.
+   - O usuário deve inserir valores entre 1 e 4 para o andar e entre 1 e 3 para o quarto. O programa ajusta esses valores para índices de array (0 a 3 para andares e 0 a 2 para quartos).
+   - Se o andar e o quarto estiverem dentro dos limites, o quarto é marcado como ocupado.
+   - O programa pergunta se o usuário deseja informar outra ocupação e continua o loop enquanto a resposta for "S".
+
+4. **Exibição da Tabela de Ocupação**:
+   - Após o registro das ocupações, o programa exibe uma tabela que mostra quais quartos estão ocupados (marcados com "X") e quais estão desocupados (em branco).
+   - A tabela é formatada para que o primeiro andar apareça na parte inferior e o último na parte superior.
+
+5. **Fechamento do Scanner**: O scanner é fechado ao final do programa para liberar recursos.
+
+### Como Executar
+
+1. Copie o código acima para um arquivo chamado `HotelQuartos.java`.
+2. Compile o programa usando o comando `javac HotelQuartos.java`.
+3. Execute o programa com `java HotelQuartos`.
+4. Siga as instruções na tela para registrar as ocupações dos quartos e visualizar a tabela de ocupação.

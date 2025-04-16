@@ -1,0 +1,58 @@
+--> em cada alteração darei commit
+
+Agora vou para a listagem de dados:
+--> primeiro vou fazer os produtos cadastrados aparecerem na lista.(UC10)
+
+----------------------------------------Abaixo comandos utilizados--------------------------------------
+
+--> git commit -m "Retirei main do arquivo listagemVIEW"
+--> git push origin master
+--> git commit -m "Criei uma pasta Main"
+--> git push origin master
+Ok, criação das pasta main e definição como inicial dela
+
+git commit -am "Forçando atualização" ( é para quando o código tem erro e você quer salvar mesmo assim)
+
+# Agora vou dar o commit depois de ter conseguido cadastrar o produto, mas ainda tenho que usar a segurança ssl este ultimo eu n fiz. No gpt diz como fazer
+
+git pull origin uc11  --> com este comando eu recebo as atualizações feitas no projeto.
+Para enviar todas as alterações para o repositório remoto no GitHub, siga estes passos:
+
+### **1. Verifique o status para garantir que tudo foi adicionado**
+```bash
+git status
+```
+Se os arquivos ainda aparecerem como "Changes not staged for commit", certifique-se de que rodou:
+```bash
+git add .
+```
+
+---
+
+### **2. Faça o commit das alterações**
+Adicione uma mensagem descritiva ao commit:
+```bash
+git commit -m "Descrição das alterações feitas"
+```
+
+---
+
+### **3. Envie as alterações para o repositório remoto**
+```bash
+git push origin uc11
+```
+Isso enviará as alterações para o branch remoto **uc11**.
+
+---
+
+### **4. Verifique se o push foi bem-sucedido**
+Para confirmar que tudo foi enviado corretamente, use:
+```bash
+git status
+```
+Se aparecer **"Your branch is up to date with 'origin/uc11'"**, então está tudo certo!
+
+
+
+------------------------------------------------------------IA ---------------------------------------------
+https://chatgpt.com/c/67d54bfb-9f1c-8011-a52a-a79cfae8e89c

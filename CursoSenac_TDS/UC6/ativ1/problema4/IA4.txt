@@ -1,0 +1,84 @@
+Aqui está um algoritmo em Java que atende aos requisitos que você descreveu. O programa permite que o usuário cadastre e pesquise hóspedes, com um menu que oferece as opções de cadastrar, pesquisar ou sair.
+
+```java
+import java.util.Scanner;
+
+public class CadastroHospedes {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        String[] hospedes = new String[15]; // Array para armazenar até 15 hóspedes
+        int contador = 0; // Contador para o número de hóspedes cadastrados
+
+        while (true) {
+            // Exibe o menu
+            System.out.println("Digite 1- cadastrar; 2- pesquisar; 3- sair");
+            int opcao = entrada.nextInt();
+            entrada.nextLine(); // Limpa o buffer
+
+            if (opcao == 1) { // Cadastrar hóspede
+                if (contador < 15) {
+                    System.out.print("Digite o nome do hóspede: ");
+                    String nome = entrada.nextLine();
+                    hospedes[contador] = nome; // Armazena o nome no array
+                    contador++; // Incrementa o contador
+                } else {
+                    System.out.println("Máximo de cadastros atingido");
+                }
+            } else if (opcao == 2) { // Pesquisar hóspede
+                System.out.print("Digite o nome do hóspede a ser pesquisado: ");
+                String nomePesquisa = entrada.nextLine();
+                boolean encontrado = false;
+
+                // Pesquisa o hóspede no array
+                for (int i = 0; i < contador; i++) {
+                    if (hospedes[i].equals(nomePesquisa)) {
+                        System.out.println("Hóspede " + nomePesquisa + " foi encontrado no índice " + i);
+                        encontrado = true;
+                        break; // Encerra o loop se o hóspede for encontrado
+                    }
+                }
+
+                if (!encontrado) {
+                    System.out.println("Hóspede não encontrado");
+                }
+            } else if (opcao == 3) { // Sair
+                System.out.println("Saindo do programa...");
+                break; // Encerra o loop
+            } else {
+                System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
+
+        entrada.close(); // Fecha o scanner
+    }
+}
+```
+
+### Explicação do Código
+
+1. **Importação da Classe Scanner**: O programa utiliza a classe `Scanner` para ler a entrada do usuário.
+
+2. **Array de Hóspedes**: Um array de strings é criado para armazenar até 15 nomes de hóspedes.
+
+3. **Loop Principal**: Um loop `while` é utilizado para exibir o menu e permitir que o usuário escolha uma opção.
+
+4. **Cadastrar Hóspede**:
+   - Se a opção escolhida for 1, o programa verifica se o contador de hóspedes é menor que 15.
+   - Se houver espaço, o usuário é solicitado a inserir o nome do hóspede, que é armazenado no array e o contador é incrementado.
+   - Se o máximo de cadastros for atingido, uma mensagem é exibida.
+
+5. **Pesquisar Hóspede**:
+   - Se a opção escolhida for 2, o usuário é solicitado a inserir o nome do hóspede a ser pesquisado.
+   - O programa percorre o array de hóspedes e verifica se o nome informado é igual a algum dos nomes cadastrados.
+   - Se encontrado, exibe a mensagem com o índice; caso contrário, informa que o hóspede não foi encontrado.
+
+6. **Sair do Programa**: Se a opção escolhida for 3, o programa exibe uma mensagem de saída e encerra o loop.
+
+7. **Opção Inválida**: Se o usuário inserir uma opção que não seja 1, 2 ou 3, uma mensagem de erro é exibida.
+
+### Como Executar
+
+1. Copie o código acima para um arquivo chamado `CadastroHospedes.java`.
+2. Compile o programa usando o comando `javac CadastroHospedes.java`.
+3. Execute o programa com `java CadastroHospedes`.
+4. Siga as instruções na tela para cadastrar e pesquisar hóspedes.

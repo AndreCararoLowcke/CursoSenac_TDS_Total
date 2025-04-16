@@ -1,0 +1,14 @@
+git pull origin main  --> Caso você tenha alterado algo diretamente no GitHub (como editar arquivos online), 
+faça um pull para trazer essas mudanças para seu computador.
+
+-->  Atualizar o repositório remoto (GitHub)
+Agora, para enviar as mudanças que você fez no seu computador para o GitHub:
+git add .
+git commit -m "Descrição das alterações"
+git push origin main
+
+-->  Passos para criar e enviar uma nova branch
+Criar uma branch → git checkout -b nome-da-branch
+Fazer alterações e commitar → git add . e git commit -m "mensagem"
+Enviar para o GitHub → git push origin nome-da-branch
+

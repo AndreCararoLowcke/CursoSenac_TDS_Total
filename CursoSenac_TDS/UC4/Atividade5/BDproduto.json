@@ -1,0 +1,359 @@
+[
+	{
+		"id" : 1,
+		"nome" : "Ventilador de mesa",
+		"descricao" : "Ventilador branco 40cm 110v",
+		"estoque" : 5,
+		"fabricante" : "Bons Ventos"
+	},
+	{
+		"id" : 2,
+		"nome" : "Ventilador de mesa",
+		"descricao" : "Ventilador preto 40cm 110v",
+		"estoque" : 5,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 3,
+		"nome" : "Ventilador de mesa 220",
+		"descricao" : "Ventilador branco 40cm 220v",
+		"estoque" : 5,
+		"fabricante" : "Bons Ventos"
+	},
+	{
+		"id" : 4,
+		"nome" : "Aspirador de pó",
+		"descricao" : "Aspira pó e agua 110v",
+		"estoque" : 9,
+		"fabricante" : "Bons ventos"
+	},
+	{
+		"id" : 5,
+		"nome" : "Aspirador de pó",
+		"descricao" : "Aspira pó 110v vermelho",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 6,
+		"nome" : "Aspirador de pó",
+		"descricao" : "Aspira pó 110v vermelho",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 7,
+		"nome" : "Batedeira planetária",
+		"descricao" : "Cor Branca 110v",
+		"estoque" : 5,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 8,
+		"nome" : "Liquidificador",
+		"descricao" : "Cor Preta 110v",
+		"estoque" : 7,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 9,
+		"nome" : "Liquidificador",
+		"descricao" : "Cor Branca 110v",
+		"estoque" : 2,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 10,
+		"nome" : "Liquidificador",
+		"descricao" : "Cor Preta 110v",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 11,
+		"nome" : "Processador",
+		"descricao" : "Cor Preta 110v",
+		"estoque" : 7,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 12,
+		"nome" : "Mixer",
+		"descricao" : "Cor Rosa 110v",
+		"estoque" : 8,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 13,
+		"nome" : "Furadeira",
+		"descricao" : "110v",
+		"estoque" : 3,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 14,
+		"nome" : "Furadeira 220",
+		"descricao" : "220v",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 15,
+		"nome" : "Forno Elétrico",
+		"descricao" : "110v",
+		"estoque" : 6,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 16,
+		"nome" : "Torradeira",
+		"descricao" : "110v",
+		"estoque" : 9,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 17,
+		"nome" : "Torradeira",
+		"descricao" : "110v",
+		"estoque" : 9,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 18,
+		"nome" : "Secador de cabelo",
+		"descricao" : "Cor Vermelha 2000w 110v",
+		"estoque" : 17,
+		"fabricante" : "Belle Tech"
+	},
+	{
+		"id" : 19,
+		"nome" : "Secador de cabelo",
+		"descricao" : "Cor Vermelha 2000w 110v",
+		"estoque" : 17,
+		"fabricante" : "UltraBeauty"
+	},
+	{
+		"id" : 20,
+		"nome" : "Chapinha cerâmica",
+		"descricao" : "Cor azul bivolt",
+		"estoque" : 4,
+		"fabricante" : "Belle Tech"
+	},
+	{
+		"id" : 21,
+		"nome" : "Chapinha cerâmica",
+		"descricao" : "Cor preta bivolt",
+		"estoque" : 4,
+		"fabricante" : "UltraBeauty"
+	},
+	{
+		"id" : 22,
+		"nome" : "Air Fryer",
+		"descricao" : "Bivolt",
+		"estoque" : 3,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 23,
+		"nome" : "Cafeteira Elétrica",
+		"descricao" : "Bivolt Verde",
+		"estoque" : 4,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 24,
+		"nome" : "Cafeteira Elétrica",
+		"descricao" : "Bivolt Azul",
+		"estoque" : 2,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 25,
+		"nome" : "Espremedor de Frutas",
+		"descricao" : "Preto bivolt",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 26,
+		"nome" : "Espremedor de Frutas",
+		"descricao" : "Branco bivolt",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 27,
+		"nome" : "Purificador de água",
+		"descricao" : "Refrigerado e antibactérias",
+		"estoque" : 3,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 28,
+		"nome" : "Purificador de água",
+		"descricao" : "Refrigerado",
+		"estoque" : 2,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 29,
+		"nome" : "Aspirador de pó vertical",
+		"descricao" : "1,5 m vermelho",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 30,
+		"nome" : "Panela de arroz eletrica",
+		"descricao" : "Bivolt",
+		"estoque" : 4,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 31,
+		"nome" : "Ferro de passar",
+		"descricao" : "Cor de Rosa",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 32,
+		"nome" : "Ferro de passar",
+		"descricao" : "vapor e seco",
+		"estoque" : 4,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 33,
+		"nome" : "Máquina de costura",
+		"descricao" : "9 pontos bivolt",
+		"estoque" : 3,
+		"fabricante" : "Formidable"
+	},
+	{
+		"id" : 34,
+		"nome" : "Forno Elétrico",
+		"descricao" : "",
+		"estoque" : 2,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 35,
+		"nome" : "Batedeira 400w",
+		"descricao" : "Premium profissional",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 36,
+		"nome" : "Pipoqueira elétrica",
+		"descricao" : "Bivolt",
+		"estoque" : 2,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 37,
+		"nome" : "Robo aspirador",
+		"descricao" : "autonomia para 4 horas",
+		"estoque" : 2,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 38,
+		"nome" : "Mixer",
+		"descricao" : "170w bivolt",
+		"estoque" : 2,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 39,
+		"nome" : "Multiprocessador",
+		"descricao" : "Bivolt",
+		"estoque" : 2,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 40,
+		"nome" : "Grill",
+		"descricao" : "compacto",
+		"estoque" : 6,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 41,
+		"nome" : "Forno de Microondas",
+		"descricao" : "20 litros",
+		"estoque" : 6,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 42,
+		"nome" : "Forno de Microondas",
+		"descricao" : "30 litros",
+		"estoque" : 6,
+		"fabricante" : "Casa & cia"
+	},
+	{
+		"id" : 43,
+		"nome" : "Cooktop",
+		"descricao" : "5 bocas",
+		"estoque" : 2,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 44,
+		"nome" : "Frigobar",
+		"descricao" : "50 litros",
+		"estoque" : 3,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 45,
+		"nome" : "Geladeira",
+		"descricao" : "Branca 110v",
+		"estoque" : 3,
+		"fabricante" : "Venus"
+	},
+	{
+		"id" : 46,
+		"nome" : "Geladeira",
+		"descricao" : "Branca 220v",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 47,
+		"nome" : "Fogão",
+		"descricao" : "Branco 4 bocas",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 48,
+		"nome" : "Lavadora de roupas 220",
+		"descricao" : "220v com centrifugação",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 49,
+		"nome" : "Lavadora de roupas",
+		"descricao" : "110v com centrifugação",
+		"estoque" : 3,
+		"fabricante" : "Mundiale"
+	},
+	{
+		"id" : 50,
+		"nome" : "Lavadora de roupas",
+		"descricao" : "Com secagem",
+		"estoque" : 3,
+		"fabricante" : "Ultralar"
+	},
+	{
+		"id" : 51,
+		"nome" : "Adega",
+		"descricao" : "8 garrafas inox",
+		"estoque" : 2,
+		"fabricante" : "Ultralar"
+	}
+]

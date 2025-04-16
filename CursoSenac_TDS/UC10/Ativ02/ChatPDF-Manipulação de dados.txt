@@ -1,0 +1,124 @@
+PDF: Olá! É com grande alegria que lhe dou boas-vindas à sua leitura sobre Desenvolvimento de Sistemas e Manipulação de Dados! Neste documento, você encontrará informações valiosas sobre como conectar-se a bancos de dados utilizando Java, realizar operações de inserção, atualização, consulta e remoção de registros. Além disso, aprenderá sobre a importância de fechar conexões após as operações para manter seus dados seguros. Prepare-se para se aventurar em um mundo de sistemas dinâmicos e ágeis!
+
+Aqui estão três perguntas que você pode fazer sobre o arquivo:
+
+1. Quais são os passos necessários para se conectar a um banco de dados utilizando Java?
+2. Por que é importante fechar a conexão com o banco de dados após as operações?
+3. Quais são as diferenças entre manipulação de dados via linhas de comando e interfaces gráficas com Java Swing?
+
+Me: Contexto
+Sua empresa venceu a concorrência para desenvolver a nova plataforma de streaming de vídeos, a Cenaflix. Seu gestor organizou um time de desenvolvimento para iniciar o projeto e, após a realização da planning referente a primeira sprint, você foi designado para desenvolver a tela inicial do cadastro de vídeos. Sua entrega deve conter um campo para identificação numérica, um campo para o nome do filme, um campo para a data de lançamento e a categoria à qual ele pertence. A equipe de UX (user experience) desenvolveu o protótipo da tela na qual você deve se basear para a criação da interface de cadastro.
+ 
+Atividade
+Desenvolva o primeiro item de um CRUD (create, read, update, delete), que é o cadastro dos dados, usando JDBC (Java Database Connectivity). Sua aplicação deve comunicar-se com o banco de dados “ATIVIDADE1”, encontrado no link Conteúdo > Material complementar, assim como realizar a inserção de dados por meio de uma interface com uso do JFrame Form. Sua interface de cadastro deve estar de acordo com o wireframe que também se encontra no material complementar da atividade. Realize o download desses materiais para realizar a atividade.
+ 
+Entrega
+No espaço dedicado à entrega da atividade, envie um arquivo compactado (ZIP, RAR ou 7z) contendo todo o projeto NetBeans criado para a atividade, assim com um print no Workbench demostrando, com o comando Select, que os dados foram cadastrados na tabela.
+Sua entrega deve conter os arquivos desenvolvidos no projeto e evidências de que o programa está realizando a comunicação corretamente.
+
+PDF: Para desenvolver a tela inicial do cadastro de vídeos conforme descrito no seu contexto, você pode seguir os passos abaixo:
+
+### 1. Preparar o Banco de Dados
+Primeiro, você deve criar a tabela necessária no banco de dados "ATIVIDADE1". Utilize o seguinte comando SQL no MySQL Workbench para criar a tabela de vídeos:
+
+```sql
+CREATE TABLE videos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    data_lancamento DATE NOT NULL,
+    categoria VARCHAR(100) NOT NULL
+);
+```
+
+### 2. Configurar o Projeto no NetBeans
+1. **Crie um novo projeto** no NetBeans chamado "Cenaflix".
+2. **Adicione a biblioteca JDBC** do MySQL ao seu projeto (MySQL Connector/J).
+
+### 3. Desenvolver a Interface Gráfica
+Crie uma nova `JFrame Form` para a tela de cadastro dos vídeos:
+- Adicione os seguintes componentes:
+  - `JTextField` para o ID (pode ser preenchido automaticamente)
+  - `JTextField` para o nome do filme
+  - `JTextField` para a data de lançamento
+  - `JTextField` para a categoria
+  - `JButton` com o texto "Cadastrar" para realizar a inserção dos dados.
+
+### 4. Código para a Inserção de Dados
+No evento de clique do botão "Cadastrar", você pode utilizar o seguinte código para inserir os dados no banco de dados:
+
+```java
+private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {
+    String nome = txtNome.getText();
+    String dataLancamento = txtDataLancamento.getText();
+    String categoria = txtCategoria.getText();
+
+    try {
+        // Estabelece a conexão com o banco de dados
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ATIVIDADE1", "root", "");
+        String sql = "INSERT INTO videos (nome, data_lancamento, categoria) VALUES (?, ?, ?)";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setString(1, nome);
+        pstmt.setDate(2, java.sql.Date.valueOf(dataLancamento)); // Formato yyyy-mm-dd
+        pstmt.setString(3, categoria);
+        
+        int rowsAffected = pstmt.executeUpdate();
+        if (rowsAffected > 0) {
+            JOptionPane.showMessageDialog(this, "Vídeo cadastrado com sucesso!");
+        }
+        
+        con.close();
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Erro ao cadastrar vídeo: " + e.getMessage());
+    }
+}
+```
+
+### 5. Testar a Aplicação
+- Execute a aplicação e preencha os campos com informações adequadas.
+- Clique no botão "Cadastrar" e verifique se a mensagem de sucesso aparece.
+
+### 6. Comprovar a Inserção no Banco de Dados
+Após fazer a inserção:
+- No MySQL Workbench, execute o seguinte comando SQL para visualizar os dados:
+
+```sql
+SELECT * FROM videos;
+```
+- Tire um print da tela mostrando os dados inseridos.
+
+### 7. Empacotar e Entregar o Projeto
+- Compacte todo o diretório do seu projeto NetBeans (por exemplo, como um arquivo ZIP).
+- Inclua o print do Workbench demonstrando os dados cadastrados na tabela.
+
+### Considerações Finais
+Certifique-se de que você está utilizando as credenciais e URL corretas para a conexão ao banco de dados. O código apresentado pode ser ajustado conforme a lógica do seu aplicativo e o design da interface que você estiver utilizando. Bom desenvolvimento e boa sorte na sua entrega!
+
+Me: Quais são as diferenças entre manipulação de dados via linhas de comando e interfaces gráficas com Java Swing?
+
+PDF: A manipulação de dados via linhas de comando e interfaces gráficas com Java Swing possui várias diferenças que afetam a experiência do usuário, a facilidade de uso e a implementação técnica. Aqui estão algumas das principais diferenças:
+
+### 1. **Usabilidade**
+- **Linhas de Comando:** A interação é feita através de texto, o que pode ser menos intuitivo para usuários sem experiência técnica. Os usuários precisam memorizar comandos e sintaxes corretas para realizar operações, o que pode levar a erros.
+- **Interfaces Gráficas (Java Swing):** Proporciona uma experiência mais amigável e visual. Elementos como botões, campos de texto e menus tornam a interação mais intuitiva. Usuários podem clicar para realizar ações, reduzindo a curva de aprendizado.
+
+### 2. **Feedback ao Usuário**
+- **Linhas de Comando:** O feedback geralmente é textual e pode não ser tão claro. Mensagens de erro ou sucesso aparecem como texto no console, o que pode ser menos envolvente.
+- **Interfaces Gráficas:** Pode fornecer feedback visual imediato através de diálogos, cores e animações. Por exemplo, uma mensagem de erro pode aparecer em uma janela pop-up, tornando mais fácil para o usuário compreender a situação.
+
+### 3. **Complexidade de Implementação**
+- **Linhas de Comando:** Normalmente requer menos código e estrutura para setar, já que não precisa criar a interface visual. A lógica de negócios pode ser mais diretamente ligada ao código que manipula dados.
+- **Interfaces Gráficas:** Requer mais esforço em termos de design e implementação. É necessário organizar os componentes da interface e gerenciar eventos de interação do usuário. Isso pode levar a um código mais complexo devido ao uso de gerenciadores de eventos.
+
+### 4. **Acessibilidade**
+- **Linhas de Comando:** Pode ser mais acessível em ambientes onde a interface gráfica não está disponível, como servidores ou sistemas embarcados. Muitas operações podem ser automatizadas através de scripts.
+- **Interfaces Gráficas:** Depende de um ambiente gráfico e pode não ser viável em todas as plataformas ou sistemas. No entanto, é mais atraente e acessível para a maioria dos usuários.
+
+### 5. **Interatividade**
+- **Linhas de Comando:** A interação normalmente acontece de forma sequencial, onde o usuário deve esperar pela resposta do sistema após cada comando.
+- **Interfaces Gráficas:** Permite a interação simultânea com múltiplos componentes, como preencher campos enquanto consulta outras informações. Isso cria uma experiência mais dinâmica.
+
+### 6. **Destinatários**
+- **Linhas de Comando:** Mais comuns em ambientes técnicos para administradores de sistema e desenvolvedores. Ideal para automação, testes e scripts de manutenção.
+- **Interfaces Gráficas:** Visam usuários finais que podem não ter conhecimentos técnicos. São mais comuns em aplicações de consumo, como software desktop ou web.
+
+Em resumo, a escolha entre manipulação de dados via linhas de comando ou interfaces gráficas com Java Swing depende do contexto da aplicação, do público-alvo e da facilidade de uso desejada. Cada abordagem tem suas vantagens e desvantagens, e a melhor escolha varia com base nas necessidades específicas do projeto e usuários.

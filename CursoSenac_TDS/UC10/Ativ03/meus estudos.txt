@@ -1,0 +1,459 @@
+Atualmente: 1 criando pasta com login
+1.1 --> montando tela
+1.2 --> colocar as senhas como variáveis
+1.3 --> fazer botão de login
+
+
+---------------------------------------------------------------------------------------------
+
+Novo método de pesquisa (preciso mudar meu método de pesquisa porque está muito difícil achar oque eu quero)
+1- Olhar meus PDF
+2- Colocar na IA o código e pergunta a ela como fazer
+3- Coloco funcionar sem ser tão exigente
+
+--------------------------------------------------------------------------------------------
+Minhas anotações do PDF:
+
+--> pag13 ensina como abrir um projeto.
+
+--> pag 34 começa o exemplo em código de uma implementação.
+
+--> pag 40 começa um CRUD utilizando a biblioteca estudada ali
+
+Minhas anotações do PDF(segurança da informação):
+--> pag 9 coloca um sistema mais seguro para fazer o login.
+--> pag 18 começa a mostrar o jeito seguro de fazer (antes explicava como rolava uma invazão)
+
+--------------------------------------------------------------------------------------------
+
+cenaflix/
+│
+├── src/
+│   ├── br/
+│   │   └── com/
+│   │       └── cenaflix/
+│   │           ├── gui/               // Interface gráfica
+│   │           │   ├── Login.java
+│   │           │   ├── CadastroPodcast.java
+│   │           │   └── ListagemPodcast.java
+│   │           │
+│   │           ├── modelo/            // Classes de modelo (entidades)
+│   │           │   ├── Usuario.java
+│   │           │   └── Podcast.java
+│   │           │
+│   │           ├── persistencia/      // Classes de persistência (DAO)
+│   │           │   ├── UsuarioDAO.java
+│   │           │   └── PodcastDAO.java
+│   │           │
+│   │           └── CenaflixApp.java  // Classe principal
+│   │
+│   └── resources/                      // Arquivos de configuração (persistence.xml)
+│
+└── pom.xml                              // Configuração Maven
+##############################################################
+O esqueleto inicial da aplicação já está pronto com as seguintes funcionalidades:
+
+Tela de Login: Valida usuários com permissões (Administrador, Operador, Usuário).
+Modelo de Dados:
+Usuario: Contém nome, senha e tipo de usuário.
+Podcast: Entidade persistida no banco de dados via JPA.
+Persistência: Um DAO que salva e lista os podcasts.
+Agora, vou implementar as duas últimas telas:
+
+Cadastro de Podcast (restrição de permissões)
+Listagem de Podcasts
+
+##############################################################
+/ CenaflixApp.java - Classe principal
+package br.com.cenaflix;
+
+import br.com.cenaflix.gui.Login;
+
+public class CenaflixApp {
+    public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
+    }
+}
+
+// Usuario.java - Modelo de usuário
+package br.com.cenaflix.modelo;
+
+public class Usuario {
+    private String nome;
+    private String senha;
+    private String tipo;
+    
+    public Usuario(String nome, String senha, String tipo) {
+        this.nome = nome;
+        this.senha = senha;
+        this.tipo = tipo;
+    }
+    
+    public String getNome() { return nome; }
+    public String getSenha() { return senha; }
+    public String getTipo() { return tipo; }
+}
+
+// Podcast.java - Modelo de podcast
+package br.com.cenaflix.modelo;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Podcast {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String produtor;
+    private String nomeEpisodio;
+    private int numeroEpisodio;
+    private String duracao;
+    private String url;
+    
+    // Getters e Setters
+    public int getId() { return id; }
+    public void setProdutor(String produtor) { this.produtor = produtor; }
+    public String getProdutor() { return produtor; }
+    public void setNomeEpisodio(String nomeEpisodio) { this.nomeEpisodio = nomeEpisodio; }
+    public String getNomeEpisodio() { return nomeEpisodio; }
+    public void setNumeroEpisodio(int numeroEpisodio) { this.numeroEpisodio = numeroEpisodio; }
+    public int getNumeroEpisodio() { return numeroEpisodio; }
+    public void setDuracao(String duracao) { this.duracao = duracao; }
+    public String getDuracao() { return duracao; }
+    public void setUrl(String url) { this.url = url; }
+    public String getUrl() { return url; }
+}
+
+// PodcastDAO.java - Persistência de podcast
+package br.com.cenaflix.persistencia;
+
+import br.com.cenaflix.modelo.Podcast;
+import jakarta.persistence.*;
+import java.util.List;
+
+public class PodcastDAO {
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("Cenaflix");
+    
+    public void salvar(Podcast podcast) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(podcast);
+        em.getTransaction().commit();
+        em.close();
+    }
+    
+    public List<Podcast> listarTodos() {
+        EntityManager em = emf.createEntityManager();
+        List<Podcast> lista = em.createQuery("FROM Podcast", Podcast.class).getResultList();
+        em.close();
+        return lista;
+    }
+}
+
+// Login.java - Tela de login
+package br.com.cenaflix.gui;
+
+import br.com.cenaflix.modelo.Usuario;
+import javax.swing.*;
+import java.awt.event.*;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Login extends JFrame {
+    private JTextField txtUsuario;
+    private JPasswordField txtSenha;
+    private JButton btnLogin;
+    private Map<String, Usuario> usuarios;
+    
+    public Login() {
+        setTitle("Login - Cenaflix");
+        setSize(300, 200);
+        setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        usuarios = new HashMap<>();
+        usuarios.put("admin", new Usuario("admin", "123", "Administrador"));
+        usuarios.put("operador", new Usuario("operador", "123", "Operador"));
+        usuarios.put("usuario", new Usuario("usuario", "123", "Usuário"));
+        
+        JLabel lblUsuario = new JLabel("Usuário:");
+        lblUsuario.setBounds(30, 30, 80, 25);
+        add(lblUsuario);
+        
+        txtUsuario = new JTextField();
+        txtUsuario.setBounds(100, 30, 150, 25);
+        add(txtUsuario);
+        
+        JLabel lblSenha = new JLabel("Senha:");
+        lblSenha.setBounds(30, 70, 80, 25);
+        add(lblSenha);
+        
+        txtSenha = new JPasswordField();
+        txtSenha.setBounds(100, 70, 150, 25);
+        add(txtSenha);
+        
+        btnLogin = new JButton("Entrar");
+        btnLogin.setBounds(100, 110, 100, 30);
+        add(btnLogin);
+        
+        btnLogin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                autenticar();
+            }
+        });
+    }                                                                                                                      <--------#### Aqui está oque é importante
+    
+    private void autenticar() {
+        String nome = txtUsuario.getText();
+        String senha = new String(txtSenha.getPassword());
+        
+        if (usuarios.containsKey(nome) && usuarios.get(nome).getSenha().equals(senha)) {
+            Usuario usuario = usuarios.get(nome);
+            JOptionPane.showMessageDialog(this, "Olá " + usuario.getNome() + ", sua permissão é de " + usuario.getTipo() + ". Seja bem-vindo!");
+            new CadastroPodcast(usuario).setVisible(true);
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuário ou senha inválidos.");
+        }
+    }
+}
+
+// CadastroPodcast.java - Tela de cadastro de podcast
+package br.com.cenaflix.gui;
+
+import br.com.cenaflix.modelo.Podcast;
+import br.com.cenaflix.persistencia.PodcastDAO;
+import br.com.cenaflix.modelo.Usuario;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class CadastroPodcast extends JFrame {
+    private JTextField txtProdutor, txtNomeEpisodio, txtNumeroEpisodio, txtDuracao, txtUrl;
+    private JButton btnSalvar, btnListar;
+    private Usuario usuario;
+    
+    public CadastroPodcast(Usuario usuario) {
+        this.usuario = usuario;
+        setTitle("Cadastro de Podcast");
+        setSize(400, 400);
+        setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        JLabel lblProdutor = new JLabel("Produtor:");
+        lblProdutor.setBounds(30, 30, 100, 25);
+        add(lblProdutor);
+        txtProdutor = new JTextField();
+        txtProdutor.setBounds(150, 30, 200, 25);
+        add(txtProdutor);
+        
+        JLabel lblNomeEpisodio = new JLabel("Nome do Episódio:");
+        lblNomeEpisodio.setBounds(30, 70, 120, 25);
+        add(lblNomeEpisodio);
+        txtNomeEpisodio = new JTextField();
+        txtNomeEpisodio.setBounds(150, 70, 200, 25);
+        add(txtNomeEpisodio);
+        
+        JLabel lblNumeroEpisodio = new JLabel("Número do Episódio:");
+        lblNumeroEpisodio.setBounds(30, 110, 120, 25);
+        add(lblNumeroEpisodio);
+        txtNumeroEpisodio = new JTextField();
+        txtNumeroEpisodio.setBounds(150, 110, 200, 25);
+        add(txtNumeroEpisodio);
+        
+        JLabel lblDuracao = new JLabel("Duração:");
+        lblDuracao.setBounds(30, 150, 100, 25);
+        add(lblDuracao);
+        txtDuracao = new JTextField();
+        txtDuracao.setBounds(150, 150, 200, 25);
+        add(txtDuracao);
+        
+        JLabel lblUrl = new JLabel("URL:");
+        lblUrl.setBounds(30, 190, 100, 25);
+        add(lblUrl);
+        txtUrl = new JTextField();
+        txtUrl.setBounds(150, 190, 200, 25);
+        add(txtUrl);
+        
+        btnSalvar = new JButton("Salvar");
+        btnSalvar.setBounds(80, 250, 100, 30);
+        btnSalvar.setEnabled(!usuario.getTipo().equals("Usuário"));
+        add(btnSalvar);
+        
+        btnListar = new JButton("Listar");
+        btnListar.setBounds(200, 250, 100, 30);
+        add(btnListar);
+        
+        btnSalvar.addActionListener(e -> salvarPodcast());
+        btnListar.addActionListener(e -> new ListagemPodcast().setVisible(true));
+    }
+    
+    private void salvarPodcast() {
+        Podcast podcast = new Podcast();
+        podcast.setProdutor(txtProdutor.getText());
+        podcast.setNomeEpisodio(txtNomeEpisodio.getText());
+        podcast.setNumeroEpisodio(Integer.parseInt(txtNumeroEpisodio.getText()));
+        podcast.setDuracao(txtDuracao.getText());
+        podcast.setUrl(txtUrl.getText());
+        
+        PodcastDAO dao = new PodcastDAO();
+        dao.salvar(podcast);
+        JOptionPane.showMessageDialog(this, "Podcast cadastrado com sucesso!");
+    }
+}
+
+// ListagemPodcast.java - Tela de listagem de podcasts
+package br.com.cenaflix.gui;
+
+import br.com.cenaflix.modelo.Podcast;
+import br.com.cenaflix.persistencia.PodcastDAO;
+import javax.swing.*;
+import java.awt.*;
+import java.util.List;
+
+public class ListagemPodcast extends JFrame {
+    public ListagemPodcast() {
+        setTitle("Listagem de Podcasts");
+        setSize(600, 400);
+        setLayout(new BorderLayout());
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
+        PodcastDAO dao = new PodcastDAO();
+        List<Podcast> lista = dao.listarTodos();
+        
+        String[] colunas = {"ID", "Produtor", "Nome do Episódio", "Número", "Duração", "URL"};
+        String[][] dados = new String[lista.size()][6];
+        
+        for (int i = 0; i < lista.size(); i++) {
+            Podcast p = lista.get(i);
+            dados[i][0] = String.valueOf(p.getId());
+            dados[i][1] = p.getProdutor();
+            dados[i][2] = p.getNomeEpisodio();
+            dados[i][3] = String.valueOf(p.getNumeroEpisodio());
+            dados[i][4] = p.getDuracao();
+            dados[i][5] = p.getUrl();
+        }
+        
+        JTable tabela = new JTable(dados, colunas);
+        JScrollPane scrollPane = new JScrollPane(tabela);
+        add(scrollPane, BorderLayout.CENTER);
+    }
+}
+----------------------------------------------------------------------------------------------------------
+--> O plano é se basear no chat pdf segurança da informação e tentar implementar. # vou começar um 
+chatgpt novo com meu codigo da tentativa. 
+
+https://www.youtube.com/playlist?list=PLTfMci2zQafAK0Rk-Su8gxyBBlkTLdUUp  --> Aqui tem alguma 
+coisa atual e interessante. Dar uma olhada sem compromisso
+
+Para criar uma tela de login em Java Swing que utilize JPA (Java Persistence API) para validação do usuário, você pode seguir este exemplo, que complementa seu código fornecido. A ideia é implementar a lógica de autenticação ao clicar no botão de login.
+
+1. Importe as bibliotecas do JPA no início do seu arquivo:
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.swing.JOptionPane;
+
+1. Adicione a lógica de autenticação no método que será chamado quando o botão de login for pressionado. Você pode fazer isso dentro do Login:
+
+btnLogin.addActionListener(evt -> {
+String login = pfLogin.getText();
+String senha = new String(pfSenha.getPassword());
+
+if (authenticateUser(login, senha)) {
+JOptionPane.showMessageDialog(this, "Login bem-sucedido!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+// Aqui você pode abrir a próxima tela da sua aplicação.
+} else {
+JOptionPane.showMessageDialog(this, "Usuário ou senha inválidos!", "Erro", JOptionPane.ERROR_MESSAGE);
+}
+});
+
+1. Implemente o método authenticateUser para validar o usuário utilizando JPA:
+
+private boolean authenticateUser(String login, String senha) {
+EntityManagerFactory emf = Persistence.createEntityManagerFactory("sua_unidade_de_persistencia");
+EntityManager em = emf.createEntityManager();
+
+try {
+// Supondo que você tenha uma classe Usuario com campos `login` e `senha`
+String jpql = "SELECT u FROM Usuario u WHERE u.login = :login AND u.senha = :senha";
+Query query = em.createQuery(jpql);
+query.setParameter("login", login);
+query.setParameter("senha", senha); // Você pode querer aplicar criptografia aqui.
+
+return query.getResultList().size() > 0; // Retorna verdadeiro se um usuário for encontrado
+} catch (Exception e) {
+e.printStackTrace();
+return false;
+} finally {
+em.close();
+emf.close();
+}
+}
+
+Completo
+
+Aqui está o trecho completo com as adições que você precisa para ter uma tela de login funcional:
+
+package uc10ativ03.gui;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.swing.JOptionPane;
+
+public class Login extends javax.swing.JFrame {
+
+public Login() {
+initComponents();
+btnLogin.addActionListener(evt -> {
+String login = pfLogin.getText();
+String senha = new String(pfSenha.getPassword());
+
+if (authenticateUser(login, senha)) {
+JOptionPane.showMessageDialog(this, "Login bem-sucedido!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+// Aqui você pode abrir a próxima tela da sua aplicação.
+} else {
+JOptionPane.showMessageDialog(this, "Usuário ou senha inválidos!", "Erro", JOptionPane.ERROR_MESSAGE);
+}
+});
+}
+
+private boolean authenticateUser(String login, String senha) {
+EntityManagerFactory emf = Persistence.createEntityManagerFactory("sua_unidade_de_persistencia");
+EntityManager em = emf.createEntityManager();
+
+try {
+String jpql = "SELECT u FROM Usuario u WHERE u.login = :login AND u.senha = :senha";
+Query query = em.createQuery(jpql);
+query.setParameter("login", login);
+query.setParameter("senha", senha); // Considere uma abordagem de hashing para segurança
+
+return query.getResultList().size() > 0;
+} catch (Exception e) {
+e.printStackTrace();
+return false;
+} finally {
+em.close();
+emf.close();
+}
+}
+
+// O resto do seu código permanece inalterado
+}
+
+Notas:
+
+1. Segurança: Para a senha, é sempre melhor armazená-la na forma criptografada. Considere usar um hash seguro em vez de armazená-la em texto simples.
+
+2. Persistence Unit: Certifique-se de que o nome da unidade de persistência ("sua_unidade_de_persistencia") corresponde ao que você definiu no persistence.xml.
+
+3. Tratamento de exceções: Melhore o tratamento de exceções para um ambiente de produção.
+
+Esse exemplo fornece uma estrutura básica para autenticação de usuários usando Java Swing e JPA. Você pode expandir ou modificar conforme necessário para se adequar aos requisitos do seu projeto.
+
+
+

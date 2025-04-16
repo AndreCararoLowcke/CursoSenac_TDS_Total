@@ -1,0 +1,155 @@
+PDF: Olá! Seja bem-vindo ao nosso guia sobre Desenvolvimento de Sistemas e Processo de Design! Aqui, você encontrará informações valiosas sobre a importância da interação do usuário e como um bom design pode impactar a aceitação do software. Vamos explorar juntos as etapas do processo de design, começando pela imersão e entendimento do público-alvo. Aproveite a leitura e inspire-se para criar interfaces incríveis!
+
+Aqui estão três perguntas que você pode fazer sobre o arquivo:
+
+1. Quais são as principais etapas do processo de design em desenvolvimento de sistemas?
+2. Como a usabilidade e a estética influenciam a aceitação de um software?
+3. O que um desenvolvedor deve considerar ao entender o público-alvo para um aplicativo?
+
+Me: Contexto
+Você começou a trabalhar como estagiário em experiência de usuário há pouco tempo em uma empresa. Nessa empresa, notou-se que, no refeitório, será necessário um pequeno sistema para cadastrar os alimentos que chegam. Dessa forma, foi solicitado a você que realize uma pesquisa a fim de coletar as informações necessárias para que a equipe de desenvolvimento tenha subsídios para trabalhar. As informações coletadas serão usadas em futuros desenvolvimentos para o mesmo tipo de sistema, então é importante diversificar e deixar o documento bem completo, com personas e mapas de empatia. Você recebeu, portanto, as duas telas da equipe de design e deverá utilizar essas telas para introduzir os usuários à sua pesquisa.
+
+Descrição: A imagem mostra uma tela wireframe com um quadrado no canto superior esquerdo escrito “Logo da empresa”. Ao centro da tela há um rótulo “Nome de usuário” e abaixo, um retângulo simbolizando campo de texto; abaixo há um rótulo “Senha” e abaixo, um retângulo simbolizando campo de texto. Clique para obter mais opções
+ 
+Descrição: A imagem mostra uma tela semelhante à anterior, em que no canto superior esquerdo há o título “Cadastre seu produto”. Abaixo há um quadrado em branco e abaixo dele, um retângulo simbolizando um botão, com as palavras “Selecionar imagem”. Ao centro da tela há um rótulo “Nome do produto” e abaixo um retângulo simbolizando campo de texto; abaixo, há um rótulo “Quantidade em estoque” e abaixo, um retângulo simbolizando campo de texto. Na parte direita da tela, há um rótulo “Descrição do produto” e abaixo, um campo de texto com várias linhas; abaixo, um rótulo “Notas adicionais” e abaixo um campo de texto com várias linhas. Clique para obter mais opções
+ 
+Atividade
+Desenvolva uma pesquisa utilizando o Google Forms com no mínimo cinco perguntas, apresentando o layout e as perguntas a serem respondidas e a coleta das respostas a elas. Após isso, utilize o modelo de documento presente em Conteúdos > Material Complementar > Atividade 1 – Modelo para criar o relatório com as respostas, as personas e os mapas de empatia.
+Dica: caso tenha dificuldades com o Google Forms, assista ao vídeo sobre a criação de pesquisas presente no conteúdo UX research e pesquisa qualitativa desta unidade.
+ 
+
+PDF: Para desenvolver a pesquisa no Google Forms e coletar informações relevantes para o sistema de cadastro de alimentos no refeitório, você pode seguir o seguinte modelo de perguntas e layout:
+
+### Layout da Pesquisa no Google Forms
+
+**Título da Pesquisa:** Pesquisa de Usuário para Sistema de Cadastro de Alimentos
+
+**Descrição:** Esta pesquisa tem como objetivo coletar informações sobre as necessidades e preferências dos usuários em relação ao sistema de cadastro de alimentos que será implementado no refeitório. Suas respostas são muito importantes para garantir que o sistema atenda às suas expectativas.
+
+### Perguntas da Pesquisa
+
+1. **Qual é o seu nome?**
+   - Tipo: Resposta curta
+
+2. **Qual é o seu cargo na empresa?**
+   - Tipo: Resposta curta
+
+3. **Com que frequência você utiliza o refeitório?**
+   - Tipo: Múltipla escolha
+     - Opções:
+       - Diariamente
+       - Algumas vezes por semana
+       - Raramente
+       - Nunca
+
+4. **Quais informações você considera mais importantes ao cadastrar um alimento? (Selecione todas as que se aplicam)**
+   - Tipo: Caixa de seleção
+     - Opções:
+       - Nome do produto
+       - Quantidade em estoque
+       - Descrição do produto
+       - Notas adicionais
+       - Imagem do produto
+
+5. **Você tem alguma sugestão ou comentário adicional sobre o sistema de cadastro de alimentos?**
+   - Tipo: Parágrafo
+
+### Coleta de Respostas
+
+Após criar a pesquisa no Google Forms, você pode compartilhar o link com os usuários para que eles possam responder. As respostas serão coletadas automaticamente e você poderá visualizá-las em gráficos e tabelas no próprio Google Forms.
+
+### Relatório
+
+Após a coleta das respostas, você pode utilizar o modelo de documento para criar o relatório. O relatório deve incluir:
+
+1. **Introdução:** Breve descrição do objetivo da pesquisa.
+2. **Resultados da Pesquisa:** Apresentação das respostas coletadas, com gráficos e tabelas, se necessário.
+3. **Personas:** Criação de personas baseadas nas respostas dos usuários. Por exemplo:
+   - **Persona 1:** "João, 30 anos, funcionário do departamento de vendas, utiliza o refeitório diariamente."
+   - **Persona 2:** "Maria, 25 anos, estagiária, utiliza o refeitório algumas vezes por semana."
+
+4. **Mapas de Empatia:** Criação de mapas de empatia para cada persona, abordando o que elas pensam, sentem, dizem e fazem em relação ao uso do sistema de cadastro de alimentos.
+
+5. **Conclusão:** Resumo das principais descobertas e recomendações para a equipe de desenvolvimento.
+
+### Dicas Adicionais
+
+- Certifique-se de que as perguntas sejam claras e objetivas.
+- Teste a pesquisa antes de enviá-la para garantir que tudo esteja funcionando corretamente.
+- Considere a privacidade dos respondentes e informe-os sobre como as informações serão utilizadas.
+
+Com essas orientações, você estará bem preparado para realizar a pesquisa e criar um relatório completo que ajudará a equipe de desenvolvimento a entender melhor as necessidades dos usuários.
+
+Me: Quais são as principais etapas do processo de design em desenvolvimento de sistemas?
+
+PDF: As principais etapas do processo de design em desenvolvimento de sistemas incluem:
+
+1. **Imersão ou Entendimento**: Esta etapa inicial envolve a compreensão do problema a ser resolvido e do público-alvo. O desenvolvedor deve investigar as necessidades dos usuários e as soluções existentes no mercado.
+
+2. **Definição de Requisitos**: Após a imersão, é importante definir claramente os requisitos do sistema, levando em consideração as necessidades dos usuários e as funcionalidades desejadas.
+
+3. **Ideação**: Nesta fase, são geradas ideias e soluções criativas para o problema identificado. Isso pode incluir brainstorming e outras técnicas de geração de ideias.
+
+4. **Prototipagem**: A criação de protótipos é uma etapa crucial, onde as ideias são transformadas em representações tangíveis do sistema. Isso pode incluir wireframes, maquetes ou protótipos interativos.
+
+5. **Testes de Usabilidade**: Os protótipos são testados com usuários reais para coletar feedback sobre a usabilidade e a experiência do usuário. Essa etapa é fundamental para identificar problemas e oportunidades de melhoria.
+
+6. **Iteração**: Com base no feedback dos testes, o design é refinado e ajustado. Essa etapa pode ser repetida várias vezes para garantir que o produto final atenda às expectativas dos usuários.
+
+7. **Implementação**: Após a validação do design, o sistema é desenvolvido e implementado. Isso envolve a codificação e a integração de todas as funcionalidades definidas.
+
+8. **Avaliação e Manutenção**: Após o lançamento do sistema, é importante monitorar seu desempenho e coletar feedback contínuo dos usuários para realizar melhorias e atualizações conforme necessário.
+
+Essas etapas são interativas e podem ser revisitadas conforme necessário, garantindo que o design permaneça centrado no usuário e atenda às suas necessidades de forma eficaz.
+
+Me: Como a usabilidade e a estética influenciam a aceitação de um software?
+
+PDF: A usabilidade e a estética desempenham papéis cruciais na aceitação de um software, influenciando diretamente a experiência do usuário e a percepção do produto. Aqui estão algumas maneiras pelas quais esses fatores impactam a aceitação:
+
+### Usabilidade
+
+1. **Facilidade de Uso**: Um software com boa usabilidade é intuitivo e fácil de navegar. Isso significa que os usuários podem realizar suas tarefas sem frustrações, o que aumenta a satisfação e a probabilidade de uso contínuo.
+
+2. **Eficiência**: Softwares que permitem que os usuários realizem suas tarefas de forma rápida e eficiente tendem a ser mais bem aceitos. A usabilidade envolve a minimização de passos desnecessários e a simplificação de processos, o que melhora a produtividade do usuário.
+
+3. **Redução de Erros**: Um design que considera a usabilidade ajuda a reduzir a ocorrência de erros. Interfaces bem projetadas guiam os usuários e oferecem feedback claro, o que diminui a chance de confusões e frustrações.
+
+4. **Satisfação do Usuário**: Quando os usuários conseguem interagir com o software de maneira fluida e sem dificuldades, sua satisfação aumenta. Isso pode levar a uma maior lealdade ao produto e recomendações positivas.
+
+### Estética
+
+1. **Primeira Impressão**: A estética de um software, incluindo seu design visual e layout, cria a primeira impressão que os usuários têm do produto. Um design atraente pode gerar interesse e curiosidade, incentivando os usuários a explorar mais.
+
+2. **Identidade da Marca**: A estética também está ligada à identidade da marca. Um design visual consistente e atraente pode reforçar a imagem da marca e criar uma conexão emocional com os usuários.
+
+3. **Experiência do Usuário**: A estética contribui para a experiência geral do usuário. Um software visualmente agradável pode tornar a interação mais prazerosa, o que pode aumentar a aceitação e o uso do produto.
+
+4. **Consistência Visual**: A consistência no design visual ajuda os usuários a se orientarem melhor dentro do software. Quando os elementos visuais são uniformes, os usuários podem navegar com mais facilidade, o que melhora a usabilidade.
+
+### Conclusão
+
+Em resumo, a usabilidade e a estética são interdependentes e juntas influenciam a aceitação de um software. Um produto que combina uma interface fácil de usar com um design visual atraente tende a ser mais bem recebido pelos usuários, resultando em maior satisfação, lealdade e sucesso no mercado. Portanto, é essencial que os desenvolvedores e designers considerem ambos os aspectos durante o processo de design.
+
+Me: O que um desenvolvedor deve considerar ao entender o público-alvo para um aplicativo?
+
+PDF: Ao entender o público-alvo para um aplicativo, um desenvolvedor deve considerar diversos fatores que influenciam a experiência do usuário e a eficácia do produto. Aqui estão os principais aspectos a serem levados em conta:
+
+1. **Demografia**: Informações sobre idade, gênero, localização geográfica, nível educacional e ocupação ajudam a moldar o design e as funcionalidades do aplicativo. Diferentes grupos demográficos podem ter necessidades e preferências distintas.
+
+2. **Comportamento do Usuário**: Compreender como o público-alvo interage com tecnologia e aplicativos é fundamental. Isso inclui hábitos de uso, frequência de uso de dispositivos móveis, e preferências em relação a plataformas (iOS, Android, web).
+
+3. **Necessidades e Problemas**: Identificar as necessidades específicas e os problemas que o público-alvo enfrenta é crucial. O aplicativo deve oferecer soluções que realmente atendam a essas necessidades, garantindo que os usuários vejam valor no produto.
+
+4. **Expectativas e Preferências**: Conhecer as expectativas dos usuários em relação à funcionalidade, design e usabilidade do aplicativo pode guiar o desenvolvimento. Isso inclui preferências por interfaces simples, recursos específicos e tipos de feedback.
+
+5. **Nível de Familiaridade com Tecnologia**: Avaliar o nível de conforto e familiaridade do público-alvo com tecnologia pode influenciar o design da interface. Usuários menos experientes podem precisar de uma interface mais intuitiva e orientações claras, enquanto usuários mais experientes podem preferir funcionalidades avançadas.
+
+6. **Cultura e Contexto**: Aspectos culturais podem afetar a forma como os usuários interagem com o aplicativo. Isso inclui considerações sobre linguagem, símbolos, cores e normas sociais que podem variar entre diferentes grupos culturais.
+
+7. **Feedback e Testes**: Realizar testes de usabilidade e coletar feedback do público-alvo durante o desenvolvimento pode fornecer insights valiosos. Isso ajuda a identificar áreas de melhoria e a garantir que o aplicativo atenda às expectativas dos usuários.
+
+8. **Concorrência**: Analisar aplicativos concorrentes que atendem ao mesmo público-alvo pode oferecer informações sobre o que funciona bem e o que pode ser melhorado. Isso ajuda a identificar lacunas no mercado e oportunidades de diferenciação.
+
+### Conclusão
+
+Considerar esses fatores ao entender o público-alvo é essencial para o desenvolvimento de um aplicativo que não apenas atenda às necessidades dos usuários, mas também proporcione uma experiência positiva e envolvente. Um design centrado no usuário, que leva em conta essas variáveis, é fundamental para a aceitação e o sucesso do aplicativo no mercado.
