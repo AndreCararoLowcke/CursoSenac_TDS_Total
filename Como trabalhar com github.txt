@@ -1,0 +1,214 @@
+git pull origin main  --> Caso você tenha alterado algo diretamente no GitHub (como editar arquivos online), 
+faça um pull para trazer essas mudanças para seu computador.
+
+-->  Atualizar o repositório remoto (GitHub)
+Agora, para enviar as mudanças que você fez no seu computador para o GitHub:
+git add .
+git commit -m "Descrição das alterações"
+git push origin main
+
+-->  Passos para criar e enviar uma nova branch
+Criar uma branch → git checkout -b nome-da-branch
+Fazer alterações e commitar → git add . e git commit -m "mensagem"
+Enviar para o GitHub → git push origin nome-da-branch
+
+
+# ✅ PRÉ-REQUISITOS
+
+- Já tem o projeto clonado na sua máquina.
+- Tem acesso ao repositório no GitHub (via SSH ou HTTPS).
+- Está numa branch adequada (nunca trabalhe direto na `main` se estiver em equipe).
+
+---
+
+## 🔁 FLUXO DE TRABALHO PARA TRABALHO EM EQUIPE
+
+### 1. **Atualize seu repositório local**
+Antes de começar qualquer coisa, é bom garantir que sua base está atualizada com o GitHub.
+
+```bash
+git checkout main              # Vai para a branch principal
+git pull origin main           # Atualiza com o que está no GitHub
+```
+
+---
+
+### 2. **Crie uma nova branch para sua tarefa**
+
+```bash
+git checkout -b feat/nome-da-tarefa
+```
+
+> Exemplo: `git checkout -b feat/cadastro-usuarios`
+
+---
+
+### 3. **Faça alterações no código**
+Trabalhe à vontade no projeto. Quando terminar uma parte, faça o commit:
+
+```bash
+git add .                      # Adiciona todas as alterações
+git commit -m "feat: implementa cadastro de usuários"
+```
+
+> Use mensagens de commit claras, seguindo a convenção `feat`, `fix`, `refactor`, `docs`, etc.
+
+---
+
+### 4. **Mantenha sua branch atualizada com a main (se necessário)**
+
+Se outros membros do time também estão trabalhando, é bom trazer as mudanças da `main` para sua branch:
+
+```bash
+git checkout main
+git pull origin main
+git checkout feat/nome-da-tarefa
+git merge main
+```
+
+> Resolva conflitos se houver.
+
+---
+
+### 5. **Suba sua branch para o GitHub**
+
+```bash
+git push origin feat/nome-da-tarefa
+```
+
+---
+
+### 6. **Abra um Pull Request (PR)**
+
+- Vá até o repositório no GitHub
+- Clique em “Compare & pull request”
+- Escreva uma descrição clara do que você fez
+- Peça para alguém revisar (ou faça o merge se for aprovado)
+
+---
+
+### 7. **Merge aprovado? Volte para a main e atualize**
+
+```bash
+git checkout main
+git pull origin main
+```
+
+---
+
+### 8. **Delete a branch local e remota (se quiser)**
+
+```bash
+git branch -d feat/nome-da-tarefa              # Local
+git push origin --delete feat/nome-da-tarefa   # Remoto
+```
+
+---
+
+## 🎯 DICAS EXTRAS
+
+- Use nomes de branch no padrão `feat/`, `fix/`, `refactor/` etc.
+- Faça commits pequenos e frequentes.
+- Escreva mensagens de commit com contexto.
+- Faça rebase ao invés de merge se quiser histórico limpo:
+  ```bash
+  git pull --rebase origin main
+  ```
+
+Se quiser, posso montar um arquivo `.gitignore`, um template de mensagem de commit, ou até um guia README para seu time. Quer que eu te ajude com isso também?
+
+Boa, André! Vou te explicar o que significa cada uma dessas palavras-chave que usamos nas mensagens de **commit**. Essa convenção é baseada no **Conventional Commits**, muito usada em projetos profissionais (especialmente com GitHub, GitLab, CI/CD, etc).
+
+---
+
+## 🚀 TIPOS DE COMMIT MAIS COMUNS
+
+### 🔧 `feat` (feature)
+> **Usado para adicionar uma nova funcionalidade.**
+
+**Exemplo:**
+```bash
+git commit -m "feat: implementa botão de login"
+```
+
+---
+
+### 🐛 `fix`
+> **Usado para corrigir bugs (erros no sistema).**
+
+**Exemplo:**
+```bash
+git commit -m "fix: corrige erro de login ao digitar senha errada"
+```
+
+---
+
+### 🧼 `refactor`
+> **Usado quando você melhora o código sem alterar a funcionalidade.**
+
+**Exemplo:**
+```bash
+git commit -m "refactor: remove código duplicado na função de autenticação"
+```
+
+---
+
+### 📚 `docs`
+> **Usado quando você altera a documentação (README, comentários, etc).**
+
+**Exemplo:**
+```bash
+git commit -m "docs: adiciona instruções de instalação no README"
+```
+
+---
+
+### 🎨 `style`
+> **Usado para mudanças de formatação, como espaços, indentação, etc. Sem alterar o funcionamento.**
+
+**Exemplo:**
+```bash
+git commit -m "style: ajusta identação do arquivo main.java"
+```
+
+---
+
+### 🔁 `chore`
+> **Usado para tarefas rotineiras, que não afetam código ou lógica do app.**  
+Tipo atualização de dependência, configuração, script, etc.
+
+**Exemplo:**
+```bash
+git commit -m "chore: atualiza versão do Maven"
+```
+
+---
+
+### 🧪 `test`
+> **Usado quando você cria ou ajusta testes automatizados.**
+
+**Exemplo:**
+```bash
+git commit -m "test: adiciona testes para a classe UsuarioService"
+```
+
+---
+
+### ⚙️ `build`
+> **Usado quando você muda configurações de build (ex: Gradle, Maven, Webpack).**
+
+**Exemplo:**
+```bash
+git commit -m "build: adiciona plugin do Lombok no pom.xml"
+```
+
+---
+
+## 💡 DICA DE OURO
+
+Você pode até combinar tipos:
+
+```bash
+git commit -m "feat(login): adiciona autenticação via token JWT"
+git commit -m "fix(form): corrige validação do campo e-mail"
+```

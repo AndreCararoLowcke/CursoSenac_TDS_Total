@@ -1,0 +1,35 @@
+[![Freelancer.com.br](https://images.openai.com/thumbnails/df3855ed1049f8e67fae551a8968af9a.jpeg)](https://freelancer.com.br/freelancers/s/automa%C3%A7%C3%A3o-industrial)
+Claro! Aqui estão alguns projetos de automação industrial disponíveis em plataformas de freelancers que podem ser interessantes para você:
+
+---
+
+## 🔧 Projetos de Automação Industrial em Plataformas de Freelancer
+
+### 1. **Automação de Processos de Defesa Ambiental**
+- **Descrição**: Desenvolvimento de automação utilizando CLPs (Siemens, Rockwell), transmissão de dados via rádio e supervisão com sistemas SCADA (WinCC, E3).
+- **Plataforma**: Workana
+- **Link**: [Automação industrial - Workana](https://www.workana.com/pt/job/automacao-industrial)
+
+### 2. **Sistema de Automação de Processos**
+- **Descrição**: Criação de um robô para automatizar rotinas em sistema SAP, substituindo tarefas manuais por processos automatizados.
+- **Plataforma**: Workana
+- **Link**: [Sistema de automação de processos - Workana](https://www.workana.com/pt/job/sistema-de-automacao-de-processos)
+
+### 3. **Projetista de Automação Industrial**
+- **Descrição**: Realização de projetos e programação em geral relacionados à automação industrial.
+- **Plataforma**: Freelancer
+- **Link**: [Projetista de automação industrial - Freelancer](https://www.freelancer.com/projects/robotic-process-automation/projetista-automa-industrial)
+
+---
+
+## 🌐 Plataformas para Encontrar Mais Projetos
+
+Além dos projetos listados acima, você pode explorar as seguintes plataformas para encontrar mais oportunidades na área de automação industrial:
+
+- **Freelancer.com.br**: [Freelancer.com.br - Automação Industrial](https://freelancer.com.br/freelancers/s/automa%C3%A7%C3%A3o-industrial)
+- **Automação Expert**: [Automação Expert - Sistema de Freelancers](https://sistema.automacaoexpert.com/)
+- **Fiverr**: [Fiverr - Programadores de PLC](https://br.fiverr.com/hire/plc-programming)
+
+---
+
+Se precisar de ajuda para se cadastrar nessas plataformas ou para elaborar propostas eficazes para esses projetos, estou à disposição para auxiliá-lo! 
