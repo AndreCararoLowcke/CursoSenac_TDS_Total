@@ -1,0 +1,437 @@
+PDF: Oi, tudo bem? Aqui estamos falando sobre manipulação de dados em banco de dados, cobrindo comandos como INSERT, UPDATE, DELETE e SELECT, usando SQL. É uma parte essencial para gerenciar informações de forma eficiente, principalmente ao criar, modificar ou remover dados dentro de sistemas. 
+Seria legal fazer um resumo desse assunto? 
+Como os comandos de manipulação influenciam na rotina de administração de bancos de dados? 
+E quais pontos você acha mais relevantes para entender essa forma de gerenciar informações?
+
+Me: resuma os pontos importante para mim
+
+PDF: Claro! Aqui está um resumo dos pontos mais importantes sobre manipulação de dados em SQL:
+
+1. **Inserção de Dados (INSERT)**:
+   - Utilizado para adicionar novos registros em uma tabela.
+   - Sintaxe básica: `INSERT INTO nome_da_tabela VALUES (valores);`
+   - Pode inserir dados em todas as colunas ou apenas em colunas específicas.
+   - Valores numéricos não precisam de aspas, enquanto valores de texto devem estar entre aspas simples.
+   - Conhecer a estrutura da tabela é essencial para inserir corretamente os dados.
+
+2. **Atualização de Dados (UPDATE)**:
+   - Comando responsável por modificar registros existentes.
+   - Sintaxe: 
+     ```
+     UPDATE nome_da_tabela
+     SET coluna1 = valor1, coluna2 = valor2, ...
+     WHERE condição;
+     ```
+   - Pode atualizar um único registro ou múltiplos, dependendo da condição.
+   - Uso deve ser feito com cuidado, pois alterações são permanentes e não podem ser desfeitas facilmente.
+
+3. **Exclusão de Dados (DELETE)**:
+   - Remover registros de uma tabela.
+   - Sintaxe: `DELETE FROM nome_da_tabela WHERE condição;`
+   - Para excluir todos os registros, basta omitir a cláusula WHERE, mas isso deve ser feito com atenção, pois a ação é irreversível.
+   - Importante sempre usar a condição adequada para evitar apagar dados indevidamente.
+
+4. **Leitura de Dados (SELECT)**:
+   - Usado para consultar registros de uma tabela.
+   - Exemplo básico: `SELECT * FROM nome_da_tabela;`
+   - Fundamental para verificar o conteúdo atual do banco antes ou após manipulações.
+
+5. **Cuidados Gerais**:
+   - Conhecer bem a estrutura das tabelas (campos e tipos de dados).
+   - Usar o ponto e vírgula (`;`) ao final de cada comando.
+   - Manipulação de dados deve ser feita com atenção para evitar perdas ou alterações indesejadas.
+
+Esses comandos são a base da manipulação de dados em bancos, permitindo criar, modificar, consultar e remover informações de forma eficiente e controlada.
+
+Me: gostaria de saber como isto é aplicado para administrar o servidor de uma empresa
+
+PDF: A manipulação de dados em SQL é fundamental para a administração de servidores de bancos de dados em uma empresa. Ela permite gerenciar, manter, e garantir a integridade das informações essenciais para as operações do negócio. Veja como esses conceitos são aplicados na prática:
+
+1. **Inserção de Dados (INSERT)**:
+   - Inserir novos registros de clientes, funcionários, produtos, vendas, fornecedores, etc.
+   - Quando novos dados chegam, eles são adicionados ao banco de forma estruturada, facilitando consultas e análises futuras.
+   - Exemplo: inserir um novo cliente no sistema de cadastro da empresa.
+
+2. **Atualização de Dados (UPDATE)**:
+   - Manter os dados atualizados conforme mudanças ocorrem, como alterações de endereço, status do pedido, preço de produtos, etc.
+   - Garantir que informações estejam corretas e atuais é importante para a tomada de decisão e operações diárias.
+   - Exemplo: atualizar o estoque após uma venda ou modificar dados de contato de um cliente.
+
+3. **Exclusão de Dados (DELETE)**:
+   - Remover registros que não são mais necessários, como pedidos cancelados, clientes inativos ou dados duplicados.
+   - Essa operação ajuda a manter o banco limpo, rápido e eficiente.
+   - É importante usar condições específicas para evitar exclusões não intencionais.
+
+4. **Consulta de Dados (SELECT)**:
+   - Realizar consultas para gerar relatórios, verificar o status de operações, analisar vendas, avaliar o desempenho da equipe, etc.
+   - Essas informações suportam a tomada de decisões estratégicas e operacionais.
+
+5. **Segurança e Controle**:
+   - O gerenciamento do banco inclui restrições de acesso (quem pode inserir, alterar, excluir ou consultar).
+   - Uso de comandos e políticas que garantam que apenas usuários autorizados manipulem os dados, preservando a integridade e confidencialidade.
+
+6. **Automação e Rotinas**:
+   - Inserções, atualizações e exclusões podem ser automatizadas por meio de scripts, facilitando tarefas rotineiras e evitando erros humanos.
+   - Programação de backups, rotinas de limpeza de dados, auditorias são suportadas por comandos SQL.
+
+**Resumindo**, esses comandos permitem que os administradores de servidores gerenciem de forma eficiente toda a base de dados, garantindo que ela esteja atualizada, consistente, segura e pronta para suportar todas as operações da empresa. Assim, a manipulação de dados é uma ferramenta central na administração de sistemas corporativos.
+
+Me: Atividade 3
+
+ 
+
+Contexto
+
+Com o banco de dados para o sistema hospitalar completamente montado, é necessário incluir dados para realizar os devidos testes e validar sua viabilidade quanto a sistema. Nesta etapa, também é importante realizar a separação de alguns scripts iniciais para o banco, com os dados que serão necessários a um povoamento inicial do sistema.
+
+ 
+
+Atividade
+
+Parte 1
+
+Crie o script de povoamento geral das tabelas desenvolvidas na atividade 2. Observe as seguintes regras:
+
+Inclua ao menos dez médicos.
+Inclua ao menos sete especialidades (considere que “entre as especialidades há pediatria, clínica geral, gastroenterologia e dermatologia”).
+Inclua ao menos dez pacientes.
+Inclua dez consultas de diferentes pacientes e diferentes médicos (alguns pacientes realizam mais do que uma consulta). As consultas devem ter ocorrido entre 01/01/2017 e 31/12/2022.
+Inclua ao menos cinco consultas, que devem ter receituário com dois ou mais medicamentos.
+Inclua ao menos quatro convênios médicos, associe ao menos cinco pacientes e cinco consultas a convênios existentes.
+Inclua ao menos três quartos.
+Inclua ao menos sete internações. Pelo menos dois pacientes devem ter se internado mais de uma vez. As internações devem ter ocorrido entre 01/01/2017 e 31/12/2022.
+Considerando que, “em princípio, o hospital trabalha com apartamentos, quartos duplos e enfermaria”, inclua ao menos esses três tipos com valores diferentes.
+Inclua dados de seis profissionais de enfermaria. Associe cada internação a pelo menos dois enfermeiros.
+Os dados de tipo de quarto, convênio e especialidade são essenciais para a operação do sistema e, portanto, devem ser povoados assim que o sistema for instalado.
+ 
+
+Crie um script para o povoamento básico (dos itens essenciais para a implantação do sistema).
+
+Crie um script para o povoamento geral de dados (parte 1). Caso necessário, utilize sites geradores de CPF e de CNPJ para ajudar na definição de dados (pesquise “gerar CNPJ e CPF”na internet, poisvocê precisará disso para criar os CPFs dos pacientes/enfermeiros e CNPJ dos convênios). Utilize nomes significativos para as pessoas cadastradas. Aplique dados os mais próximos possíveis da realidade.
+
+ 
+
+Parte 2
+
+Realize algumas alterações nas tabelas e nos dados usando comandos de atualização e exclusão:
+
+Crie uma coluna “em atividade” com o tipo bit na tabela “médicos”, na qual o 0 (zero) representa o “não” e o 1 representa o “sim”. Crie o comando SQL para atualizar ao menos dois médicos com “não” e o restante com “sim”.
+Crie um comando SQL para atualizar as datas de alta nas internações em quartos de enfermaria para três dias após a entrada.
+Crie comandos SQL para excluir o último convênio cadastrado. Note que também será necessáriaa exclusão das consultas relacionadas a esse convênio.
+Crie um novo script com as operações em SQL solicitadas anteriormente (parte 2).
+
+ 
+
+Entrega
+
+No espaço dedicado à entrega da atividade, envie o arquivo compactado (RAR, ZIP ou 7z) com os seguintes scripts:
+
+Script de criação do banco de dados desenvolvido na atividade 2
+Script de povoamento básico (itens essenciais)
+Script de povoamento geral (inserts) da parte 1
+Script com os comandos SQL da parte 2
+Observação:os scripts prontos devem estar estruturados de tal maneira que sua execução total – sem alterações – seja bem-sucedida, ou seja, ao clicar no botão de execução do script, ele rode sem apresentar erros no console de saída.
+
+ 
+
+Dica de leitura
+
+Para esta atividade, leia os seguintes materiais:
+
+Linguagem SQL
+Manipulação de dados
+ 
+
+Avaliação
+
+Nesta atividade, você será avaliado nos indicadores:
+
+Manipula dados em tabelas de banco de dados relacional (insert, delete, update) conforme comandos SQL e requisitos do sistema.
+Cria arquivo de scripts reutilizável de criação e população de dados conforme comandos SQL e requisitos do sistema.
+
+PDF: Para realizar a atividade proposta, você deverá criar scripts SQL que populam o banco de dados do sistema hospitalar, de acordo com as regras e critérios estabelecidos. A seguir, apresento um guia detalhado para cada parte da atividade, incluindo exemplos de comandos SQL que podem ser adaptados ao seu banco, com base nas informações do conteúdo do PDF e nas regras específicas do exercício.
+
+---
+
+### Parte 1: Script de povoamento geral das tabelas
+
+Este script deve incluir os seguintes itens:
+
+1. **Inserção de ao menos 10 médicos.**
+2. **Inserção de ao menos 7 especialidades.**
+3. **Inserção de ao menos 10 pacientes.**
+4. **Inserção de 10 consultas de diferentes pacientes e médicos, ocorridas entre 01/01/2017 e 31/12/2022.**
+5. **Inserção de ao menos 5 consultas com receituário contendo dois ou mais medicamentos.**
+6. **Inserção de 4 convênios médicos, associando-os a 5 pacientes e 5 consultas.**
+7. **Inserção de 3 quartos.**
+8. **Inserção de pelo menos 7 internações, sendo que pelo menos 2 pacientes tenham mais de uma internação, ocorridas entre 01/01/2017 e 31/12/2022.**
+9. **Inclusão de tipos de quartos (apartamento, quarto duplo, enfermaria), cada um com valores diferentes.**
+10. **Inserção de 6 profissionais de enfermaria, associando cada internação a pelo menos dois enfermeiros.**
+
+---
+
+### Exemplo de script para povoamento inicial (parte 1)
+
+```sql
+-- Inserindo especialidades
+INSERT INTO especialidade (descricao) VALUES
+('Pediatria'),
+('Clínica Geral'),
+('Gastroenterologia'),
+('Dermatologia'),
+('Cardiologia'),
+('Neurologia'),
+('Ortopedia');
+
+-- Inserindo médicos
+INSERT INTO medico (nome, sobrenome, cpf, telefone, especialidade_id) VALUES
+('João', 'Silva', '111.111.111-11', '11999999999', 1),
+('Maria', 'Oliveira', '222.222.222-22', '11988888888', 2),
+('Carlos', 'Pereira', '333.333.333-33', '11977777777', 3),
+('Ana', 'Souza', '444.444.444-44', '11966666666', 4),
+('Pedro', 'Alves', '555.555.555-55', '11955555555', 5),
+('Luana', 'Farias', '666.666.666-66', '11944444444', 6),
+('José', 'Costa', '777.777.777-77', '11933333333', 7),
+('Fernanda', 'Lima', '888.888.888-88', '11922222222', 2),
+('Ricardo', 'Martins', '999.999.999-99', '11911111111', 3),
+('Juliana', 'Fernandes', '000.000.000-00', '11900000000', 1);
+
+-- Inserindo pacientes
+INSERT INTO paciente (nome, sobrenome, cpf, data_nascimento, sexo) VALUES
+('Lucas', 'Santos', '123.456.789-00', '1985-05-10', 'M'),
+('Laura', 'Costa', '234.567.890-11', '1992-08-21', 'F'),
+('Mateus', 'Gomes', '345.678.901-22', '1978-12-05', 'M'),
+('Amanda', 'Ferreira', '456.789.012-33', '1988-07-19', 'F'),
+('Felipe', 'Rodrigues', '567.890.123-44', '1990-03-30', 'M'),
+('Sofia', 'Lima', '678.901.234-55', '1995-11-11', 'F'),
+('Carlos', 'Medeiros', '789.012.345-66', '1980-02-25', 'M'),
+('Mariana', 'Barros', '890.123.456-77', '1975-09-09', 'F'),
+('Rafael', 'Silva', '901.234.567-88', '1983-04-13', 'M'),
+('Larissa', 'Pereira', '012.345.678-99', '1998-06-24', 'F');
+
+-- Inserindo convênios
+INSERT INTO convenio (descricao, cnpj) VALUES
+('Unimed', '12.345.678/0001-99'),
+('Amil', '98.765.432/0001-88'),
+('Bradesco Saúde', '23.456.789/0001-77'),
+('SulAmérica', '87.654.321/0001-66');
+
+-- Associando convênios a pacientes
+UPDATE paciente SET convenio_id = 1 WHERE id IN (1, 3, 5, 7, 9);
+UPDATE paciente SET convenio_id = 2 WHERE id IN (2, 4);
+UPDATE paciente SET convenio_id = 3 WHERE id IN (6, 8);
+UPDATE paciente SET convenio_id = 4 WHERE id = 10;
+
+-- Inserindo quartos
+INSERT INTO quarto (tipo, valor) VALUES
+('Apartamento', 3000),
+('Quarto duplo', 2000),
+('Enfermaria', 1000);
+
+-- Inserindo hospitais ou unidades de internação (presumido tabela)
+INSERT INTO interna (quarto_id, paciente_id, data_entrada, data_saida, motivo) VALUES
+(1, 1, '2018-03-15', '2018-03-20', 'Cirurgia'),
+(2, 2, '2019-07-10', '2019-07-15', 'Consulta de rotina'),
+(3, 3, '2020-11-05', '2020-11-12', 'Gastroenterologia'),
+(2, 4, '2017-06-22', '2017-06-27', 'Dermatologia'),
+(1, 5, '2021-02-10', '2021-02-15', 'Cardiologia'),
+(3, 1, '2022-09-01', '2022-09-05', 'Reabilitação'),
+(2, 6, '2019-04-04', '2019-04-09', 'Cirurgia');
+
+-- Inserindo profissionais de enfermaria
+INSERT INTO enfermagem (nome, sobrenome, cpf) VALUES
+('Ana', 'Henrique', '321.654.987-00'),
+('Bruno', 'Costa', '432.765.098-11'),
+('Carla', 'Silva', '543.876.209-22'),
+('Daniel', 'Nascimento', '654.987.310-33'),
+('Elisa', 'Gomes', '765.098.421-44'),
+('Fábio', 'Lima', '876.209.532-55');
+
+-- Associando enfermeiros às internações (exemplo)
+INSERT INTO interna_enfermeiro (interna_id, enfermeiro_id) VALUES
+(1, 1), (1, 2),
+(2, 3), (2, 4),
+(3, 5), (3, 6),
+(4, 1), (4, 3),
+(5, 2), (5, 4),
+(6, 1), (6, 5),
+(7, 2), (7, 6);
+```
+
+---
+
+### Parte 2: Operações de atualização e exclusão
+
+1. **Criar a coluna “em atividade” na tabela “médicos”**  
+```sql
+ALTER TABLE medico ADD COLUMN em_atividade BIT;
+```
+
+2. **Atualizar ao menos dois médicos com “não” (0) e o restante com “sim” (1):**  
+```sql
+UPDATE medico SET em_atividade = 0 WHERE id IN (1, 2);
+UPDATE medico SET em_atividade = 1 WHERE id NOT IN (1, 2);
+```
+
+3. **Atualizar as datas de alta nas internações de enfermaria para três dias após a entrada:**
+```sql
+UPDATE interna SET data_saida = DATE_ADD(data_entrada, INTERVAL 3 DAY)
+WHERE quarto_id IN (SELECT id FROM quarto WHERE tipo = 'Enfermaria');
+```
+
+4. **Excluir o último convênio cadastrado e as consultas relacionadas:**
+
+```sql
+-- Supondo que o último convênio foi inserido com id maior
+DELETE FROM consulta WHERE convênio_id = (
+    SELECT MAX(id) FROM convenio
+);
+DELETE FROM convenio WHERE id = (SELECT MAX(id) FROM convenio);
+```
+
+---
+
+### Script resumido para execução total (estrutura, povoamento e operações)
+
+Você deve estruturar seu arquivo para que primeiro crie o banco/tabelas, depois insira os dados essenciais, e por último execute as operações de atualização e exclusão.
+
+---
+
+### Notas finais:
+
+- Utilize geradores de CPF e CNPJ para criar dados realistas.
+- Ajuste os nomes, dados e relacionamentos de acordo com seu banco.
+
+
+Me: coloque tudo em forma de um arquivo sql para que eu possa copiar e rodar
+
+PDF: Claro! Aqui está um arquivo SQL completo, com base nas informações fornecidas nos trechos das páginas do seu PDF, que você pode copiar e rodar no seu ambiente MySQL:
+
+```sql
+-- Drop the database if it exists and create a new one
+DROP DATABASE IF EXISTS senac_ead;
+CREATE DATABASE senac_ead;
+USE senac_ead;
+
+-- Criação da tabela curso
+CREATE TABLE curso (
+    id INT AUTO_INCREMENT,
+    nome VARCHAR(150),
+    descricao TEXT,
+    status CHAR(1) DEFAULT 'A',
+    PRIMARY KEY (id)
+);
+
+-- Criação da tabela aluno
+CREATE TABLE aluno (
+    id INT AUTO_INCREMENT,
+    nome VARCHAR(30),
+    sobrenome VARCHAR(30),
+    data_nascimento DATE,
+    curso_id INT,
+    status CHAR(1) DEFAULT 'A',
+    PRIMARY KEY (id),
+    FOREIGN KEY (curso_id) REFERENCES curso(id)
+);
+
+-- Inserção de cursos de exemplo
+INSERT INTO curso (nome) VALUES ('Técnico em Desenvolvimento de Sistemas');
+INSERT INTO curso (nome) VALUES ('Técnico em Informática para Internet');
+INSERT INTO curso (nome) VALUES ('Técnico em Administração');
+
+-- Inserção de alunos de exemplo
+INSERT INTO aluno (nome, sobrenome, data_nascimento, curso_id) VALUES ('Alice', 'Gonçalves', '1998-10-28', NULL);
+INSERT INTO aluno (nome, sobrenome, data_nascimento, curso_id) VALUES ('Eduardo', 'Machado', '1998-07-16', 2);
+INSERT INTO aluno (nome, sobrenome, data_nascimento, curso_id) VALUES ('Vitória', 'Prestes', '1997-02-15', NULL);
+INSERT INTO aluno (nome, sobrenome, data_nascimento, curso_id) VALUES ('Alex', NULL, NULL, NULL);
+
+-- Código para atualizar o status de um aluno para inativo
+-- UPDATE aluno SET status = 'I' WHERE id = 3;
+
+-- Resultados de consulta de alunos (exemplo de SELECT)
+-- SELECT * FROM aluno;
+
+-- Regras de exemplo para exclusões, baseadas nos desafios mencionados:
+-- 1. Remover um curso sem alunos inscritos
+-- Exemplo:
+-- DELETE FROM curso WHERE nome = 'Nome do curso sem alunos';
+
+-- 2. Remover o curso com menor quantidade de alunos
+-- OBS: Para isso, você precisaria de uma consulta que conta os alunos por curso e de um DELETE correspondente.
+
+-- 3. Remover todos os alunos sem vínculo a um curso
+DELETE FROM aluno WHERE curso_id IS NULL;
+
+```
+
+### Como usar:
+1. Copie todo esse código.
+2. Cole no seu cliente MySQL (como o MySQL Workbench).
+3. Execute a sequência de comandos para criar as tabelas, inserir os dados iniciais e realizar as operações necessárias.
+
+Se desejar, pode adaptar os nomes e comandos de exclusão de acordo com seus casos específicos.
+
+Me: Execute a sequência de comandos para criar as tabelas, inserir os dados iniciai, inclua para mim
+
+PDF: Claro! Aqui está a sequência completa de comandos SQL que você pode executar de uma só vez para criar o banco de dados, as tabelas, inserir os dados iniciais e incluir exemplos de comandos de atualização e exclusão conforme o conteúdo fornecido:
+
+```sql
+-- Drop o banco de dados se existir e criar um novo
+DROP DATABASE IF EXISTS senac_ead;
+CREATE DATABASE senac_ead;
+USE senac_ead;
+
+-- Criar a tabela curso
+CREATE TABLE curso (
+    id INT AUTO_INCREMENT,
+    nome VARCHAR(150),
+    descricao TEXT,
+    status CHAR(1) DEFAULT 'A',
+    PRIMARY KEY (id)
+);
+
+-- Criar a tabela aluno
+CREATE TABLE aluno (
+    id INT AUTO_INCREMENT,
+    nome VARCHAR(30),
+    sobrenome VARCHAR(30),
+    data_nascimento DATE,
+    curso_id INT,
+    status CHAR(1) DEFAULT 'A',
+    PRIMARY KEY (id),
+    FOREIGN KEY (curso_id) REFERENCES curso(id)
+);
+
+-- Inserir registros na tabela curso
+INSERT INTO curso (nome) VALUES ('Técnico em Desenvolvimento de Sistemas');
+INSERT INTO curso (nome) VALUES ('Técnico em Informática para Internet');
+INSERT INTO curso (nome) VALUES ('Técnico em Administração');
+
+-- Inserir registros na tabela aluno
+INSERT INTO aluno (nome, sobrenome, data_nascimento, curso_id) VALUES ('Alice', 'Gonçalves', '1998-10-28', NULL);
+INSERT INTO aluno (nome, sobrenome, data_nascimento, curso_id) VALUES ('Eduardo', 'Machado', '1998-07-16', 2);
+INSERT INTO aluno (nome, sobrenome, data_nascimento, curso_id) VALUES ('Vitória', 'Prestes', '1997-02-15', NULL);
+INSERT INTO aluno (nome, sobrenome, data_nascimento, curso_id) VALUES ('Alex', NULL, NULL, NULL);
+
+-- Exemplos de comandos para atualizar dados
+-- Atualizar o status de um aluno para inativo
+-- UPDATE aluno SET status = 'I' WHERE id = 3;
+
+-- Exemplos de consulta
+-- SELECT * FROM aluno;
+
+-- Excluir todos os alunos sem vínculo a um curso
+DELETE FROM aluno WHERE curso_id IS NULL;
+
+-- Para exclusão de curso sem alunos inscritos ou com poucos alunos, você pode usar comandos similares, por exemplo:
+-- DELETE FROM curso WHERE id = X;
+
+-- Ou, para remover um curso específico e seus alunos (cuidado com cascata)!
+```
+
+### Como usar:
+1. Copie todo esse código.
+2. Cole na interface do seu cliente MySQL (MySQL Workbench, phpMyAdmin, ou outro).
+3. Execute o script completo de uma só vez para criar o banco de dados, as tabelas, inserir os dados iniciais e fazer as exclusões desejadas.
+
+Se precisar de comandos adicionais ou alguma adaptação, é só pedir!

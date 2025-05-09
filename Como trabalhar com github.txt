@@ -12,6 +12,52 @@ Criar uma branch → git checkout -b nome-da-branch
 Fazer alterações e commitar → git add . e git commit -m "mensagem"
 Enviar para o GitHub → git push origin nome-da-branch
 
+-----------------------------------------------------------------------------------------------------------
+Beleza, André. Se você quer **forçar que o conteúdo da sua pasta local sobrescreva tudo no repositório remoto do GitHub**, o comando que você quer é:
+
+```bash
+git push -f origin main
+```
+
+### ⚠️ **Atenção**
+
+Esse comando **força o envio do que está na sua máquina para o GitHub**, **mesmo que sobrescreva** o que estiver lá.
+
+---
+
+## ✅ PASSOS COMPLETOS PARA FORÇAR O ENVIO
+
+1. **Verifique se está na branch `main`:**
+
+```bash
+git branch
+```
+
+> Se não estiver, use:
+
+```bash
+git checkout main
+```
+
+---
+
+2. **Adicione tudo que está na sua pasta:**
+
+```bash
+git add .
+git commit -m "atualiza conteúdo local com versão final"
+```
+
+---
+
+3. **Forçar o push para a main do GitHub:**
+
+```bash
+git push -f origin main
+```
+-----------------------------------------------------------------------------------------------------------
+
+
 
 # ✅ PRÉ-REQUISITOS
 
