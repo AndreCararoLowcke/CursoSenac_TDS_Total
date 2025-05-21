@@ -1,0 +1,378 @@
+PDF: Andre Cararo, que bom te ver por aqui!
+
+Esse material explica como a UML ajuda no desenvolvimento de sistemas, mostrando visualmente como as partes do sistema se conectam. Ele fala dos principais diagramas, como de classes, pacotes, casos de uso, sequência e atividades, e destaca que a UML não é código, mas uma maneira de planejar antes de programar.
+
+- UML é como a planta baixa do sistema para a equipe de desenvolvimento.
+- Ajuda a ver as classes, objetos e suas relações de forma visual.
+- Facilita a comunicação entre desenvolvedores e clientes.
+
+Já li tudo e posso te ajudar com qualquer dúvida!
+
+<q>Você pode me dar um resumo geral sobre UML?</q>
+<q>Como os diagramas ajudam na comunicação entre equipe e cliente?</q>
+<q>Quais tipos de diagramas UML são mais usados para planejar sistemas?</q>
+
+Me: Você pode me dar um resumo geral sobre UML?
+
+PDF: **Conceitos**
+
+- UML (Unified Modeling Language) não é uma linguagem de programação, mas sim uma forma de melhorar e detalhar a abstração e as classes de um sistema.
+- A UML serve como um guia visual para os desenvolvedores, uma "planta baixa" do sistema, definindo as classes e como elas interagem.
+- A UML tem como base a orientação a objetos e, através de símbolos e diagramas, cria a "planta baixa" do sistema.
+
+**Diagramas**
+
+- Diagramas auxiliam visualmente, proporcionando um entendimento mais profundo do sistema, cada um com sua função.
+- Diagramas mostram funções entre classes, relacionamentos, usuários e seus comportamentos ao usar as funções do sistema.
+- O ideal é ter uma boa documentação dos processos e do escopo do projeto para que os diagramas ajudem tanto os desenvolvedores quanto os clientes a visualizarem o fluxo de trabalho.
+
+**Diagrama de Classes**
+
+- Conversa diretamente com a orientação a objetos e a forma como as classes se relacionam, mostrando atributos e métodos.
+- Permite determinar a complexidade e o tamanho de qualquer aplicação.
+- Em um sistema de faculdade, a classe "professor" pode ter atributos como nome, número de funcionário, anos de serviço e número de turmas.
+
+**Diagrama de Caso de Uso**
+
+- Descreve as funcionalidades do sistema do ponto de vista dos usuários, que podem ser tanto externos quanto funcionários com diferentes acessos.
+- Os atores são usados para mostrar qualquer entidade que tenha um papel dentro do sistema.
+- Inclui o símbolo de sistema para exemplificar todo o sistema. É representado por um retângulo, no qual, na parte de dentro, ficarão os casos de uso e, na parte de fora, os atores.
+
+**Diagrama de Pacotes**
+
+- Auxilia na organização do que é produzido pelas classes e casos de uso, separando funcionalidades em pacotes.
+- Proporciona uma visão estrutural da hierarquia de outros elementos de UML dentro do sistema.
+- Simplifica os diagramas de classes sem exibir atributos e métodos.
+
+**Diagrama de Sequência**
+
+- Explica e demonstra as interações entre os objetos de forma sequencial, trabalhando diretamente com os métodos descritos nos diagramas de classes.
+- O diagrama de sequência mostra toda a sequência de um processo.
+- É importante saber que todas as classes e todos os processos envolvidos devem ser trazidos, sejam atores, sejam classes que interagirão com esses atores.
+
+**Diagrama de Atividades**
+
+- Funciona como um fluxograma, mostrando o controle das atividades de um sistema e o processo que envolve outras atividades.
+- Descreve o fluxo de atividades de um sistema, descrevendo uma a uma.
+- Mostra a sequência de uma atividade, uma após a outra.
+
+**Encerramento**
+
+- Em uma empresa, o processo de construção de diagramas é necessário para documentar o projeto como um todo, auxiliando todos os membros da equipe.
+- Os diversos diagramas abordados têm como função principal exemplificar e tornar visual tudo que os sistemas poderão fazer e trazer para os usuários.
+- Essa fase de pré-produção se faz necessária e traz confiabilidade e profissionalismo para todos os sistemas que vierem a ser produzidos.
+
+Me: Como os diagramas ajudam na comunicação entre equipe e cliente?
+
+PDF: Os diagramas UML desempenham um papel fundamental na comunicação entre a equipe de desenvolvimento e os clientes ao proporcionar uma representação visual clara e compreensível do sistema [T1, T7].
+
+**Facilitam a compreensão do sistema por todos os envolvidos:**
+
+- Os diagramas traduzem conceitos complexos de programação e estrutura do sistema em representações gráficas, facilitando a compreensão, mesmo por aqueles que não têm conhecimentos técnicos profundos.
+- Eles mostram as funções, relações entre classes, fluxo de atividades e sequências de ações de forma mais intuitiva do que textos ou códigos, tornando mais fácil discutir e validar o projeto com o cliente [T3, T4].
+
+**Aumentam a transparência e alinhamento:**
+
+- Permitem que o cliente visualize o funcionamento do sistema antes mesmo de sua implementação, ajudando a alinhar expectativas e fazer ajustes precocemente.
+- Proporcionam uma comunicação mais eficaz, pois problemas ou melhorias podem ser identificados e discutidos com base nos diagramas, evitando mal-entendidos futuros.
+
+**Apoiam a documentação e o planejamento:**
+
+- Os diagramas servem como documentação viva do projeto, ajudando a equipe a manter o foco nos objetivos e facilitando a transmissão de informações durante as diferentes fases do desenvolvimento [T1, T4].
+
+Em resumo, os diagramas UML tornam o projeto mais acessível, promovem uma comunicação mais clara e colaborativa, e aumentam a eficiência e o alinhamento entre equipe e cliente [T1, T7].
+
+Me: Quais tipos de diagramas UML são mais usados para planejar sistemas?
+
+PDF: Os diagramas UML mais utilizados para planejar sistemas são aqueles que oferecem uma visão geral das funcionalidades, estruturas e fluxos de atividades do sistema, facilitando o entendimento inicial do projeto [T3, T4].
+
+1. **Diagrama de Casos de Uso:**  
+   - Descreve as funcionalidades do sistema do ponto de vista dos usuários ou atores, mostrando o que o sistema deve fazer. É excelente para identificar os requisitos principais e os acessos necessários, ajudando no planejamento de funcionalidades essenciais.
+
+2. **Diagrama de Classes:**  
+   - Apresenta a estrutura do sistema em termos de classes, atributos e métodos, e seus relacionamentos. É fundamental para planejar a arquitetura do sistema, ajudando na definição das entidades e suas interações.
+
+3. **Diagrama de Pacotes:**  
+   - Organiza o sistema em grupos de funcionalidades ou classes, facilitando a visualização da estrutura em módulos ou componentes. É útil para planejar a divisão do sistema em partes gerenciáveis.
+
+4. **Diagrama de Sequência:**  
+   - Demonstra a interação entre objetos ao longo do tempo, ajudando a planejar o fluxo de processos e a sequência de operações. É particularmente útil na fase de design detalhado de comportamentos.
+
+5. **Diagrama de Atividades:**  
+   - Representa o fluxo de atividades ou processos do sistema, funcionando como um fluxograma visual. Ajuda a planejar processos de trabalho, fluxos de controle e atividades principais.
+
+**Resumindo**, para o planejamento inicial de sistemas, os diagramas de **Casos de Uso**, **Classes**, **Pacotes** e **Atividades** são os mais indicados, pois oferecem uma visão ampla e organizada do sistema, facilitando o entendimento e a definição dos requisitos e estrutura do projeto [T3, T4].
+
+Me: A Pizzaria Tábua solicitou à sua empresa o desenvolvimento de um sistema de pedidos online. O objetivo é permitir que os clientes façam pedidos pelo site e que tanto os atendentes quanto os pizzaiolos sejam notificados sobre novos pedidos. Nesse momento o foco está nos pedidos, e por isso o único formato de pagamento online disponível por enquanto será o PIX.
+Com isso em mente, seus gestores pediram para você criar dois tipos de diagramas UML diferentes utilizando a ferramenta online https://app.diagrams.net/, que ajudarão a equipe de desenvolvimento a visualizar melhor o escopo do projeto.
+Atividade
+Com base no contexto e na especificação inicial que foi levantada para o sistema, crie os seguintes diagramas UML a partir das definições descritas:
+Diagrama de Caso de Uso: 
+O sistema contará com três atores: Cliente, Atendente e o Pizzaiolo.
+Cliente: O cliente consegue criar a sua conta, fazer login (acessar a conta), adicionar itens ao pedido, fazer um pedido, selecionar uma forma de pagamento (PIX, dinheiro ou máquina) e consultar pedidos feitos.
+Para que o pedido possa ser realizado é necessário que o cliente esteja logado em sua conta e, também, seja adicionado itens ao pedido. Pedidos sem itens não poderão ser realizado. Um pedido pode ou não ter seu pagamento concluído.
+Atendente: O atendente consegue consultar os pedidos, confirmar o pedido para o pizzaiolo começar a prepara-lo e finalizar o pedido (independente se foi entregue para o motoboy ou o cliente retirou na loja).
+Pizzaiolo: O pizzaiolo consegue consultar os pedidos que foram realizados e também finalizar o preparo de um pedido.
+O pedido poderá ser preparado somente se o mesmo for confirmado.
+Após finalizado o preparo, o pedido é finalizado pelo atendente e entregue ao motoboy para ser enviado.
+Caso não seja possível preparar o pedido por motivos como falta de ingrediente ou o restaurante estar prestes a fechar, o pedido deve ser finalizado sem o preparo ser concluído – no caso, a finalização acontece com o cancelamento do pedido.
+Atenção: Não esqueça dos <<includes>> e <<extends>>;
+Diagrama de Classe: 
+O sistema contará com 5 classes: Cliente, Funcionário, Pizza, Sabores e Pedido.
+Cliente: a classe será composta pelos atributos id, nome, endereço, telefone e os métodos get() e set() para todos os atributos;
+Funcionário: a classe do funcionário será composta por id, nome e cargo (Atendente ou Pizzaiolo), junto dos métodos get() e set();
+Pizza: a classe será composta pelos atributos id, tamanho, sabores, preço e seus métodos get() e set();
+Sabor: a classe será composta pelos atributos id, nome e uma lista de ingredientes, junto dos seus respectivos métodos get() e set();
+Pedido: a classe será composta por id, uma lista de itens (no caso, as pizzas que compõe o pedido), tipo de entrega (tele-entrega ou retirar no local), forma de pagamento (PIX, dinheiro ou máquina) e status do pedido. Além disso, a classe será composta pelos métodos ExibirDetalhes(), CriarPedido() e AtualizarStatus(). Não é necessária a criação de métodos get() e set() para essa classe.
+Após criada as classes, deverá ser feito o relacionamento entre elas, onde:
+A classe Pedido deve ter uma relação de dependência com as classes Cliente e Funcionário;
+A classe Pedido deve ter uma relação de agregação com a classe Pizza;
+A classe Sabores deve uma relação de composição com a classe Sabores. 
+Atenção: os atributos devem obrigatoriamente ter seus tipos indicados e os métodos, quando apresentam retorno, também.
+Para facilitar a criação deste diagrama, resuma os métodos getters e setters como getters() e setters(), sem citar um por um em cada classe.
+Verifique os vídeos no material de apoio para auxiliar nos conteúdo da atividade. 
+Entrega
+No espaço dedicado a entregas da atividade, envie um arquivo compactado (ZIP, RAR ou 7z) com os diagramas criados no formato .drawio – selecione Fichario > Guardar e salve o arquivo no formato drawio. 
+Dica de leitura
+Para esta atividade, leia o seguinte material:
+UML: conceitos, diagramas de classes, diagramas de pacotes, diagramas de casos de uso, diagramas de sequência, diagramas de atividades. 
+Avaliação
+Nesta atividade, você será avaliado no seguinte indicador:
+Representa sistema com diagramas UML de acordo com ferramentas da linguagem e definições do projeto de software.
+
+PDF: Para atender à solicitação da Pizzaria Tábua e criar os diagramas UML necessários, você deve desenvolver dois diagramas: um Diagrama de Casos de Uso e um Diagrama de Classe, considerando as especificações do sistema de pedidos online.
+
+### 1. Diagrama de Caso de Uso
+
+**Atores:**
+- Cliente
+- Atendente
+- Pizzaiolo
+
+**Casos de Uso:**
+
+- Cliente:
+  - Criar Conta
+  - Fazer Login
+  - Adicionar Itens ao Pedido
+  - Fazer Pedido
+  - Selecionar Forma de Pagamento (PIX, Dinheiro, Máquina)
+  - Consultar Pedidos
+- Atendente:
+  - Consultar Pedidos
+  - Confirmar Pedido (para preparo)
+  - Finalizar Pedido (entrega ou retirada)
+- Pizzaiolo:
+  - Consultar Pedidos
+  - Finalizar Preparo
+
+**Relacionamentos:**
+- Inclui (<<includes>>) ações comuns, como:
+  - Para fazer o pedido, é necessário que o cliente esteja logado.
+- Extende (<<extends>>) ações opcionais ou condicionais, por exemplo:
+  - Cancelar pedido, se não for possível preparar por falta de ingredientes ou horário de fechamento.
+
+**Ferramenta:**
+Utilize a ferramenta online https://app.diagrams.net/ para criar o diagrama, inserindo os atores e casos de uso e relacionando-os com os relacionamentos apropriados.
+
+---
+
+### 2. Diagrama de Classe
+
+**Classes e atributos:**
+
+- **Cliente**
+  - id: int
+  - nome: String
+  - endereço: String
+  - telefone: String
+  - Métodos: getters(), setters()
+
+- **Funcionário**
+  - id: int
+  - nome: String
+  - cargo: String (Atendente ou Pizzaiolo)
+  - Métodos: getters(), setters()
+
+- **Pizza**
+  - id: int
+  - tamanho: String
+  - sabores: List<Sabor>
+  - preço: float
+  - Métodos: getters(), setters()
+
+- **Sabor**
+  - id: int
+  - nome: String
+  - ingredientes: List<String>
+  - Métodos: getters(), setters()
+
+- **Pedido**
+  - id: int
+  - itens: List<Pizza>
+  - tipoEntrega: String (tele-entrega ou retirar na loja)
+  - formaPagamento: String (PIX, dinheiro, máquina)
+  - status: String
+  - Métodos: ExibirDetalhes(), CriarPedido(), AtualizarStatus()
+
+**Relacionamentos:**
+- Pedido depende de Cliente e Funcionário:
+  - Pedido → Cliente (dependência)
+  - Pedido → Funcionário (dependência)
+- Pedido agrega pizzas:
+  - Pedido → Pizza (agregação)
+- Pizza compõe sabores:
+  - Pizza → Sabor (composição)
+- Sabor possui ingredientes:
+  - Sabor → ingredientes (lista)
+
+**Notas importantes:**
+- Use as notações padrão UML para relacionamentos: dependência (dashed arrow), agregação (hollow diamond), composição (filled diamond).
+- Inclua visuais de métodos e atributos conforme a descrição.
+- Resuma os getters() e setters() para simplificar.
+
+---
+
+### Como criar os diagramas na ferramenta:
+
+1. Acesse https://app.diagrams.net/
+2. Para o **Diagrama de Casos de Uso**:
+   - Use ícones de ator (stick man) para Cliente, Atendente, Pizzaiolo.
+   - Use elipses para os casos de uso.
+   - Relacione-os com linhas de associação.
+   - Insira <<includes>> e <<extends>> onde necessário.
+3. Para o **Diagrama de Classes**:
+   - Use retângulos divididos para as classes.
+   - Escreva atributos e métodos na parte inferior.
+   - Desenhe linhas de relacionamento com símbolos de UML.
+   
+Ao terminar, salve os diagramas no formato `.drawio` e compacte em arquivo ZIP ou RAR.
+
+Se desejar, posso fornecer exemplos visuais em formato `.drawio`, ou ajudar na estruturação para facilitar sua criação.
+
+---
+
+**Referências:**: Página 30 — contextualmente, sobre diagramas de sequência e outros diagramas detalhados do sistema.: Página 11 — informações sobre o diagrama de caso de uso e seus elementos essenciais.: Página 4 — detalhes sobre diagramas de pacotes, sequência e atividades, úteis para compreender como relacionar elementos.: Página 2 — conceitos gerais sobre UML como uma planta baixa visual do sistema, destacando a importância de diagramas de classes e de casos de uso.
+
+---
+
+Se precisar de mais detalhes ou exemplos específicos, estou à disposição!
+
+Me: quero também um diagrama de atividades
+
+PDF: Claro! Para criar o **Diagrama de Atividades** do sistema de pedidos da Pizzaria Tábua, podemos modelar o fluxo de ações realizadas desde o cliente até a finalização do pedido. A seguir, apresento uma descrição detalhada do diagrama de atividades que pode ser reproduzido em ferramentas como https://app.diagrams.net/ ou qualquer outro editor de diagramas UML.
+
+### Fluxo do Diagrama de Atividades para o Sistema de Pedidos
+
+---
+
+#### Atividades principais:
+
+1. **Início**  
+   - Ponto de partida do fluxo.
+
+2. **Cliente cria uma conta?**  
+   - Decisão: Sim ou Não.
+
+   - Se não tem conta:
+     - **Cadastrar Cliente** (informar dados pessoais)
+     - **Login do Cliente**  
+
+3. **Cliente realiza login?**  
+   - Decisão: Sim ou Não.  
+   - Se não loga, fica na opção de login ou cadastro.
+
+4. **Cliente adiciona itens ao pedido**  
+   - Seleciona pizza(s) e outros itens (refrigerantes, etc.).
+
+5. **Cliente escolhe forma de pagamento**  
+   - PIX, Dinheiro, Máquina.  
+
+6. **Cliente finaliza o pedido**  
+   - Confirma detalhes.
+
+7. **Sistema registra pedido**  
+   - Criar registro do pedido com status “pendente”.
+
+8. **Pedido enviado para atendimento**  
+   - O atendente e o pizzaiolo visualizam o pedido.
+
+9. **Preparo do produto**  
+   - Pizzaiolo prepara a pizza.
+
+10. **Pedido pronto?**  
+    - Decisão: Sim ou Não.  
+    - Se sim, prossegue; se não, aguarda.
+
+11. **Pedido finalizado**  
+    - Caso para entrega ou retirada, dependendo do tipo de pedido.
+
+12. **Pagamento confirmado?**  
+    - Decisão: Sim ou Não.  
+    - Se não, aguarda pagamento ou cancela.
+
+13. **Sistema envia confirmação ao cliente**  
+    - Por e-mail ou mensagem.
+
+14. **Fim**  
+    - Processo concluído.
+
+---
+
+### Como desenhar no seu diagrama:
+
+- Use símbolos de atividade (retângulos arredondados) para as ações como “Cadastrar Cliente”, “Adicionar Itens”, “Escolher pagamento”, etc.
+- Use losangos para decisões (sim/não).
+- Ligue as atividades com setas segundo a sequência.
+- Decisões levam a diferentes caminhos (exemplo: cadastro ou login).
+- Inclua pontos de sincronização, como "Aguardar pagamento", se necessário.
+
+---
+
+### Visualizações das principais atividades:
+
+```
+[Início]
+   |
+[Cliente cria conta?]
+  / \
+Sim Não
+ |   |
+[Cadastrar Cliente]         [Login]
+        \                   /
+     [Adicionar Itens ao Pedido]
+                |
+    [Escolher Forma de Pagamento]
+                |
+      [Finalizar Pedido]
+                |
+     [Pedido enviado ao sistema]
+                |
+      [Preparo do Produto]
+                |
+     [Pedido pronto?]
+       /        \
+     Sim       Não
+       |         |
+[Pedido entregue]  [Aguardar]
+       |
+[Pagamento confirmado?]
+       / \
+     Sim  Não
+      |   |
+[Enviar Confirmação]
+      |
+    [Fim]
+```
+
+---
+
+### Recomendações:
+
+- Insira esses elementos na ferramenta de diagramas.
+- Use cores diferentes para atividades, decisões, pontos de início e fim.
+- Faça ajustes conforme a necessidade, por exemplo, acrescentando etapas específicas de confirmação ou cancelamento.
+
+---
+
+Se desejar, posso gerar um arquivo `.drawio` com esse fluxo para facilitar sua implementação. Basta solicitar!

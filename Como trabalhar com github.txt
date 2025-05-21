@@ -13,7 +13,7 @@ Fazer alterações e commitar → git add . e git commit -m "mensagem"
 Enviar para o GitHub → git push origin nome-da-branch
 
 -----------------------------------------------------------------------------------------------------------
-Beleza, André. Se você quer **forçar que o conteúdo da sua pasta local sobrescreva tudo no repositório remoto do GitHub**, o comando que você quer é:
+---forçar que o conteúdo da sua pasta local sobrescreva tudo no repositório remoto do GitHub---
 
 ```bash
 git push -f origin main
