@@ -258,3 +258,4 @@ Você pode até combinar tipos:
 git commit -m "feat(login): adiciona autenticação via token JWT"
 git commit -m "fix(form): corrige validação do campo e-mail"
 ```
+----------------------------------------------------------------------------------------------------------------------------------
