@@ -8,11 +8,18 @@ public class CarrinhoDeCompras {
     private List<Produto> produtos;
 
     public CarrinhoDeCompras() {
-        this.produtos = new ArrayList<>();
+        produtos = new ArrayList<>();
     }
 
-    public void adicionarProduto(String nome, int quantidade, double precoUnitario) {
-        this.produtos.add(new Produto(nome, quantidade, precoUnitario));
+    public void adicionarProduto(String nome, int quantidade, double preco) {
+        Produto produto = new Produto(nome, quantidade, preco);
+        produtos.add(produto);
+    }
+
+    public void listarProdutos() {
+        for (Produto produto : produtos) {
+            System.out.println(produto.getQuantidade() + "x " + produto.getNome() + " - R$ " + produto.getPrecoUnitario());
+        }
     }
 
     public double calcularTotal() {
@@ -22,5 +29,8 @@ public class CarrinhoDeCompras {
         }
         return total;
     }
-    
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
 }

@@ -1,5 +1,11 @@
 package supermercado;
 
+/**
+ * Classe Supermercado.
+ * Exemplo simples de execução de um fluxo de compra:
+ * cria um carrinho, adiciona produtos, cria um pedido e finaliza.
+ */
+
 public class Supermercado {
 
     public static void main(String[] args) {
@@ -19,4 +25,4 @@ public class Supermercado {
         PedidoView pedidoView = new PedidoView();
         pedidoView.exibirPedido(pedido);
     }
-}
+}     

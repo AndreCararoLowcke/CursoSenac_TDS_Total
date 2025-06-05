@@ -23,5 +23,8 @@ public class Produto {
     public double calcularTotal(double preco, int quantidade) {
         return  preco * quantidade;
     }
+    public String getNome() {
+        return nome;
+    }
 
 }

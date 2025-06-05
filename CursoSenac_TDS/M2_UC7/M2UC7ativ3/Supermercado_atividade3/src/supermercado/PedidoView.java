@@ -2,19 +2,24 @@ package supermercado;
 
 public class PedidoView {
 
+    /**
+     * Exibe todas as informações de um pedido.
+     */
     public void exibirPedido(Pedido pedido) {
-        System.out.println("===== Detalhes do Pedido =====");
-        System.out.println("Número do pedido: " + pedido.getNumeroPedido());
-        System.out.println("Cliente: " + pedido.getCliente().getNome());
-        System.out.println("CPF: " + pedido.getCliente().getCpf());
-        System.out.println("E-mail: " + pedido.getCliente().getEmail());
-        System.out.println("Produtos:");
 
-        for (Produto produto : pedido.getCarrinho().getProdutos()) {
-            System.out.println("- " + produto);
-        }
+        System.out.println("Número do Pedido: " + pedido.getNumeroPedido());
 
-        System.out.println("Total: R$ " + pedido.getCarrinho().calcularTotal());
-        System.out.println("===============================");
+        Cliente cliente = pedido.getCliente();
+        System.out.println("Cliente: " + cliente.getNome());
+        System.out.println("CPF: " + cliente.getCpf());
+        System.out.println("Email: " + cliente.getEmail());
+
+        System.out.println("Produtos no Carrinho:");
+        CarrinhoDeCompras carrinho = pedido.getCarrinho();
+        carrinho.listarProdutos();
+
+        double total = carrinho.calcularTotal();
+        System.out.println("Total do Pedido: R$ " + total);
+
     }
 }

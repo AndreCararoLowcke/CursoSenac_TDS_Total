@@ -1,9 +1,9 @@
 package supermercado;
 
 public class Pedido {
-    private int numeroPedido;
-    private CarrinhoDeCompras carrinho;
-    private Cliente cliente;
+    private final int numeroPedido;
+    private final CarrinhoDeCompras carrinho;
+    private final Cliente cliente;
 
     public Pedido(int numeroPedido, CarrinhoDeCompras carrinho, Cliente cliente) {
         this.numeroPedido = numeroPedido;
