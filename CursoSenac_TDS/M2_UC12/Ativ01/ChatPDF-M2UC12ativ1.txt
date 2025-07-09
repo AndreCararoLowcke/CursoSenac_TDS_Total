@@ -1,0 +1,387 @@
+PDF: E aí, André Cararo, tudo certo?
+
+Este material foca em testes de software, mostrando como são essenciais para garantir que um sistema funcione bem antes de chegar ao usuário final.
+
+- Testar é um ciclo contínuo para identificar falhas e evitar problemas no uso real
+- O analista de testes tem um papel "destrutivo", tentando achar erros para aumentar a segurança do sistema
+- Casos de teste são conjuntos detalhados para validar o comportamento esperado do software
+
+Eu revi as 67 páginas inteiras, bora lá!
+
+<q>Resuma este conteúdo sobre testes de software</q>
+<q>Quais são as principais responsabilidades do analista de testes?</q>
+<q>Como o ciclo de testes ajuda a manter a qualidade do software?</q>
+
+Me: Atividade 1
+ 
+Contexto
+O projeto de software para o hospital da cidade está evoluindo e a equipe de desenvolvimento finalizou o módulo de cadastro e visualização de pacientes. Os líderes (scrum master e product owner), no entanto, estão observando que há falha no processo de testes, que precisa ser formalizado e posto em prática – atualmente, os testes estão a critério e rigor dos desenvolvedores, com validações pontuais do cliente nas entregas intermediárias.
+Você está entre os desenvolvedores designados a encaminhar o processo de teste. Sua missão, neste momento, é entregar um plano de teste simples e prático para o módulo de cadastro e visualização de pacientes para servir como base para o teste nos outros módulos do sistema a serem desenvolvidos.
+ 
+Atividade
+Em Conteúdo > Material Complementar, baixe os arquivos relativos ao projeto de software para o hospital e a documentação de requisitos para o módulo de cadastro e visualização do paciente, desenvolvidos pelos analistas de sistemas. Leia as especificações e analise o código já desenvolvido. A partir do que já foi desenvolvido e o que está ainda planejado, preencha o modelo de plano de teste também disponibilizado juntamente com esses arquivos.
+ 
+Entrega
+No espaço dedicado a entregas da atividade, envie um arquivo .DOCX de modelo para plano de teste com os campos solicitados preenchidos.
+ 
+Dica de leitura
+Para esta atividade, leia os seguintes materiais:
+Testes de software: conceitos de teste, caso de teste, plano de teste, defeito, falha, teste estático, teste dinâmico e critério de aceitação, artefatos de testes
+Estratégias de teste: preventiva e reativa; níveis de teste: unitário, sistema, integração e aceitação
+Tipos de teste: funcional, regressão, desempenho, aceitação, smoke test, exploratório, confirmação, estresse, carga, volume, recuperação, segurança; teste manual e automatizado
+Plano de teste: especificações do teste; tipos de teste a serem executados; especificação e relato de teste; registros de teste
+ 
+Avaliação
+Nesta atividade, você será avaliado nos indicadores:
+Desenvolve plano de testes para o aplicativo computacional de acordo com funcionalidades e restrições previstas no projeto de software.
+Relata erros na ferramenta especificada de acordo com as regras de negócio da aplicação.
+
+PDF: Para realizar a atividade de elaboração do plano de teste do módulo de cadastro e visualização de pacientes do sistema hospitalar, siga as etapas abaixo, fundamentadas nos materiais de referência e no conteúdo disponível:
+
+1. **Leitura e análise da documentação**:  
+   - Baixe e revise atentamente os arquivos de requisitos e o código desenvolvido.  
+   - Identifique funcionalidades, regras de negócio e áreas críticas do módulo.
+
+2. **Definição dos objetivos do plano de teste**:  
+   - Verificar se o cadastro de pacientes está funcionando conforme especificações.  
+   - Confirmar a exibição correta das informações dos pacientes.  
+   - Garantir a validação dos dados de entrada e a integridade da base de dados.
+
+3. **Escopo do teste**:  
+   - Abrange o cadastro de novos pacientes, edição, visualização e validação dos campos.  
+   - Inclui o teste de integração com o banco de dados, interface e regras de negócio.
+
+4. **Seleção de tipos de teste a serem empregados**:  
+   - Teste funcional (para verificar funcionalidades específicas).  
+   - Teste de integração (para validar a comunicação entre componentes).  
+   - Teste de validação de regras de negócio e limites.  
+   - Teste manual (por ora, devido à simplicidade) e automação futura, se possível.
+
+5. **Casos de teste**:  
+   - Elaborar casos detalhados para cada funcionalidade, por exemplo:  
+     - Cadastro com dados válidos.  
+     - Cadastro com dados inválidos (CPF incorreto, campos vazios, etc.).  
+     - Visualização de dados cadastrados.  
+     - Edição de informações de um paciente.  
+     - Exclusão, se prevista.
+
+6. **Critérios de aceitação**:  
+   - Todos os testes devem resultar em resultados previstos, sem falhas.  
+   - O sistema deve tratar exceções e entradas inválidas adequadamente.
+
+7. **Recursos necessários**:  
+   - Hardware e software de teste, banco de dados preparado.  
+   - Conhecimento das regras de negócio e acessos necessários.  
+   - Equipe envolvida na execução.
+
+8. **Registro e relato de erros**:  
+   - Documentar falhas observadas usando o modelo indicado, incluindo: descrição, passo a passo, expectativa, resultado obtido, severidade, e sugestão de correção.
+
+9. **Cronograma de execução**:  
+   - Organize as atividades de teste de modo sequencial, com prazos realistas para execução e análise dos resultados.
+
+10. **Relatório final**:  
+    - Resuma os resultados obtidos, anote as falhas encontradas e recomendações para melhorias ou correções.
+
+### Apresentação final:
+- Crie um documento `.DOCX` com os seguintes campos preenchidos:
+  - Título: Plano de Teste – Módulo Cadastro e Visualização de Pacientes
+  - Objetivos do Plano de Teste
+  - Escopo do Teste
+  - Tipos de Teste
+  - Casos de Teste (descritos detalhadamente)
+  - Critérios de Aceitação
+  - Recursos Necessários
+  - Cronograma de Testes
+  - Relato de Erros e Registro de Testes
+
+Se desejar, posso ajudar na elaboração do conteúdo específico de cada seção, com exemplos de casos de teste e relatos de erro. Basta solicitar!
+
+Me: resuma o pdf e coloque as partes mais importantes para resolver estas questões
+
+PDF: Claro! A seguir, apresento um resumo do conteúdo do PDF, destacando as partes mais importantes que ajudarão na elaboração do plano de teste do módulo de cadastro e visualização de pacientes, conforme sua atividade.
+
+---
+
+### **Resumo do Conteúdo do PDF com Pontos Relevantes para a Atividade**
+
+#### 1. **Importância do Plano de Teste**  
+- **O plano de teste** é essencial para garantir que o sistema funcione corretamente, cobrindo possível erros e orientando a equipe de testes de forma estruturada [T1, T4, T5].
+- Um **documento bem elaborado** evita retrabalho, cobre várias possibilidades de erro e garante maior robustez do sistema, especialmente em módulos críticos, como cadastro de pacientes.
+
+#### 2. **Itens de um Plano de Teste**  
+- Nome e resumo do sistema
+- Objetivos do plano
+- Escopo do projeto
+- Tipos de testes que serão realizados
+- Casos de teste detalhados
+- Critérios de aceitação
+- Recursos necessários
+- Cronograma de execução
+- Relatório de defeitos e resultados dos testes [T5, T9]
+
+#### 3. **Principais Tipos de Testes**  
+- **Funcionais:** verificam se as funcionalidades operam como esperado (exemplo: cadastro e visualização).
+- **Regressão:** validação após mudanças para garantir que funcionalidades antigas continuam operando.
+- **Validação de regras de negócio:** verificar se as regras específicas do hospital (exemplo: CPF válido, restrições por idade) são atendidas.
+- **Testes de integração:** assegurar que componentes do sistema interagem corretamente.
+- **Testes de interface:** garantir usabilidade e apresentação adequada [T4, T6].
+
+#### 4. **Casos de Teste**  
+- Devem ser únicos com identificador, descrição clara, passos detalhados, dados de entrada e resultados esperados.  
+- Exemplos: cadastro com dados válidos, cadastro com dados inválidos, visualização de cadastro, edição de dados.
+
+#### 5. **Registrar e Reportar Bugs**  
+- Todos os erros devem ser documentados, com detalhes do problema, passos para reprodução, impacto e prioridade, facilitando correções pela equipe de desenvolvimento.
+
+#### 6. **Riscos e Áreas Críticas**  
+- Áreas sensíveis como validações de dados, integração com banco, e regras de negócio críticas devem receber atenção especial. Problemas nessas áreas podem comprometer a segurança, integridade e confiabilidade do sistema.
+
+#### 7. **Estratégias de Teste**  
+- Planejar testes preventivos (focados em evitar problemas grandes) e reativos (ao detectar falhas).  
+- A pirâmide de testes sugere começar pelos testes de base (unitários e de componente) até os testes finais de sistema e aceitação.
+
+---
+
+### **Como usar esse resumo na sua atividade?**
+
+- **Foque nos itens do planejamento de teste:** objetivos, escopo, casos de teste, critérios de aceitação.
+- **Priorize testes funcionais**, como cadastro, visualização, edição e validações.
+- **Documente identificadores e passos detalhados** para cada caso de teste.
+- **Registre falhas de forma clara** seguindo o modelo de relatório de defeitos do material.
+
+Se desejar, posso ajudar a montar um esboço do seu arquivo de plano de teste com base nesse conteúdo.
+
+Me: me diga oque devo fazer em passos para concluir a atividade
+
+PDF: Para concluir a atividade de criar um plano de teste para o módulo de cadastro e visualização de pacientes, você pode seguir os seguintes passos estruturados:
+
+1. **Entenda o Sistema e Seus Requisitos**  
+   - Reúna informações sobre o sistema (funcionalidades, regras de negócio, interface).  
+   - Identifique os requisitos específicos relacionados ao cadastro e visualização de pacientes.
+
+2. **Defina os Objetivos do Plano de Teste**  
+   - Liste o que deseja verificar (ex.: validar cadastro de paciente, consulta de dados, edição, exclusão).  
+   - Determine o propósito de cada teste (verificar funcionalidade, segurança, usabilidade).
+
+3. **Especifique o Escopo do Teste**  
+   - Delimite os componentes que serão testados (ex.: telas de cadastro, banco de dados, validações).  
+   - Decida quais funcionalidades ficam de fora neste momento, se houver.
+
+4. **Liste os Tipos de Testes a Serem Realizados**  
+   - Testes funcionais (cadastro, visualização, edição).  
+   - Testes de validação de regras (atributos obrigatórios, formatos de CPF, idade mínima).  
+   - Testes de integração (interação com banco de dados).
+
+5. **Desenvolva os Casos de Teste**  
+   - Para cada funcionalidade, crie casos de teste detalhados, incluindo:  
+     - ID do caso  
+     - Descrição  
+     - Pré-condições (ex.: usuário deve estar logado)  
+     - Passos detalhados para execução  
+     - Resultado esperado  
+     - Pós-condições (estado após o teste)  
+   - Exemplo: cadastro de paciente com dados válidos, cadastro com dados inválidos, visualização dos dados.
+
+6. **Configure Critérios de Aceitação e Falha**  
+   - Defina quando um teste será considerado aprovado ou reprovado.  
+   - Estabeleça prioridade para falhas, para orientar a correção.
+
+7. **Planeje Recursos e Cronograma**  
+   - Liste quem fará os testes (testadores), com quais ferramentas.  
+   - Defina o cronograma de execução dos testes.
+
+8. **Reporte e Documente os Resultados**  
+   - Após cada execução, registre os resultados, apontando falhas ou aprovações.  
+   - Documente bugs ou problemas observados com detalhes para facilitar correções.
+
+9. **Analise os Resultados e Tome Decisões**  
+   - Verifique se o sistema está conforme esperado.  
+   - Decida se o sistema está pronto para implantação ou se há necessidade de melhorias.
+
+---
+
+### Resumo em passos práticos:
+1. Recolher informações do sistema.
+2. Definir objetivos do teste.
+3. Especificar escopo e funcionalidades.
+4. Criar casos de teste detalhados.
+5. Definir critérios de aceitação.
+6. Planejar recursos e cronograma.
+7. Executar testes e registrar resultados.
+8. Analisar resultados e ajustar o sistema se necessário.
+
+Se desejar, posso ajudá-lo a montar o documento de plano de teste passo a passo.
+
+Me: me diga qual parte do pdf tenho que ler para cada passo
+
+PDF: Claro! Aqui está um guia detalhado de qual parte do PDF você deve ler para cada passo da sua atividade, relacionando com os tópicos e páginas correspondentes:
+
+### 1. **Recolher informações do sistema**
+- **Leitura recomendada:**  
+  - Página 57 (T2): **Etapas de criação de um plano de teste**.  
+  - Página 55 (T5): **Importância do plano de testes e elementos essenciais**.  
+  - Página 18 (T7): **Importância de verificar a documentação do sistema e do usuário final**.  
+  - Página 16 (T8): **Pontos a serem considerados na estratégia de teste, incluindo requisitos e funcionalidades**.
+
+### 2. **Definir objetivos do teste**
+- **Leitura recomendada:**  
+  - Página 57 (T2): **Objetivos do plano de teste**.  
+  - Página 16 (T8): **Principais pontos ao criar uma estratégia de teste** (objetivos do teste).  
+  - Página 55 (T5): **Objetivos do plano de teste e o que se espera dos resultados**.
+
+### 3. **Especificar escopo e funcionalidades**
+- **Leitura recomendada:**  
+  - Página 55 (T5): **Escopo do projeto**.  
+  - Página 54 (T4): **Itens de um plano de teste** (inclusão de escopo).  
+  - Página 57 (T2): **Fazer relação com os documentos utilizados para definir o escopo**.
+
+### 4. **Criar casos de teste detalhados**
+- **Leitura recomendada:**  
+  - Página 5 (T9): **Etapas de um caso de teste**.  
+  - Página 5 (T10): **Como escrever um caso de teste — elementos essenciais**.  
+  - Exemplos de cenários de teste — página 16 (T8), na seção sobre cenário de teste.
+
+### 5. **Definir critérios de aceitação**
+- **Leitura recomendada:**  
+  - Página 55 (T5): **Requisitos de teste e critérios de aceitação**.  
+  - Página 16 (T8): **Riscos e critérios de sucesso ou falha**.
+
+### 6. **Planejar recursos e cronograma**
+- **Leitura recomendada:**  
+  - Página 57 (T2): **Equipe responsável, ferramentas e cronograma de testes**.  
+  - Página 54 (T4): **Itens importantes de um plano de teste** (destacando equipe e infraestrutura).
+
+### 7. **Executar testes e registrar resultados**
+- **Leitura recomendada:**  
+  - Página 9 (T9): **Como documentar resultados dos testes — etapas, resultados esperados, pós-condições**.  
+  - Página 5 (T9): **Itens de um caso de teste, incluindo resultados e status**.
+
+### 8. **Analisar resultados e ajustar o sistema se necessário**
+- **Leitura recomendada:**  
+  - Página 66 (T1): **Análise dos resultados de testes, relatórios de erros e ações corretivas**.  
+  - Página 66 (T1): **Importância de um documento bem elaborado para decidir o próximo passo**.
+
+---
+
+Se desejar uma orientação ainda mais específica ou uma síntese de cada capítulo para facilitar sua leitura, posso ajudar também!
+
+Me: me diga como ir fazendo e já registrando meus resultados
+
+PDF: Para realizar o processo de testes do sistema de forma organizada e garantir que os resultados sejam bem registrados, você pode seguir os passos abaixo, baseando-se nas informações do PDF:
+
+### Como fazer e registrar seus resultados durante o teste:
+
+#### 1. **Preparação do ambiente de testes**
+- **Leitura recomendada:**  
+  - Página 54 (T5): itens essenciais de um plano de teste, incluindo infraestrutura e ambiente.  
+- **Ação:**  
+  - Assegure-se de que o ambiente de testes esteja configurado (hardware, software, dados) conforme o planejado.  
+  - Verifique se todas as ferramentas necessárias estão disponíveis.
+
+#### 2. **Elaboração dos casos de teste**
+- **Leitura recomendada:**  
+  - Página 5 (T10): Como criar um caso de teste detalhado.  
+  - Página 16 (T9): Componentes dos casos de teste e cenários.  
+- **Ação:**  
+  - Crie os seus casos de teste com elementos como: ID, descrição, passos, dados de entrada, resultado esperado.
+
+#### 3. **Execução dos testes passo a passo**
+- **Leitura recomendada:**  
+  - Página 9 (T9): Como registrar resultados e seguir etapas.  
+- **Ação:**  
+  - Para cada caso de teste, execute os passos descritos.  
+  - Observe o sistema e compare o resultado com o esperado.  
+  - Registre os resultados imediatamente após cada execução usando uma tabela ou formulário.  
+
+#### 4. **Registro dos resultados**
+- **Informações a serem registradas:**  
+  - **ID do caso de teste:** para identificação.  
+  - **Data e hora do teste:** para controle.  
+  - **Resultado:**  
+    - **Sucesso:** sistema funcionou conforme esperado.  
+    - **Falha:** sistema apresentou erro, inconsistente ou comportamento inesperado.  
+  - **Descrição da falha ou observações:** detalhes do erro, captura de tela, mensagem de erro, passos adicionais.  
+  - **Estado final:** aprovado, reprovado, pendente.  
+- **Ferramentas sugeridas:**  
+  - Planilhas (Excel, Google Sheets) para registro manual ou digital.  
+  - Sistemas de gestão de testes, se disponíveis (como uma ferramenta de gerenciamento de testes).
+
+#### 5. **Análise dos resultados**  
+- **Leitura recomendada:**  
+  - Página 66 (T2): Análise dos registros de testes, decisão sobre os próximos passos.  
+- **Ação:**  
+  - Avalie se o sistema passou nos testes ou se há itens que precisam ser corrigidos.  
+  - Documente os erros e comunique a equipe responsável para correções.
+
+#### 6. **Repetir os testes após correções**
+- **Leitura recomendada:**  
+  - Página 34 (T6): Testes de regressão, reexecutando testes após alterações.  
+- **Ação:**  
+  - Execute novamente os casos de teste relacionados às áreas corrigidas.  
+  - Atualize os registros com novos resultados.  
+
+---
+
+### Resumindo:
+- **Prepare o ambiente e crie seus casos de teste,** registrando cada passo, resultado, e observação em planilhas ou software de gestão.  
+- **Execute os testes passo a passo** e registre os resultados **imediatamente após cada execução.**  
+- **Analise os resultados** para decidir se o sistema está pronto ou se precisa de ajustes.  
+- **Repita os testes** após ajustes, sempre atualizando os registros.
+
+Se desejar, posso ajudar a montar um modelo de documento ou planilha para facilitar seu registro de resultados.
+
+Me: quero ir colocando no arquivo doc que terei que entragar, enquanto vou fazendo já quero ir deixando este arquivo pronto
+
+PDF: Perfeito! Para facilitar sua rotina, recomendo criar um documento no Word ou similar, organizado com os seguintes elementos básicos, que você pode preencher à medida que realiza cada teste. Assim, seu arquivo ficará completo e pronto para entrega, economizando tempo na fase final.
+
+### Modelo de documento de registro de testes para seu arquivo
+
+---
+
+# Relatório de Testes do Sistema [Nome do Sistema]
+
+## 1. Dados básicos
+- **Data:** [inserir data]
+- **Versão do sistema:** [exemplo: 1.0.0]
+- **Responsável pelo teste:** [seu nome ou equipe]
+
+---
+
+## 2. Lista de Casos de Teste Realizados
+
+| ID do Caso de Teste | Descrição                     | Data/Hora         | Resultado   | Observações / Erros                          | Status        | Anexo (se necessário)                  |
+|----------------------|------------------------------|-------------------|-------------|----------------------------------------------|--------------|----------------------------------------|
+| CT-001               | Verificar login válido        | 23/06/2025 10:30 | Aprovado    |                                            | Concluído    | (se tiver captura de tela)             |
+| CT-002               | Testar cadastro de usuário    | 23/06/2025 10:55 | Reprovado  | Mensagem de erro não exibida                | Reprovado   | Anexo 1                                |
+| CT-003               | Testar recuperação de senha   | 23/06/2025 11:10 | Aprovado    |                                            | Concluído    |                                        |
+
+*(Você pode expandir essa tabela ou criar uma específica para seu sistema)*
+
+---
+
+## 3. Detalhes das falhas encontradas (se houver)
+
+**Caso de teste: CT-002 – Cadastro de usuário**  
+- **Erro:** Mensagem de erro ao tentar salvar cadastro sem preencher o campo obrigatório.  
+- **Captura de tela:** [inclua aqui se desejar, ou indique o arquivo anexo]  
+- **Ação recomendada:** Corrigir validação do formulário para exibir mensagem adequada.
+
+---
+
+## 4.Conclusão Geral
+- **Sistema está em condições de avançar para a próxima fase?** [Sim/Não]  
+- **Observações gerais:** [qualquer comentário adicional]
+
+---
+
+### Dicas para usar esse modelo:
+- Crie esse documento em Word ou Google Docs.
+- Insira uma tabela semelhante à mostrada, preenchendo a cada teste.
+- Salve o arquivo frequentemente durante o processo.
+- Anexe capturas de tela ou evidências, se necessário.
+- Atualize o documento ao longo do processo e deixe pronto para a entrega.
+
+---
+
+Se desejar, posso ajudar a montar esse documento em um arquivo Word real para você, basta pedir!
