@@ -19,8 +19,10 @@ import persistencia.ConexaoBanco;
  */
 
 
-/*A classe ConvenioDAO é responsável pela comunicação entre a aplicação e o banco de dados, ou seja,
-ela é responsável por realizar as operações de cadastro e busca de convenio  no banco de dados.
+/*A classe ConvenioDAO é responsável pela comunicação entre a aplicação e o banco
+de dados, ou seja,
+ela é responsável por realizar as operações de cadastro e busca de convenio  no
+banco de dados.
 */
 public class ConvenioDAO {
 
@@ -29,7 +31,8 @@ public class ConvenioDAO {
 
       /*No construtor da classe, a instância de ConexaoBanco é criada e 
     armazenada no atributo conexao. 
-    Essa instância será usada posteriormente para obter a conexão com o banco de dados.
+    Essa instância será usada posteriormente para obter a conexão com o banco de
+    dados.
     */
     public ConvenioDAO() {
         this.conexao = new ConexaoBanco();

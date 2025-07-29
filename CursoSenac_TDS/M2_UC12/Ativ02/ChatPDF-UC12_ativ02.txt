@@ -1,0 +1,170 @@
+PDF: E aí, tudo certo, andre cararo?
+
+Esse material traz um guia completinho sobre técnicas de teste em desenvolvimento de sistemas, tipo caixa-preta e caixa-branca, e ainda fala dos testes funcionais e não funcionais, mostrando uns exemplos práticos de quando aplicar cada um.
+
+Quer que eu resuma todo esse conteúdo pra você?
+
+O que exatamente significam os testes funcionais e não funcionais no dia a dia do desenvolvimento?
+
+Como as técnicas de teste ajudam a garantir a qualidade do sistema que está sendo desenvolvido?
+
+Me: ﻿
+
+Atividade 2
+Contexto
+Com as diretrizes estabelecidas para testes a partir do documento de plano de testes, a equipe concentra-se em executar os testes previstos no projeto de software para o hospital. Os problemas encontrados - ou seja, os testes que falharam - devem ser registrados em ferramenta de bugtracking. A equipe decide que usará o Jira para isso. Você deverá executar as técnicas de testes de caixa preta e caixa branca, identificando em que casos um é mais adequado que outro.
+Atividade
+Registre-se no Jira e crie um projeto. Usando o projeto Java presente em Conteúdo > Material Complementar e baseando-se no plano de testes elaborado na atividade 1, execute os testes propostos e registre no Jira todos os testes que resultaram em falha. Ao fim, elabore um relatório (DOCX ou PDF) evidenciando todas as tarefas criadas no Jira.
+Entrega
+No espaço dedicado a entregas da atividade, envie o relatório desenvolvido (DOCX ou PDF) com as evidências de tarefas criadas no Jira.
+Dica de leitura
+Para esta atividade, leia os seguintes materiais:
+• Técnicas de teste: caixa-preta, caixa-branca; métodos de testes
+⚫ Ferramentas de testes: bugtrackers e automação
+Ferramentas de depuração passo a passo: recursos de IDE, comandos, utilização
+Avaliação
+Nesta atividade, você será avaliado nos indicadores:
+• Executa testes de caixa branca de acordo com plano de teste e conforme tecnologias selecionadas para o processo de testes.
+• Executa testes de caixa preta de acordo com plano de teste e conforme tecnologias selecionadas para o processo de testes.
+
+PDF: Para realizar a Atividade 2 conforme o contexto e as diretrizes fornecidas, siga os passos abaixo:
+
+1. **Registro no Jira e criação do projeto**:
+   - Acesse o Jira e crie um novo projeto, nomeando-o de forma adequada ao seu planejamento, por exemplo, "Teste Sistema Hospitalar".
+   - Configure o projeto para o tipo de teste que será realizado, podendo usar quadros de tarefas ou bugs.
+
+2. **Execução dos testes de acordo com o plano elaborado**:
+   - Utilize o projeto Java fornecido em "Conteúdo > Material Complementar".
+   - Baseando-se no plano de testes definido na atividade 1, execute os testes de caixa-preta e caixa-branca.
+     - **Testes de caixa-preta**: avaliar funcionalidades do sistema a partir das especificações, sem considerar o código interno.
+     - **Testes de caixa-branca**: avaliar aspectos internos do código, verificando estruturas, cobertura de instruções, decisões, caminhos, etc.
+
+3. **Registro dos testes que resultaram em falha**:
+   - Para cada teste realizado, registre no Jira:
+     - Nome ou identificação do teste.
+     - Descrição do cenário/teste.
+     - Resultado obtido.
+     - Se o teste falhou, registre os detalhes do erro ou comportamento esperado versus atual, e crie uma task/bug no Jira para esse problema.
+
+4. **Elaboração do relatório**:
+   - Compile todos os registros das tarefas e bugs criados no Jira.
+   - Faça um documento (DOCX ou PDF) evidenciando:
+     - As tarefas principais realizadas.
+     - Os testes que passaram e os que falharam, com detalhes dos problemas encontrados.
+     - Prints de telas ou exportações do Jira, se possível, para comprovação.
+     - Uma análise final sobre a adequação do uso das técnicas de teste (quando usar caixa-preta ou caixa-branca).
+
+5. **Envio**:
+   - Encaminhe o documento finalizando a atividade no espaço designado.
+
+Se desejar, posso ajudar a estruturar o conteúdo do relatório ou explicar mais detalhes sobre o uso do Jira e as técnicas de teste que devem ser aplicadas.  
+
+Quer que eu prepare um modelo de relatório ou forneça uma explicação mais detalhada sobre como diferenciar o uso de caixa-preta e caixa-branca na prática?
+
+Me: quero começar fazendo teste da conexão com o banco de dados
+
+PDF: Ótima escolha! Testar a conexão com o banco de dados é uma etapa fundamental na validação do sistema, garantindo que a aplicação possa acessar os dados necessários para funcionamento. Aqui estão os passos para você iniciar esse teste, considerando tanto a técnica de caixa-preta quanto a de caixa-branca:
+
+---
+
+### Como realizar o teste de conexão com o banco de dados
+
+#### **1. Planejamento do teste (com base no plano de testes)**
+- **Objetivo**: Confirmar que a aplicação consegue estabelecer conexão com o banco de dados.
+- **Cenário de teste**: Inserir ou verificar a operação de conexão ao banco de dados ao iniciar a aplicação.
+- **Resultado esperado**: A conexão deve ser bem-sucedida sem erros.
+
+---
+
+### **2. Teste de Caixa-Preta**
+- **Descrição**: Testar a conexão a partir do ponto de vista da funcionalidade da aplicação, sem olhar o código interno.
+- **Procedimentos**:
+  - Execute a aplicação e navegue até a funcionalidade que depende do banco (por exemplo, abrir uma tela de consulta ou lógica de login).
+  - Observe se a tela ou operação que depende do banco de dados funciona normalmente.
+  - Verifique mensagens de erro visuais, logs de erro exibidos na interface ou mensagens de sucesso na tela.
+  - Não há necessidade de verificar os detalhes do código; apenas a operação final.
+
+- **Resultado a registrar no Jira**:
+  - Caso a conexão funcione, registre como teste bem-sucedido.
+  - Caso falhe, registre a falha, incluindo a mensagem de erro observada (exemplo: "Erro ao conectar ao banco: timeout", "Credenciais inválidas", etc.).
+
+---
+
+### **3. Teste de Caixa-Branca**
+- **Descrição**: Avaliar a conexão do ponto de vista interno do código, analisando a implementação.
+- **Procedimentos**:
+  - Acesse o código fonte do método responsável por estabelecer a conexão com o banco.
+  - Verifique as configurações de conexão (URL, usuário, senha, tempo limite).
+  - Realize testes unitários no método de conexão para verificar se ele é executado corretamente.
+  - Você pode usar uma IDE que permita depuração passo a passo para verificar se o método está sendo chamado e se a conexão é estabelecida com sucesso. 
+  - Avalie também se há tratamento de erro adequado para diferentes situações de falha.
+
+- **Resultado a registrar no Jira**:
+  - Se o código estiver correto e a conexão for bem-sucedida, esse é um teste de sucesso.
+  - Se houver falha no código, registre o problema (exemplo: exceções não tratadas, configurações incorretas, erro de autenticação).
+
+---
+
+### **4. Registro no Jira**
+- Crie uma nova tarefa ou bug, contendo:
+  - Uma descrição clara do teste: "Teste de conexão com o banco de dados — [descrição do procedimento]"
+  - Resultados observados.
+  - Anexos (prints das telas, logs, trechos de código, se aplicável).
+  - Status: "Aprovado" ou "Falhou", com detalhes.
+
+---
+
+### **Exemplo de relato para o Jira**
+- **Título**: Teste de conexão ao banco de dados - sucesso/falha
+- **Descrição**: Teste realizado para verificar se a aplicação consegue estabelecer conexão com o banco de dados. Procedimentos seguidos: ... Resultados: conexão estabelecida com sucesso / conexão não estabelecida, mensagem de erro: ...
+- **Anexo**: print da tela de erro ou trecho de logs.
+
+---
+
+Se desejar, posso te ajudar a elaborar um roteiro detalhado ou um exemplo de como fazer os registros no Jira. Quer também uma orientação com scripts ou trechos de código que você pode usar para testar a conexão na sua aplicação?
+
+Me: O que exatamente significam os testes funcionais e não funcionais no dia a dia do desenvolvimento?
+
+Como as técnicas de teste ajudam a garantir a qualidade do sistema que está sendo desenvolvido?
+
+PDF: Os testes funcionais e não funcionais representam duas abordagens principais para verificar a qualidade de um sistema durante o desenvolvimento, e cada uma tem um papel específico no dia a dia da equipe de desenvolvimento.
+
+### **Testes Funcionais**
+
+**Significado no dia a dia**:
+- São realizados para garantir que **as funcionalidades do sistema operam conforme especificado nos requisitos**.  
+- Sua rotina envolve validar se cada recurso (como cadastro, login, emissão de notas fiscais, etc.) funciona corretamente.  
+- Geralmente, esses testes são baseados em cenários de uso real ou simulado, feitos por testadores ou automaticamente por ferramentas de automação.
+
+**Exemplo no dia a dia**:
+- Testar se uma tela de cadastro permite inserir dados e salvar corretamente no banco de dados.
+- Verificar se uma operação de emissão de nota fiscal deduz itens corretamente do estoque.
+
+### **Testes Não Funcionais**
+
+**Significado no dia a dia**:
+- Avaliam **características do sistema que não estão diretamente relacionadas às funcionalidades específicas**, mas que afetam sua qualidade global, como desempenho, segurança, usabilidade, compatibilidade, confiabilidade, etc.  
+- Essas avaliações garantem que o sistema não só funciona, mas também atende a requisitos de performance, proteção, facilidade de uso, entre outros.
+
+**Exemplo no dia a dia**:
+- Medir se o sistema consegue processar 100 operações simultâneas sem queda de desempenho (performance).
+- Testar se o sistema impede acessos não autorizados (segurança).
+- Verificar se a interface é intuitiva para usuários de diferentes idades (usabilidade).
+
+---
+
+## Como as técnicas de teste ajudam a garantir a qualidade do sistema?
+
+As técnicas de teste, como testes de caixa-preta, caixa-branca e combinações como o teste de caixa-cinza, fornecem métodos estruturados para validar diferentes aspectos do sistema:
+
+- **Padronização e consistência**: As técnicas oferecem procedimentos claros para elaborar casos de teste, garantindo que testes relevantes sejam feitos de forma sistemática.  
+- **Detecção de defeitos precocemente**: Com testes planejados, os erros são identificados logo nas fases iniciais, o que reduz custos de correção e evita que defeitos se acumulem.  
+- **Cobertura abrangente**: Técnicas como o teste de cobertura de código (caixa-branca) asseguram que diferentes caminhos do código sejam percorridos, ajudando a diminuir falhas ocultas.  
+- **Validação do comportamento esperado**: Os testes de caixa-preta verificam se o sistema comporta-se conforme a documentação, requisitos e casos de uso definidos.  
+- **Melhoria contínua**: Ao registrar falhas, o processo de teste promove melhorias nos processos de desenvolvimento e na qualidade do produto final.
+
+### Resumindo
+- **Testes funcionais** garantem que as funcionalidades atendem às expectativas e requisitos do usuário.  
+- **Testes não funcionais** asseguram que o sistema também tenha boa performance, segurança, usabilidade e outros atributos qualitativos.
+
+Ambas as abordagens e suas técnicas são essenciais para desenvolver sistemas robustos, confiáveis e de alta qualidade.

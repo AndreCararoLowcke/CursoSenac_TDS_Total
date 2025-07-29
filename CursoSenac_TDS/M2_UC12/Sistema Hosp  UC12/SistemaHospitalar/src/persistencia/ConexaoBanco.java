@@ -12,8 +12,8 @@ public class ConexaoBanco {
 
     //Atributos estáticos com os dados do Banco de Dados
     private static String URL = "jdbc:mysql://localhost:3306/hospital_uc12";
-    private static String USUARIO = "root";
-    private static String SENHA = "root";
+    private static String USUARIO = "andre";
+    private static String SENHA = "123";
 
     /*
     Ao chamar este método  getConexao()  em outra classe, como por exemplo em um DAO, é 
