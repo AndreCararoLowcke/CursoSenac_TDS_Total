@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solicite seu Orçamento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">Meu <strong>LOGO</strong></div>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="galeria.html">Galeria</a>
+      </nav>
+    </header>
+
+    <section class="title">
+      <h1>Solicite seu Orçamento</h1>
+      <p>Preencha o formulário abaixo e entraremos em contato:</p>
+    </section>
+
+    <div class="form-wrap">
+      <form action="#" method="post" novalidate>
+        <input type="text" name="nome" placeholder="Nome:" required>
+        <input type="email" name="email" placeholder="Email:" required>
+        <input type="tel" name="telefone" placeholder="Telefone:" required>
+        <input type="text" name="endereco" placeholder="Endereço:">
+        <input type="date" name="data_evento" placeholder="Data do Evento:">
+        <textarea name="observacoes" placeholder="Observações:" rows="3"></textarea>
+        <input type="text" name="idade_media" placeholder="Idade média dos participantes:">
+        <select name="tipo_evento">
+          <option>Tipo de Evento</option>
+          <option>Aniversário</option>
+          <option>Gincana</option>
+          <option>Piquenique</option>
+        </select>
+
+        <fieldset style="border:1px solid rgba(0,0,0,0.08);padding:8px;border-radius:6px">
+          <legend>Selecione o tipo de serviço desejado:</legend>
+          <label><input type="checkbox" name="servico" value="teatro"> Teatro</label><br>
+          <label><input type="checkbox" name="servico" value="brinquedo"> Brinquedo</label><br>
+          <label><input type="checkbox" name="servico" value="apresentacao"> Apresentação Educativa</label>
+        </fieldset>
+
+        <button class="btn" type="submit">Solicitar Orçamento</button>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <div>
+        <strong>Contato:</strong><br>
+        (47) 988888881
+      </div>
+      <div style="text-align:center;flex:1">Redes Sociais<br><span class="social">Instagram</span> <span style="margin-left:10px">Facebook</span></div>
+      <div style="text-align:right;font-size:12px">Endereço opcional</div>
+    </footer>
+  </div>
+</body>
+</html>

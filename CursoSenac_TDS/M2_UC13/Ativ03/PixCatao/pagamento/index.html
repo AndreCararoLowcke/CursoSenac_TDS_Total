@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pagamento - Pix / Cartão</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Página de Pagamento</h1>
+
+        <div class="row">
+            <label class="lbl">Valor</label>
+            <input id="valor" type="text" placeholder="Ex: 100.00 ou 100,00" />
+        </div>
+        <div id="erro-valor" class="erro" aria-live="polite"></div>
+
+        <div class="row radios">
+            <label><input type="radio" name="pagto" value="pix" checked> PIX</label>
+            <label><input type="radio" name="pagto" value="cartao"> Cartão de Crédito</label>
+        </div>
+
+        <div class="row">
+            <button id="btn-informar" class="btn">Informar dados</button>
+        </div>
+
+        <!-- PAINEL PIX -->
+        <section id="painel-pix" class="panel" style="display:none;">
+            <h2>PIX</h2>
+            <div class="row">
+                <label class="lbl">CPF</label>
+                <input id="cpf" type="text" placeholder="000.000.000-00" />
+            </div>
+            <p class="hint">Chave PIX: pagamentos@empresa.com</p>
+        </section>
+
+        <!-- PAINEL CARTÃO -->
+        <section id="painel-cartao" class="panel" style="display:none;">
+            <h2>CARTÃO DE CRÉDITO</h2>
+
+            <div class="row">
+                <label class="lbl">Número</label>
+                <div class="input-with-icon">
+                    <input id="num-cartao" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" />
+                    <span id="bandeira" class="icon"></span>
+                </div>
+            </div>
+            <div id="erro-cartao" class="erro" aria-live="polite"></div>
+
+            <div class="row">
+                <label class="lbl">Titular</label>
+                <input id="titular" type="text" />
+            </div>
+
+            <div class="grid2">
+                <div class="row">
+                    <label class="lbl">Cód. Segurança</label>
+                    <input id="cvv" type="text" maxlength="4" inputmode="numeric" />
+                </div>
+                <div class="row">
+                    <label class="lbl">Vencimento</label>
+                    <input id="venc" type="month" />
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="lbl">Parcelas</label>
+                <select id="parcelas"></select>
+            </div>
+
+            <div id="lista-parcelas" class="parcelas-list"></div>
+        </section>
+
+        <div class="row total-row">
+            <strong>Total:</strong>
+            <span id="total">R$ 0,00</span>
+        </div>
+
+        <div class="row">
+            <button id="btn-pagar" class="btn primary" style="display:none;">Pagar</button>
+        </div>
+
+        <div id="msg-sucesso" class="sucesso" style="display:none;">Pagamento realizado com sucesso! ✅</div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

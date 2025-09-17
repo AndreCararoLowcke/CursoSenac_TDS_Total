@@ -1,0 +1,325 @@
+/* Header com logo e menu */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo à esquerda, menu à direita */
+    padding: 10px 20px;
+    background-color: #fdf6f0;
+}
+
+/* Logo */
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    gap: 20px; /* Espaço entre os botões */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+/* Efeito hover */
+.nav-link:hover {
+    background-color: #ffcc70;
+    color: #000;
+}
+footer {
+  background-color: #ffebf0; /* rosa claro */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-contact p {
+  margin: 5px 5;
+}
+
+.social-icons img {
+  width: 24px;
+  margin: 0 5px;
+}
+
+copyright {
+  font-size: 14px;
+  color: #666;
+}
+.footer-logo img {
+  width: 150px; /* define a largura da logo */
+  height: auto; /* mantém a proporção */
+}
+.galeria {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr; /* duas colunas grandes e uma pequena */
+    grid-template-rows: repeat(3, 200px); /* 3 linhas com altura fixa */
+    gap: 10px;
+}
+
+/* Ajustando posições */
+.grid-galeria div:nth-child(1) { grid-column: 1; grid-row: 1; }
+.grid-galeria div:nth-child(2) { grid-column: 2; grid-row: 1; }
+.grid-galeria div:nth-child(3) { grid-column: 3; grid-row: 1; }
+.grid-galeria div:nth-child(4) { grid-column: 3; grid-row: 2; }
+.grid-galeria div:nth-child(5) { grid-column: 3; grid-row: 3; }
+.grid-galeria div:nth-child(6) { grid-column: 1 / span 2; grid-row: 2 / span 2; }
+
+.grid-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche sem distorcer */
+    border-radius: 5px;
+}
+
+.btn-orcamento {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Estilo geral */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* --- INTRO --- */
+.intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.intro p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* --- CARROSSEL --- */
+.carousel {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-container button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel-image img {
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.dots {
+    margin-top: 10px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #999;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+/* --- SERVIÇOS --- */
+.services {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.service {
+    width: 32%;
+    text-align: center;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.service img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    background: #ddd;
+}
+
+.service button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- DEPOIMENTOS --- */
+.testimonials {
+    text-align: center;
+}
+
+.testimonials textarea {
+    width: 80%;
+    margin: 8px 0;
+    padding: 10px;
+    resize: none;
+}
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal */
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Título */
+main h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+main p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Formulário */
+.form-orcamento {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Labels */
+.form-orcamento label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Inputs e textarea */
+.form-orcamento input,
+.form-orcamento select,
+.form-orcamento textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Textarea */
+.form-orcamento textarea {
+    resize: none;
+}
+
+/* Checkboxes */
+.checkbox-group {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.checkbox-group legend {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Botão */
+.btn-submit {
+    background: #333;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #555;
+}
+
+

@@ -1,0 +1,146 @@
+:root {
+    --bg: #fafafa;
+    --card: #fff;
+    --border: #ddd;
+    --accent: #2b6cff;
+    --err: #c62828;
+    --ok: #2e7d32;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
+.container {
+    width: min(720px, 96%);
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+}
+
+h1 {
+    margin: 0 0 12px
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0
+}
+
+.lbl {
+    min-width: 100px;
+    font-weight: 600
+}
+
+input[type="text"],
+input[type="month"],
+select {
+    flex: 1;
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.btn {
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid var(--border);
+    cursor: pointer
+}
+
+.btn:hover {
+    filter: brightness(.98)
+}
+
+.primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: transparent
+}
+
+.panel {
+    margin-top: 12px;
+    border: 1px solid var(--border);
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px
+}
+
+.total-row {
+    justify-content: flex-end;
+    gap: 12px;
+    font-size: 1.05rem;
+    margin-top: 14px;
+    border-top: 1px dashed var(--border);
+    padding-top: 12px
+}
+
+.erro {
+    color: var(--err);
+    font-size: 0.9rem;
+    margin-top: -6px
+}
+
+.hint {
+    color: #555;
+    font-size: 0.95rem
+}
+
+.sucesso {
+    color: var(--ok);
+    font-weight: 700;
+    margin-top: 12px
+}
+
+.input-with-icon {
+    position: relative;
+    width: 100%
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: .9
+}
+
+.parcelas-list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    color: #333;
+    font-size: .95rem
+}
+
+@media (max-width:520px) {
+    .grid2 {
+        grid-template-columns: 1fr
+    }
+
+    .lbl {
+        min-width: 80px
+    }
+}

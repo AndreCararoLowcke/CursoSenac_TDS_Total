@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <img src="images/logo.png" alt="Logo Coisa de Criança" class="logo">
+
+        <nav class="navbar">
+            <a href="index.html" class="nav-link">Início</a>
+            <a href="galeria.html" class="nav-link">Galeria</a>
+
+        </nav>
+        <!-- logo e nav -->
+    </header>
+    <main>
+        <section class="orcamento">
+            <h1>Solicite seu Orçamento</h1>
+            <p>Preencha o formulário abaixo e entraremos em contato:</p>
+
+            <form action="#" method="post" class="form-orcamento">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco">
+
+                <label for="data">Data do Evento:</label>
+                <input type="date" id="data" name="data">
+
+                <label for="observacoes">Observações:</label>
+                <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+
+                <label for="idade">Idade média dos participantes:</label>
+                <input type="number" id="idade" name="idade" min="0">
+
+                <label for="tipo">Tipo de Evento:</label>
+                <input type="text" id="tipo" name="tipo">
+
+                <label for="servico">Selecione o tipo de serviço desejado:</label>
+                <select id="servico" name="servico">
+                    <option value="teatro">Teatro</option>
+                    <option value="brinquedo">Brinquedo</option>
+                    <option value="apresentacao">Apresentação Educativa</option>
+                </select>
+
+                <fieldset class="checkbox-group">
+                    <legend>Serviços Extras:</legend>
+                    <label><input type="checkbox" name="extras" value="teatro"> Teatro</label>
+                    <label><input type="checkbox" name="extras" value="brinquedo"> Brinquedo</label>
+                    <label><input type="checkbox" name="extras" value="apresentacao"> Apresentação Educativa</label>
+                </fieldset>
+
+                <button type="submit" class="btn-submit">Solicitar Orçamento</button>
+            </form>
+        </section>
+    </main>
+
+
+
+    <footer class="site-footer">
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Logo da empresa">
+                </div>
+                <div class="footer-links">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>Email: contato@recreacao.com</p>
+                    <p>Telefone: (47) 988843081</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="images/facebookicon.png" alt="Facebook"></a>
+                        <a href="#"><img src="images/instagramicon.png" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Recreação Infantil - Todos os direitos reservados</p>
+        </footer>
+        <!-- contato / redes -->
+    </footer>
+</body>
+
+</html>
